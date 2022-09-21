@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: 'signin', component: SigninComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'movies-list', component: MoviesListComponent },
-  { path: 'movie-details', component: MovieDetailsComponent },
+  { path: 'movie-details/:movieId', component: MovieDetailsComponent },
   
   // default route 
   {path: '', redirectTo: 'signin', pathMatch: 'full' },

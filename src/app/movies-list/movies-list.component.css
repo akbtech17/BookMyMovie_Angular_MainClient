@@ -2,6 +2,14 @@ img{
     height: 70%;
 }
 
+.movie-title {
+    display: flex;
+}
+
+.name {
+    flex: 0.9;
+}
+
 ul{
     display: flex;
     justify-content: center;
@@ -12,7 +20,7 @@ ul{
 }
 
 ul li {
-    margin-bottom: 2rem;
+    margin-bottom: 0.5rem;
 }
 
 ul li a{
@@ -60,11 +68,7 @@ li a:hover{
   align-items: center;  
 }
 
-.origins{
-    flex: 9;
-}
-
-.origins span{
+.genres{
     border-radius: 2rem;
     background-color: whitesmoke;
     color: grey;
@@ -73,9 +77,8 @@ li a:hover{
     display: inline-block;
 }
 
-.cook-time{
+.duration{
     font-size: 1rem;
-    flex: 3;
     text-align: center;
 }
 

@@ -1,22 +1,27 @@
 <ul>
     <li *ngFor="let movie of movies">
-        <a href="#">
+        <a href="#" [routerLink]="['/movie-details', movie.movieId]">
             <img src="{{movie.imageUrl}}" alt="foods-image">
             <div class="content">
                 
-                <div class="name">{{movie.movieName}}</div>
-                <span class="favorite">❤{{movie.ratings}}</span>
+                <div class="movie-title">
+                    <div class="name">{{movie.movieName}}</div>
+                    <span class="favorite">❤{{movie.ratings}}</span>
+                </div>
                 <div class="product-item-footer">
-                    <div class="origins">
+                    <div class="genres">
                         <!-- <span *ngFor="let origin of food.origins">
                             {{origin | titlecase}}
                         </span> -->
                         {{movie.genres}}
                     </div>
-                    <div class="cook-time">
+                    <div class="duration">
                         <span>🕘</span>
                         {{movie.duration}}
                     </div>
+                </div>
+                <div class="price">
+                    {{movie.showTime | date: 'short'}}
                 </div>
                 <div class="price">
                     {{movie.costPerSeat | currency:'INR'}}
