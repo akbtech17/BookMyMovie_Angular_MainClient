@@ -9,13 +9,13 @@ import { MovieService } from '../movie.service';
 })
 export class MoviesListComponent implements OnInit {
   movies: IMovie[] = [];
-  constructor() { }
+  constructor(private movieService: MovieService) { }
 
   ngOnInit(): void {
-    // this.movieService.getMovieList().subscribe( data => {
-    //   this.movies = data
-    //   console.log(this.movies)
-    // })
+    this.movieService.getMovieList().subscribe( data => {
+      this.movies = data
+      console.log(this.movies)
+    })
   }
 
 }

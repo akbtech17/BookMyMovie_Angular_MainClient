@@ -4,7 +4,6 @@ import { HttpClient } from '@angular/common/http' //hhtp client object helps wit
 import { Observable } from 'rxjs'; // to work or load single component not whole page or app.
 import { catchError, throwError } from 'rxjs';
 import { HttpErrorResponse } from '@angular/common/http';
-import { IMovie } from './movie';
 
 @Injectable({
   providedIn: 'root'
