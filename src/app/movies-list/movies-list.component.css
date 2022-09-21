@@ -1,3 +1,7 @@
+img{
+    height: 70%;
+}
+
 ul{
     display: flex;
     justify-content: center;
@@ -7,11 +11,16 @@ ul{
     padding: 0;
 }
 
+ul li {
+    margin-bottom: 2rem;
+}
+
 ul li a{
-    height: 22rem;
-    width: 20rem;
+    height: 26rem;
+    width: 17rem;
     border: 1px solid whitesmoke;
     border-radius: 1rem;
+    
     margin: 0.5rem;
     display: flex;
     flex-direction: column;
@@ -52,10 +61,10 @@ li a:hover{
 }
 
 .origins{
-    flex: 7;
+    flex: 9;
 }
 
-.origins {
+.origins span{
     border-radius: 2rem;
     background-color: whitesmoke;
     color: grey;
@@ -66,6 +75,7 @@ li a:hover{
 
 .cook-time{
     font-size: 1rem;
+    flex: 3;
     text-align: center;
 }
 
