@@ -1,7 +1,7 @@
 <ul>
     <li *ngFor="let movie of movies">
         <a href="#" [routerLink]="['/movie-details', movie.movieId]">
-            <img src="{{movie.imageUrl}}" alt="foods-image">
+            <img class="movie-list-image" src="./assets/{{movie.imageUrl}}" alt="foods-image">
             <div class="content">
                 
                 <div class="movie-title">

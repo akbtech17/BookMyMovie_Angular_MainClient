@@ -24,7 +24,7 @@ ul li {
 }
 
 ul li a{
-    height: 26rem;
+    height: auto;
     width: 17rem;
     border: 1px solid whitesmoke;
     border-radius: 1rem;
@@ -40,6 +40,7 @@ li a:hover{
     opacity: 0.9;
     transition: 0.3s;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .content{
@@ -85,4 +86,7 @@ li a:hover{
 .price{
     color: #424242;
     margin-top: .2rem;
+}
+.movie-list-image {
+    height:23rem;
 }
