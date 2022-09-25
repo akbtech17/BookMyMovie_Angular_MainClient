@@ -1,6 +1,8 @@
-<input type="text" [(ngModel)]='listFilter'>
+<div>
+    <input type="text" [(ngModel)]='listFilter' placeholder="Search Movie from BMM">
+</div>
 <ul>
-    <li *ngFor="let movie of movies">
+    <li *ngFor="let movie of filteredMovies">
         <a href="#" [routerLink]="['/movie-details', movie.movieId]">
             <img class="movie-list-image" src="./assets/{{movie.imageUrl}}" alt="foods-image">
             <div class="content">

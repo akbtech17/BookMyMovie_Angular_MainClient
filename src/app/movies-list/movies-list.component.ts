@@ -10,7 +10,7 @@ import { MovieService } from '../movie.service';
 })
 export class MoviesListComponent implements OnInit {
   movies: IMovie[] = [];
-  private _listFilter: string = 'brahm';
+  private _listFilter: string = '';
   filteredMovies: IMovie[] = [];
 
   get listFilter(): string {
@@ -20,7 +20,6 @@ export class MoviesListComponent implements OnInit {
   set listFilter(value:string) {
     this._listFilter = value;
     this.filteredMovies = this.performFilter(value)
-    console.log(this.filteredMovies);
   }
 
   constructor(private movieService: MovieService, private activatedRoute: ActivatedRoute) { }
@@ -28,7 +27,7 @@ export class MoviesListComponent implements OnInit {
   ngOnInit(): void {
     this.movieService.getMovieList().subscribe( data => {
       this.movies = data
-      console.log(this.movies)
+      this.filteredMovies = data
     })
   }
 
