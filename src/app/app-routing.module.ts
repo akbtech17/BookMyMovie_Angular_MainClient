@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: 'movie-details/:movieId', component: MovieDetailsComponent },
   
   // default route 
-  {path: '', redirectTo: 'signin', pathMatch: 'full' },
+  {path: '', redirectTo: 'movies-list', pathMatch: 'full' },
 
   // wildcard route
   {path: '**', component: PageNotFoundComponent },
