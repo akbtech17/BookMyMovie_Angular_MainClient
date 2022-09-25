@@ -20,6 +20,10 @@ export class MovieService {
     return this.httpclient.get<IMovie[]>(this.url).pipe(catchError(this.handleError))
   }
 
+  getMovie(movieId: number):Observable<IMovie> {
+    return this.httpclient.get<IMovie>(this.url+'/'+movieId).pipe(catchError(this.handleError))
+  }
+
   // method to handle errors in client side
   handleError(error: HttpErrorResponse) {
     let errormessage = ''
