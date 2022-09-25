@@ -10,18 +10,30 @@ import { MovieService } from '../movie.service';
 })
 export class MoviesListComponent implements OnInit {
   movies: IMovie[] = [];
+  private _listFilter: string = 'brahm';
+  filteredMovies: IMovie[] = [];
+
+  get listFilter(): string {
+    return this._listFilter;
+  }
+
+  set listFilter(value:string) {
+    this._listFilter = value;
+    this.filteredMovies = this.performFilter(value)
+    console.log(this.filteredMovies);
+  }
+
   constructor(private movieService: MovieService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    // this.activatedRoute.params.subscribe(params => {
-    //   if(params.searchItem) {
-    //     this.movies = this.movieService.getMovieList().filter(movie => movie.movieName.toLowerCase().includes(params.searchItem.toLowerCase()));
-    //   }
-    // })
     this.movieService.getMovieList().subscribe( data => {
       this.movies = data
       console.log(this.movies)
     })
+  }
+
+  performFilter(key: string): IMovie[] {
+    return this.movies.filter((movie: IMovie) => movie.movieName.toLocaleLowerCase().includes(key));
   }
 
 }

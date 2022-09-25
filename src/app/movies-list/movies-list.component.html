@@ -1,3 +1,4 @@
+<input type="text" [(ngModel)]='listFilter'>
 <ul>
     <li *ngFor="let movie of movies">
         <a href="#" [routerLink]="['/movie-details', movie.movieId]">
