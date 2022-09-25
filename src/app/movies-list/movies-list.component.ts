@@ -19,7 +19,7 @@ export class MoviesListComponent implements OnInit {
 
   set listFilter(value:string) {
     this._listFilter = value;
-    this.filteredMovies = this.performFilter(value)
+    // this.filteredMovies = this.performFilter(value)
   }
 
   constructor(private movieService: MovieService, private activatedRoute: ActivatedRoute) { }
@@ -31,8 +31,13 @@ export class MoviesListComponent implements OnInit {
     })
   }
 
-  performFilter(key: string): IMovie[] {
-    return this.movies.filter((movie: IMovie) => movie.movieName.toLocaleLowerCase().includes(key));
-  }
+  // performFilter(key: string): IMovie[] {
+  //   return this.movies.filter((movie: IMovie) => movie.movieName.toLocaleLowerCase().includes(key));
+  // }
+
+  performFilter(): void {
+      var key = this.listFilter;
+      this.filteredMovies =  this.movies.filter((movie: IMovie) => movie.movieName.toLocaleLowerCase().includes(key));
+    }
 
 }

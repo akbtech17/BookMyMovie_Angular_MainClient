@@ -90,3 +90,41 @@ li a:hover{
 .movie-list-image {
     height:23rem;
 }
+
+/* FILTER COMPONENT */
+.filter-comp {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.filter-comp input {
+    border-radius: 10rem 0 0 10rem;
+    width: 20rem;
+    height: 3rem;
+    background-color: #f1f1f1;
+    padding: 1.2rem;
+    text-align: center;
+    font-weight: 500;
+    font-size: 1rem;
+    outline: none;
+    border: none;
+}
+
+.filter-comp button {
+    height: 3rem;
+    width: 5rem;
+    font-size: 1rem;
+    border-radius: 0 10rem 10rem 0;
+    outline: none;
+    background-color: #e72929;
+    color: white;
+    border: none;
+}
+
+.filter-comp button:hover {
+    opacity: 0.9;
+    transition: 0.3s;
+    cursor: pointer;
+}

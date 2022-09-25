@@ -1,5 +1,6 @@
-<div>
+<div class="filter-comp">
     <input type="text" [(ngModel)]='listFilter' placeholder="Search Movie from BMM">
+    <button type="button" (click)="performFilter()">Search</button>
 </div>
 <ul>
     <li *ngFor="let movie of filteredMovies">
