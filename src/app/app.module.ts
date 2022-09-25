@@ -18,7 +18,7 @@ import { FormsModule } from '@angular/forms';
     RegisterComponent,
     MoviesListComponent,
     MovieDetailsComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,

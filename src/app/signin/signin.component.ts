@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Route, Router } from '@angular/router';
 import { CustomerService } from '../customer.service';
+import { CustomerStore } from '../CustomerStore';
 import { ICrendtials } from '../icrendtials';
 
 @Component({
@@ -21,7 +22,10 @@ export class SigninComponent implements OnInit {
   onSubmit() {
     this.customerService.validateCustomerSignIn(this.creds).subscribe(data => {
       if(data!=null) {
-        this.router.navigate(['movies-list']);
+        CustomerStore.email = data.email;
+        CustomerStore.firstName = data.firstName;
+        console.log(CustomerStore.email);
+        this.router.navigate(['/']);
       }
       else console.log("login failed")
     })
