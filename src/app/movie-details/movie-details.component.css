@@ -1,31 +1,20 @@
-img{
-    height: 70%;
+.md-image {
+    height:27.5rem;
+    border-radius: 1rem;
 }
 
-.movie-title {
+.md-title {
     display: flex;
 }
 
-.name {
+.md-name {
     flex: 0.9;
 }
 
-ul{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    list-style-type: none;
-    padding: 0;
-}
-
-
-.containerr{
+.md-containerr{
     font-size: 3rem;
     height: auto;
     width: auto;
-    border: 1px solid whitesmoke;
-    border-radius: 1rem;
     
     margin: 2rem;
     display: flex;
@@ -35,99 +24,73 @@ ul{
     color: #e72929;
 }
 
-.container:hover{
-    opacity: 0.9;
-    transition: 0.3s;
-    cursor: pointer;
-    text-decoration: none;
-}
-
-.content{
-    padding: .5rem 6rem;
+.md-content{
+    padding-left: 6rem;
     position: relative;
     display: flex;
     flex-direction: column;
 }
 
-.favorite{
+.md-movie-name {
+    flex: 0.75;
+    font-weight: bold;
+}
+
+.md-favorite{
     position: absolute;
     top: .5rem;
     right: 1rem;
     font-size: 2.8rem;
 }
 
-.favorite.not{
-    color: black;
-}
 
-.star{
-    margin-bottom: .2rem;
-}
-
-.product-item-footer{
+.md-product-item-footer{
   display: flex;
   justify-content: space-between;
   align-items: center;  
 }
 
-.genres{
+.md-genres{
     border-radius: 2rem;
     background-color: whitesmoke;
     color: grey;
     font-size: 1.8rem;
     margin-right: .3rem;
     display: inline-block;
+    flex: 0.96;
 }
 
-.duration{
+.md-duration{
     font-size: 1.8rem;
     text-align: center;
 }
 
-.price{
+.md-show-time{
     color: #424242;
+    font-size: 1.5rem;
     margin-top: .2rem;
 }
-.movie-list-image {
-    height:35rem;
-}
 
-/* FILTER COMPONENT */
-.filter-comp {
+
+.md-movie-pricing-details {
+    font-size: 1.5rem;
     display: flex;
-    justify-content: center;
-    margin-top: 3rem;
-    margin-bottom: 1.5rem;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.filter-comp input {
-    border-radius: 10rem 0 0 10rem;
-    width: 20rem;
-    height: 3rem;
-    background-color: #f1f1f1;
-    padding: 1.2rem;
-    text-align: center;
-    font-weight: 500;
-    font-size: 1rem;
-    outline: none;
-    border: none;
+.md-movie-price-age {
+    display: flex;
 }
 
-.filter-comp button {
-    height: 3rem;
-    width: 5rem;
-    font-size: 1rem;
-    border-radius: 0 10rem 10rem 0;
-    outline: none;
+.md-age-rating {
+    margin-left: 0.5rem;
+}
+.md-movie-type {
     background-color: #e72929;
+    border-radius: 1rem;
     color: white;
-    border: none;
-}
-
-.filter-comp button:hover {
-    opacity: 0.9;
-    transition: 0.3s;
-    cursor: pointer;
+    padding: 0.1rem 0.5rem;
 }
 
 .md-btn {
