@@ -1,5 +1,5 @@
 <app-header></app-header>
-<div *ngIf="movieDetails">
+<!-- <div *ngIf="movieDetails">
      <br>
     {{movieDetails.releaseDate}} <br>
     {{movieDetails.genres}} <br>
@@ -9,31 +9,30 @@
     {{movieDetails.language}} <br>
     {{movieDetails.ageRating}} <br>
     {{movieDetails.showTime}} <br>
-</div>
+</div> -->
 
-<div *ngIf="movieDetails" class="container">
-    <img src="./assets/{{movieDetails.imageUrl}}"  alt="">
-</div>
-<div class="details" *ngIf="movieDetails">
-    <div class="header">
-        <span class="name">
-            {{movieDetails.movieName}}
-        </span>
-        <span class="favorite">❤{{movieDetails.ratings}}</span>
-    </div>
-    <div class="product-item-footer">
-        <div class="genres">
-            {{movieDetails.genres}}
+<div *ngIf="movieDetails" class="containerr">
+    <img class="movie-list-image" src="./assets/{{movieDetails.imageUrl}}" alt="foods-image">
+    <div class="content">
+        <div class="movie-title">
+            <div class="name">{{movieDetails.movieName}}</div>
+            <span class="favorite">❤{{movieDetails.ratings}}</span>
         </div>
-        <div class="duration">
-            <span>🕘</span>
-            {{movieDetails.duration}}
+        <div class="product-item-footer">
+            <div class="genres">
+                {{movieDetails.genres}}
+            </div>
+            <div class="duration">
+                <span>🕘</span>
+                {{movieDetails.duration}}
+            </div>
         </div>
-    </div>
-    <div class="price">
-        {{movieDetails.showTime | date: 'short'}}
-    </div>
-    <div class="price">
-        {{movieDetails.costPerSeat | currency:'INR'}}
+        <div class="price">
+            {{movieDetails.showTime | date: 'short'}}
+        </div>
+        <div class="price">
+            {{movieDetails.costPerSeat | currency:'INR'}}
+        </div>
+        <button class="md-btn">Book Now</button>
     </div>
 </div>

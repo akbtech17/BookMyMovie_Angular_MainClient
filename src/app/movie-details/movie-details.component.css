@@ -1,0 +1,149 @@
+img{
+    height: 70%;
+}
+
+.movie-title {
+    display: flex;
+}
+
+.name {
+    flex: 0.9;
+}
+
+ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+}
+
+
+.containerr{
+    font-size: 3rem;
+    height: auto;
+    width: auto;
+    border: 1px solid whitesmoke;
+    border-radius: 1rem;
+    
+    margin: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: #e72929;
+}
+
+.container:hover{
+    opacity: 0.9;
+    transition: 0.3s;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.content{
+    padding: .5rem 1rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.favorite{
+    position: absolute;
+    top: .5rem;
+    right: 1rem;
+    font-size: 2.8rem;
+}
+
+.favorite.not{
+    color: black;
+}
+
+.star{
+    margin-bottom: .2rem;
+}
+
+.product-item-footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;  
+}
+
+.genres{
+    border-radius: 2rem;
+    background-color: whitesmoke;
+    color: grey;
+    font-size: 1.8rem;
+    margin-right: .3rem;
+    display: inline-block;
+}
+
+.duration{
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.price{
+    color: #424242;
+    margin-top: .2rem;
+}
+.movie-list-image {
+    height:35rem;
+}
+
+/* FILTER COMPONENT */
+.filter-comp {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.filter-comp input {
+    border-radius: 10rem 0 0 10rem;
+    width: 20rem;
+    height: 3rem;
+    background-color: #f1f1f1;
+    padding: 1.2rem;
+    text-align: center;
+    font-weight: 500;
+    font-size: 1rem;
+    outline: none;
+    border: none;
+}
+
+.filter-comp button {
+    height: 3rem;
+    width: 5rem;
+    font-size: 1rem;
+    border-radius: 0 10rem 10rem 0;
+    outline: none;
+    background-color: #e72929;
+    color: white;
+    border: none;
+}
+
+.filter-comp button:hover {
+    opacity: 0.9;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.md-btn {
+    height: 3rem;
+    width: 20rem;
+    font-size: 1rem;
+    border-radius: 10rem;
+    outline: none;
+    background-color: #e72929;
+    color: white;
+    border: none;
+}
+
+.md-btn:hover {
+    opacity: 0.9;
+    transition: 0.3s;
+    cursor: pointer;
+}
