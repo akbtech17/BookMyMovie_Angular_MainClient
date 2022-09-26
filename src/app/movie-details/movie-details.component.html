@@ -1,14 +1,39 @@
 <app-header></app-header>
 <div *ngIf="movieDetails">
-    {{movieDetails.movieName}} <br>
+     <br>
     {{movieDetails.releaseDate}} <br>
-    {{movieDetails.ratings}} <br>
     {{movieDetails.genres}} <br>
-    {{movieDetails.imageUrl}} <br>
     {{movieDetails.costPerSeat}} <br>
     {{movieDetails.duration}} <br>
     {{movieDetails.movieType}} <br>
     {{movieDetails.language}} <br>
     {{movieDetails.ageRating}} <br>
     {{movieDetails.showTime}} <br>
+</div>
+
+<div *ngIf="movieDetails" class="container">
+    <img src="./assets/{{movieDetails.imageUrl}}"  alt="">
+</div>
+<div class="details" *ngIf="movieDetails">
+    <div class="header">
+        <span class="name">
+            {{movieDetails.movieName}}
+        </span>
+        <span class="favorite">❤{{movieDetails.ratings}}</span>
+    </div>
+    <div class="product-item-footer">
+        <div class="genres">
+            {{movieDetails.genres}}
+        </div>
+        <div class="duration">
+            <span>🕘</span>
+            {{movieDetails.duration}}
+        </div>
+    </div>
+    <div class="price">
+        {{movieDetails.showTime | date: 'short'}}
+    </div>
+    <div class="price">
+        {{movieDetails.costPerSeat | currency:'INR'}}
+    </div>
 </div>
