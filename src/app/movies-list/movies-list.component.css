@@ -1,16 +1,12 @@
-img{
+.ml-image {
     height: 70%;
 }
 
-.movie-title {
+.ml-title {
     display: flex;
 }
 
-.name {
-    flex: 0.9;
-}
-
-ul{
+.ml-ul{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,14 +15,14 @@ ul{
     padding: 0;
 }
 
-ul li {
+.ml-ul li {
     margin-bottom: 0.5rem;
 }
 
-ul li a{
+.ml-ul li a{
     height: auto;
     width: 17rem;
-    border: 1px solid whitesmoke;
+    border: 3px solid whitesmoke;
     border-radius: 1rem;
     
     margin: 0.5rem;
@@ -36,70 +32,66 @@ ul li a{
     color: #e72929;
 }
 
-li a:hover{
+.ml-ul li a:hover{
     opacity: 0.9;
     transition: 0.3s;
     cursor: pointer;
     text-decoration: none;
 }
 
-.content{
+.ml-content{
     padding: .5rem 1rem;
     position: relative;
 }
 
-.favorite{
+.ml-movie-name {
+    flex: 0.75;
+    font-weight: bold;
+}
+
+.ml-favorite{
     position: absolute;
     top: .5rem;
     right: 1rem;
     font-size: 1.2rem;
 }
 
-.favorite.not{
-    color: black;
-}
-
-.star{
-    margin-bottom: .2rem;
-}
-
-.product-item-footer{
+.ml-product-item-footer{
   display: flex;
   justify-content: space-between;
   align-items: center;  
 }
 
-.genres{
+.ml-genres{
     border-radius: 2rem;
     background-color: whitesmoke;
     color: grey;
     font-size: .8rem;
     margin-right: .3rem;
     display: inline-block;
+    flex: 0.96;
 }
 
-.duration{
+.ml-duration{
     font-size: 1rem;
     text-align: center;
 }
 
-.price{
+.ml-show-time{
     color: #424242;
     margin-top: .2rem;
 }
-.movie-list-image {
-    height:23rem;
-}
+
 
 /* FILTER COMPONENT */
-.filter-comp {
+.ml-filter-comp {
     display: flex;
     justify-content: center;
     margin-top: 3rem;
     margin-bottom: 1.5rem;
 }
 
-.filter-comp input {
+.ml-filter-comp input {
     border-radius: 10rem 0 0 10rem;
     width: 20rem;
     height: 3rem;
@@ -112,7 +104,7 @@ li a:hover{
     border: none;
 }
 
-.filter-comp button {
+.ml-filter-comp button {
     height: 3rem;
     width: 5rem;
     font-size: 1rem;
@@ -123,8 +115,28 @@ li a:hover{
     border: none;
 }
 
-.filter-comp button:hover {
+.ml-filter-comp button:hover{
     opacity: 0.9;
     transition: 0.3s;
     cursor: pointer;
+}
+
+.ml-movie-pricing-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ml-movie-price-age {
+    display: flex;
+}
+
+.ml-age-rating {
+    margin-left: 0.5rem;
+}
+.ml-movie-type {
+    background-color: #e72929;
+    border-radius: 1rem;
+    color: white;
+    padding: 0.1rem 0.5rem;
 }

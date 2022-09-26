@@ -31,13 +31,8 @@ export class MoviesListComponent implements OnInit {
     })
   }
 
-  // performFilter(key: string): IMovie[] {
-  //   return this.movies.filter((movie: IMovie) => movie.movieName.toLocaleLowerCase().includes(key));
-  // }
-
   performFilter(): void {
       var key = this.listFilter;
       this.filteredMovies =  this.movies.filter((movie: IMovie) => movie.movieName.toLocaleLowerCase().includes(key));
     }
-
 }

@@ -1,32 +1,42 @@
 <app-header></app-header>
-<div class="filter-comp">
+<div class="ml-filter-comp">
     <input type="text" [(ngModel)]='listFilter' placeholder="Search Movie from BMM">
     <button type="button" (click)="performFilter()">Search</button>
 </div>
-<ul>
+<ul class="ml-ul">
     <li *ngFor="let movie of filteredMovies">
         <a href="#" [routerLink]="['/movie-details', movie.movieId]">
-            <img class="movie-list-image" src="./assets/{{movie.imageUrl}}" alt="foods-image">
-            <div class="content">
-                
-                <div class="movie-title">
-                    <div class="name">{{movie.movieName}}</div>
-                    <span class="favorite">❤{{movie.ratings}}</span>
+            <img class="ml-image" src="./assets/{{movie.imageUrl}}" alt="foods-image">
+            <div class="ml-content">
+                <div class="ml-title">
+                    <div class="ml-movie-name">{{movie.movieName}}</div>
+                    <span class="ml-favorite">❤{{movie.ratings}}%</span>
                 </div>
-                <div class="product-item-footer">
-                    <div class="genres">
+                <div class="ml-product-item-footer">
+                    <div class="ml-genres">
                         {{movie.genres}}
                     </div>
-                    <div class="duration">
+                    <div class="ml-duration">
                         <span>🕘</span>
                         {{movie.duration}}
                     </div>
                 </div>
-                <div class="price">
+                <div class="ml-show-time">
                     {{movie.showTime | date: 'short'}}
                 </div>
-                <div class="price">
-                    {{movie.costPerSeat | currency:'INR'}}
+                <div class="ml-movie-pricing-details">
+                    <!-- {{movie.costPerSeat | currency:'INR'}} -->
+                    <div class="ml-movie-price-age">
+                        <div class="language">
+                            {{movie.language}}
+                        </div>
+                        <div class="ml-age-rating">
+                            ({{movie.ageRating}})
+                        </div>
+                    </div>
+                    <div class="ml-movie-type">
+                        {{movie.movieType}}
+                    </div>
                 </div>
             </div>
         </a>
