@@ -22,8 +22,9 @@ a:hover{
     cursor: pointer;
 }
 
-.container{
-    margin: 0;
+.containerr{
+    margin-right: 0;
+    width: 100%;
     display: flex;
     justify-content: space-between;
 }
