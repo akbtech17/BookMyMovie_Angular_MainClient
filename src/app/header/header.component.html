@@ -8,7 +8,7 @@
                     <a href="#" routerLink="/register">Register</a>
                 </li>
 
-                <li *ngIf="customerEmail">
+                <li class="header-links" *ngIf="customerEmail">
                     Hi, {{customerFirstName}}
                     <a (click)="OnLogout()">Logout</a>
                 </li>

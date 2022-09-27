@@ -1,27 +1,18 @@
-.md-image {
-    height:27.5rem;
-    border-radius: 1rem;
-}
-
-.md-title {
-    display: flex;
-}
-
-.md-name {
-    flex: 0.9;
-}
-
 .md-containerr{
-    font-size: 3rem;
+    font-size: 2.5rem;
     height: auto;
     width: auto;
-    
     margin: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
     color: #e72929;
+}
+
+.md-image{
+    height:27.5rem;
+    border-radius: 1rem;
 }
 
 .md-content{
@@ -31,7 +22,11 @@
     flex-direction: column;
 }
 
-.md-movie-name {
+.md-title{
+    display: flex;
+}
+
+.md-movie-name{
     flex: 0.75;
     font-weight: bold;
 }
@@ -40,9 +35,8 @@
     position: absolute;
     top: .5rem;
     right: 1rem;
-    font-size: 2.8rem;
+    font-size: 2rem;
 }
-
 
 .md-product-item-footer{
   display: flex;
@@ -62,22 +56,23 @@
 }
 
 .md-duration{
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     text-align: center;
 }
 
 .md-show-time{
     color: whitesmoke;
     font-size: 1.5rem;
-    margin-top: .2rem;
 }
 
-
-.md-movie-pricing-details {
+.md-movie-pricing-details{
     font-size: 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    justify-items: center;
+    
+    margin-top: 2rem;
 }
 
 .md-movie-price-age {
@@ -91,7 +86,9 @@
     background-color: #e72929;
     border-radius: 1rem;
     color: white;
-    padding: 0.1rem 0.5rem;
+    padding: 0.1rem 0.8rem;
+    width: auto;
+    text-align: center;
 }
 
 .md-btn {

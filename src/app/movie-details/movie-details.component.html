@@ -22,26 +22,32 @@
             <div class="md-genres">
                 {{movieDetails.genres}}
             </div>
-            <div class="md-duration">
-                <span>🕘</span>
-                {{movieDetails.duration}}
-            </div>
+            
         </div>
-        <div class="md-show-time">
-            {{movieDetails.showTime | date: 'short'}}
-        </div>
+        
         <div class="md-movie-pricing-details">
-            <!-- {{movieDetails.costPerSeat | currency:'INR'}} -->
-            <div class="md-movie-price-age">
-                <div class="language">
-                    {{movieDetails.language}}
+            <div class="md-showtime-language">
+                <div class="md-show-time">
+                    {{movieDetails.showTime | date: 'short'}}
                 </div>
-                <div class="md-age-rating">
-                    ({{movieDetails.ageRating}})
+                <!-- {{movieDetails.costPerSeat | currency:'INR'}} -->
+                <div class="md-movie-price-age">
+                    <div class="language">
+                        {{movieDetails.language}}
+                    </div>
+                    <div class="md-age-rating">
+                        ({{movieDetails.ageRating}})
+                    </div>
                 </div>
             </div>
-            <div class="md-movie-type">
-                {{movieDetails.movieType}}
+            <div class="md-duration-movie-type">
+                <div class="md-duration">
+                    <span>🕘</span>
+                    {{movieDetails.duration}}
+                </div>
+                <div class="md-movie-type">
+                    {{movieDetails.movieType}}
+                </div>
             </div>
         </div>
         <button class="md-btn" routerLink="/sbook">Book Now</button>
