@@ -12,9 +12,8 @@ const routes: Routes = [
   { path: 'signin', component: SigninComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'movies-list', component: MoviesListComponent },
-  // , canActivate:[ValidateUserSignInGuard]
-  { path: 'movie-details/:movieId', component: MovieDetailsComponent },
-  { path: 'sbook', component: SeatBookingComponent },
+  { path: 'movie-details/:movieId', component: MovieDetailsComponent, canActivate:[ValidateUserSignInGuard] },
+  { path: 'sbook', component: SeatBookingComponent, canActivate:[ValidateUserSignInGuard] },
   
   // default route 
   {path: '', redirectTo: 'movies-list', pathMatch: 'full' },

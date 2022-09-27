@@ -9,20 +9,14 @@ import { CustomerStore } from '../CustomerStore';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  customerEmail = ''
-  customerFirstName = ''
+  customerEmail = CustomerStore.email
+  customerFirstName = CustomerStore.firstName
 
   constructor(private router: Router) { }
 
   ngOnInit() {
-    this.customerEmail = CustomerStore.email
-    this.customerFirstName = CustomerStore.firstName
   }
   OnLogoClick() {
-    if(CustomerStore.email != '') {
-      this.OnLogout();
-      return;
-    }
     this.router.navigate(["/"]);
   }
   OnLogout() {

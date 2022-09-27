@@ -9,7 +9,7 @@
             <img class="ml-image" src="./assets/{{movie.imageUrl}}" alt="foods-image">
             <div class="ml-content">
                 <div class="ml-title">
-                    <div class="ml-movie-name">{{movie.movieName}}</div>
+                    <div class="ml-movie-name">{{movie.movieName | slice:0:20}}</div>
                     <span class="ml-favorite">❤{{movie.ratings}}%</span>
                 </div>
                 <div class="ml-product-item-footer">
