@@ -6,13 +6,14 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { RegisterComponent } from './register/register.component';
 import { SeatBookingComponent } from './seat-booking/seat-booking.component';
 import { SigninComponent } from './signin/signin.component';
+import { ValidateUserSignInGuard } from './validate-user-sign-in.guard';
 
 const routes: Routes = [
   { path: 'signin', component: SigninComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'movies-list', component: MoviesListComponent },
-  { path: 'movie-details/:movieId', component: MovieDetailsComponent },
-  { path: 'sbook', component: SeatBookingComponent},
+  { path: 'movie-details/:movieId', component: MovieDetailsComponent, canActivate:[ValidateUserSignInGuard] },
+  { path: 'sbook', component: SeatBookingComponent, canActivate:[ValidateUserSignInGuard] },
   
   // default route 
   {path: '', redirectTo: 'movies-list', pathMatch: 'full' },
