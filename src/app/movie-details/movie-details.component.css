@@ -51,13 +51,14 @@
 }
 
 .md-genres{
-    border-radius: 2rem;
+    border-radius: 0 2rem;
     background-color: whitesmoke;
     color: grey;
     font-size: 1.8rem;
     margin-right: .3rem;
     display: inline-block;
-    flex: 0.96;
+    flex: 0.9;
+    padding-left: 1rem;
 }
 
 .md-duration{
@@ -66,7 +67,7 @@
 }
 
 .md-show-time{
-    color: #424242;
+    color: whitesmoke;
     font-size: 1.5rem;
     margin-top: .2rem;
 }
@@ -94,6 +95,7 @@
 }
 
 .md-btn {
+    margin-top: 4rem;
     height: 3rem;
     width: 20rem;
     font-size: 1rem;
