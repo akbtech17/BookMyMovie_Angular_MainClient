@@ -11,6 +11,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
+import { SeatBookingComponent } from './seat-booking/seat-booking.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { HeaderComponent } from './header/header.component';
     MovieDetailsComponent,
     PageNotFoundComponent,
     HeaderComponent,
+    SeatBookingComponent,
   ],
   imports: [
     BrowserModule,

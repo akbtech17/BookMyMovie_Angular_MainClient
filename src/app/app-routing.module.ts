@@ -4,6 +4,7 @@ import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { MoviesListComponent } from './movies-list/movies-list.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { RegisterComponent } from './register/register.component';
+import { SeatBookingComponent } from './seat-booking/seat-booking.component';
 import { SigninComponent } from './signin/signin.component';
 
 const routes: Routes = [
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'movies-list', component: MoviesListComponent },
   { path: 'movie-details/:movieId', component: MovieDetailsComponent },
+  { path: 'sbook', component: SeatBookingComponent},
   
   // default route 
   {path: '', redirectTo: 'movies-list', pathMatch: 'full' },
