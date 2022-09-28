@@ -20,11 +20,12 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(["/"]);
   }
   OnLogout() {
-    alert(`Logging Out ${CustomerStore.firstName}`);
-    CustomerStore.email = '';
-    CustomerStore.firstName = '';
-    this.customerEmail='';
-    
-    this.router.navigate(["/"]);
+    if(confirm(`${CustomerStore.firstName}, do you really want to Logout?`)){
+      CustomerStore.email = '';
+      CustomerStore.firstName = '';
+      this.customerEmail='';
+      
+      this.router.navigate(["/"]);
+    }
   }
 }
