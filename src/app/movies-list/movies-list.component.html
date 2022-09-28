@@ -9,7 +9,8 @@
             <img class="ml-image" src="./assets/{{movie.imageUrl}}" alt="foods-image">
             <div class="ml-content">
                 <div class="ml-title">
-                    <div class="ml-movie-name">{{movie.movieName}}</div>
+                    <div class="ml-movie-name" *ngIf="movie.movieName.length>22">{{movie.movieName | slice:0:22}}...</div>
+                    <div class="ml-movie-name" *ngIf="movie.movieName.length<=22">{{movie.movieName}}</div>
                     <span class="ml-favorite">❤{{movie.ratings}}%</span>
                 </div>
                 <div class="ml-product-item-footer">
