@@ -2,7 +2,7 @@ export interface IMovie {
     movieId: number;
     movieName: string;
     releaseDate: string;
-    ratings: string;
+    ratings: number;
     genres: string;
     imageUrl: string;
     costPerSeat: number;

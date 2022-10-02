@@ -26,7 +26,9 @@ const routes: Routes = [
       {path:'signin', component:AdminSigninComponent},
       {path:'addmovie', component:AdminAddmovieComponent},
       {path:'editmovie', component:AdminEditmovieComponent},
-      {path:'movielist', component:AdminMovielistComponent}
+      {path:'movielist', component:AdminMovielistComponent},
+
+      {path: '', redirectTo: 'movielist', pathMatch: 'full' },
     ]
   },
   
