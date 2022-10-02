@@ -12,6 +12,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import { SeatBookingComponent } from './seat-booking/seat-booking.component';
+import { AdminSigninComponent } from './Admin/admin-signin/admin-signin.component';
+import { AdminHeaderComponent } from './Admin/admin-header/admin-header.component';
+import { AdminMovielistComponent } from './Admin/admin-movielist/admin-movielist.component';
+import { AdminAddmovieComponent } from './Admin/admin-addmovie/admin-addmovie.component';
+import { AdminEditmovieComponent } from './Admin/admin-editmovie/admin-editmovie.component';
+import { AdminHomeComponent } from './Admin/admin-home/admin-home.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +29,12 @@ import { SeatBookingComponent } from './seat-booking/seat-booking.component';
     PageNotFoundComponent,
     HeaderComponent,
     SeatBookingComponent,
+    AdminSigninComponent,
+    AdminHeaderComponent,
+    AdminMovielistComponent,
+    AdminAddmovieComponent,
+    AdminEditmovieComponent,
+    AdminHomeComponent,
   ],
   imports: [
     BrowserModule,
