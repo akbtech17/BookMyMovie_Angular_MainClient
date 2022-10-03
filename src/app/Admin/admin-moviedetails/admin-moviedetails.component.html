@@ -1,0 +1,42 @@
+<div *ngIf="movieDetails" class="md-containerr">
+    <img class="md-image" src="./assets/{{movieDetails.imageUrl}}" alt="foods-image">
+    <div class="md-content">
+        <div class="md-title">
+            <div class="md-movie-name">{{movieDetails.movieName}}</div>
+            <span class="md-favorite">❤{{movieDetails.ratings}}%</span>
+        </div>
+        <div class="md-product-item-footer">
+            <div class="md-genres">
+                {{movieDetails.genres}}
+            </div>
+            
+        </div>
+        
+        <div class="md-movie-pricing-details">
+            <div class="md-showtime-language">
+                <div class="md-show-time">
+                    {{movieDetails.showTime | date: 'short'}}
+                </div>
+                <!-- {{movieDetails.costPerSeat | currency:'INR'}} -->
+                <div class="md-movie-price-age">
+                    <div class="language">
+                        {{movieDetails.language}}
+                    </div>
+                    <div class="md-age-rating">
+                        ({{movieDetails.ageRating}})
+                    </div>
+                </div>
+            </div>
+            <div class="md-duration-movie-type">
+                <div class="md-duration">
+                    <span>🕘</span>
+                    {{movieDetails.duration}}
+                </div>
+                <div class="md-movie-type">
+                    {{movieDetails.movieType}}
+                </div>
+            </div>
+        </div>
+        <button class="md-btn" routerLink="/sbook">Book Now</button>
+    </div>
+</div>

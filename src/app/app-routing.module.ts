@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AdminRemovemovieComponent } from './admin-removemovie/admin-removemovie.component';
+import { AdminMoviedetailsComponent } from './Admin/admin-moviedetails/admin-moviedetails.component';
+import { AdminRemovemovieComponent } from './Admin/admin-removemovie/admin-removemovie.component';
 import { AdminAddmovieComponent } from './Admin/admin-addmovie/admin-addmovie.component';
 import { AdminEditmovieComponent } from './Admin/admin-editmovie/admin-editmovie.component';
 import { AdminHomeComponent } from './Admin/admin-home/admin-home.component';
@@ -29,6 +30,7 @@ const routes: Routes = [
       {path:'editmovie/:movieId', component:AdminEditmovieComponent},
       {path:'movielist', component:AdminMovielistComponent},
       {path:'removemovie/:movieId', component:AdminRemovemovieComponent},
+      {path:'movie-details/:movieId', component:AdminMoviedetailsComponent},
 
 
       {path: '', redirectTo: 'movielist', pathMatch: 'full' },
