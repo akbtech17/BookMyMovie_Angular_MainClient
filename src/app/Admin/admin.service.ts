@@ -7,7 +7,7 @@ import { ICrendtials } from '../icrendtials';
   providedIn: 'root'
 })
 export class AdminService {
-  url = 'http://localhost:51259/api/customer'
+  url = 'https://anshulkumarapi246.azurewebsites.net/api/customer'
   httpOptions = { headers: new HttpHeaders({'Content-type':'application/json'}) }
   
   constructor(private httpclient: HttpClient) { }

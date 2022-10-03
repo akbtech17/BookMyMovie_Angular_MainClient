@@ -1,13 +1,14 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, throwError } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { ICrendtials } from './icrendtials';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CustomerService {
-  url = 'http://localhost:51259/api/customer'
+  url = 'https://anshulkumarapi246.azurewebsites.net/api/customer'
   httpOptions = { headers: new HttpHeaders({'Content-type':'application/json'}) }
   
   constructor(private httpclient: HttpClient) { }
