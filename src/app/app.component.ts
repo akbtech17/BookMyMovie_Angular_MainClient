@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TestService } from './test.service';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit{
   
-  ngOnInit() {}
+  constructor(private testService: TestService) {}
+  
+  ngOnInit() {
+    this.testService.setDatabase().subscribe(
+      (resp) => {},
+      (err) => {}
+    )
+  }
 
 }
