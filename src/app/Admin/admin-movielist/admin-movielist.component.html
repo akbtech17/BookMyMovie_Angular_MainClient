@@ -1,1 +1,34 @@
-<p>admin-movielist works!</p>
+<div class="container" style="margin-top: 2rem;">
+    <div  class="jumbotron" style="padding: 1.5rem 2rem">
+        <h1 style="text-align:center; color:#e72929;">Movie List</h1>
+        <table class="table">
+            <thead class="head">
+                <tr>
+                    <th>Sno</th>
+                    <th>Name</th>
+                    <th>Release Date</th>
+                    <th>Seat Cost</th>
+                    <th>Age Rating</th>
+                    <th>Likes</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let movie of movies; index as indexOfelement;" class="amovielist-row">
+                    <td>{{indexOfelement}}</td>
+                    <td>{{movie.movieName}}</td>
+                    <td>{{movie.releaseDate| date: 'dd/MM/yyyy'}}</td>
+                    <td>{{movie.costPerSeat|currency:"INR":"symbol"}}</td>
+                    <td>{{movie.ageRating}}</td>
+                    <td>{{movie.ratings}}</td>
+                    <td></td>
+                    <td>
+                        <a [routerLink]="['/edit/',movie.movieId]">Edit</a>&nbsp;&nbsp;
+                        <a [routerLink]="['/remove/',movie.movieId]">Remove</a>&nbsp;&nbsp;
+                    </td>
+                </tr> 
+            </tbody>
+        </table>
+    </div>
+</div>
