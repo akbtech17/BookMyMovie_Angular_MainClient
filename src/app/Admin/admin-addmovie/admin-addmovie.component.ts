@@ -29,14 +29,15 @@ export class AdminAddmovieComponent implements OnInit {
   }
    
   onSubmit() {
-    console.log(this.movieData);
-    this.movieService.addMovie(this.movieData).subscribe(data => {
-      if(data!=null) {
-        alert("movie added success");
-        this.router.navigate(['admin/movielist'])
-        return;
+    // console.log(this.movieData);
+    this.movieService.addMovie(this.movieData).subscribe(
+      (resp) => {
+        alert("movie added successfully");
+        this.router.navigate(["admin/movielist"])
+      },
+      (err) => {
+        alert("failed");
       }
-    })
-    alert("failed");
+    )
   }
 }

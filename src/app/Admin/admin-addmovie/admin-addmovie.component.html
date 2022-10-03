@@ -1,54 +1,67 @@
 <br/>
 <div class="container" style="padding-top:20px;">  
   <div class="row">  
-    <div class="col-md-5 mx-auto">  
+    <div class="col-md-7 mx-auto">  
       <div class="card-group">  
         <div class="card p-4">  
           <div class="card-body">  
-            <form name="form"  #f="ngForm" (submit)="onSubmit()">   
-                <h1 style="text-align:center; color:#e72929;">AddMovie</h1>  
+            <form name="form" class="am-form" #f="ngForm" (submit)="onSubmit()">   
+                <h1 style="text-align:center; color:#e72929;">Add Movie</h1>  
                
-                <div class="input-group mb-3">  
-                    <input type="text" name="movieName"  class="form-control sty1" placeholder="Movie Name" required [(ngModel)]="movieData.movieName"> 
+                <div class="input-group mb-3 am-form-row">  
+                    <div class="form-text am-form-row-label">Movie Name</div>
+                    <input type="text" name="movieName"  class="form-control sty1 am-form-row-input" placeholder="Movie Name" required [(ngModel)]="movieData.movieName"> 
                 </div>
-                <div class="input-group mb-4 mt-2">  
-                    <input  type="datetime" name="releaseDate"  class="form-control"  placeholder="Release Date" required [(ngModel)]="movieData.releaseDate">
+                <div class="input-group mb-4 mt-2 am-form-row"> 
+                    <div class="form-text am-form-row-label">Release Date</div> 
+                    <input  type="datetime-local" name="releaseDate"  class="form-control am-form-row-input"  placeholder="Release Date" required [(ngModel)]="movieData.releaseDate">
                 </div>  
 
-                <div class="input-group mb-3">  
-                    <input type="text" name="ratings"  class="form-control sty1" placeholder="Ratings" required [(ngModel)]="movieData.ratings"> 
+                <div class="input-group mb-3 am-form-row">  
+                    <div class="form-text am-form-row-label">Ratings (%)</div>
+                    <input type="text" name="ratings"  class="form-control am-form-row-input sty1" placeholder="Ratings" required [(ngModel)]="movieData.ratings"> 
                 </div>
-                <div class="input-group mb-4 mt-2">  
-                    <input  type="text" name="genres"  class="form-control"  placeholder="Genres" required [(ngModel)]="movieData.genres">
+
+                <div class="input-group am-form-row mb-4 mt-2"> 
+                    <div class="form-text am-form-row-label">Genres</div> 
+                    <input  type="text" name="genres"  class="form-control am-form-row-input"  placeholder="Genres" required [(ngModel)]="movieData.genres">
                 </div> 
 
-                <div class="input-group mb-3">  
-                    <input type="text" name="imageUrl"  class="form-control sty1" placeholder="Image Url" required [(ngModel)]="movieData.imageUrl"> 
+                <div class="input-group am-form-row mb-3">  
+                    <div class="form-text am-form-row-label">Image Url</div>
+                    <input type="text" name="imageUrl"  class="form-control am-form-row-input sty1" placeholder="Image Url" required [(ngModel)]="movieData.imageUrl"> 
                 </div>
-                <div class="input-group mb-4 mt-2">  
-                    <input  type="text" name="costPerSeat"  class="form-control"  placeholder="Cost Per Seat" required [(ngModel)]="movieData.costPerSeat">
+                <div class="input-group am-form-row mb-4 mt-2"> 
+                    <div class="form-text am-form-row-label">Cost Per Seat (₹)</div> 
+                    <input  type="text" name="costPerSeat"  class="form-control am-form-row-input"  placeholder="Cost Per Seat" required [(ngModel)]="movieData.costPerSeat">
                 </div> 
 
-                <div class="input-group mb-3">  
-                    <input type="datetime-local" name="showTime"  class="form-control sty1" placeholder="Show Time" required [(ngModel)]="movieData.showTime"> 
+                <div class="input-group am-form-row mb-3">  
+                    <div class="form-text am-form-row-label">Show Time</div>
+                    <input type="datetime-local" name="showTime"  class="form-control am-form-row-input sty1" placeholder="Show Time" required [(ngModel)]="movieData.showTime"> 
                 </div>
-                <div class="input-group mb-4 mt-2">  
-                    <input  type="text" name="duration"  class="form-control"  placeholder="Duration" required [(ngModel)]="movieData.duration">
+                <div class="input-group am-form-row mb-4 mt-2">  
+                    <div class="form-text am-form-row-label">Duration</div>
+                    <input  type="text" name="duration"  class="form-control am-form-row-input"  placeholder="Duration" required [(ngModel)]="movieData.duration">
                 </div> 
 
-                <div class="input-group mb-3">  
-                    <input type="text" name="ageRating"  class="form-control sty1" placeholder="Age Rating" required [(ngModel)]="movieData.ageRating"> 
+                <div class="input-group am-form-row mb-3">  
+                    <div class="form-text am-form-row-label">Age Rating</div>
+                    <input type="text" name="ageRating"  class="form-control am-form-row-input sty1" placeholder="Age Rating" required [(ngModel)]="movieData.ageRating"> 
                 </div>
-                <div class="input-group mb-4 mt-2">  
-                    <input  type="text" name="language"  class="form-control"  placeholder="Language" required [(ngModel)]="movieData.language">
+                <div class="input-group am-form-row mb-4 mt-2"> 
+                    <div class="form-text am-form-row-label">Language</div> 
+                    <input  type="text" name="language"  class="form-control am-form-row-input"  placeholder="Language" required [(ngModel)]="movieData.language">
                 </div> 
 
-                <div class="input-group mb-3">  
-                    <input type="text" name="movieType"  class="form-control sty1" placeholder="Movie Type" required [(ngModel)]="movieData.movieType"> 
+                <div class="input-group am-form-row mb-3">  
+                    <div class="form-text am-form-row-label">Theatre Type</div>
+                    <input type="text" name="movieType"  class="form-control am-form-row-input sty1" placeholder="Movie Type" required [(ngModel)]="movieData.movieType"> 
                 </div>
         
             
                 <div class="row">  
+                    
                     <div class="col-6">  
                         <button type="submit" class="btn btn-success px-4">Add Movie</button>  
                     </div>  
