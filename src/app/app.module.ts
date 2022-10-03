@@ -18,6 +18,7 @@ import { AdminMovielistComponent } from './Admin/admin-movielist/admin-movielist
 import { AdminAddmovieComponent } from './Admin/admin-addmovie/admin-addmovie.component';
 import { AdminEditmovieComponent } from './Admin/admin-editmovie/admin-editmovie.component';
 import { AdminHomeComponent } from './Admin/admin-home/admin-home.component';
+import { AdminRemovemovieComponent } from './admin-removemovie/admin-removemovie.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { AdminHomeComponent } from './Admin/admin-home/admin-home.component';
     AdminAddmovieComponent,
     AdminEditmovieComponent,
     AdminHomeComponent,
+    AdminRemovemovieComponent,
   ],
   imports: [
     BrowserModule,

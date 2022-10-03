@@ -16,7 +16,7 @@
             </thead>
             <tbody>
                 <tr *ngFor="let movie of movies; index as indexOfelement;" class="amovielist-row">
-                    <td>{{indexOfelement}}</td>
+                    <td>{{indexOfelement+1}}</td>
                     <td>{{movie.movieName}}</td>
                     <td>{{movie.releaseDate| date: 'dd/MM/yyyy'}}</td>
                     <td>{{movie.costPerSeat|currency:"INR":"symbol"}}</td>
@@ -24,8 +24,8 @@
                     <td>{{movie.ratings}}</td>
                     <td></td>
                     <td>
-                        <a [routerLink]="['/edit/',movie.movieId]">Edit</a>&nbsp;&nbsp;
-                        <a [routerLink]="['/remove/',movie.movieId]">Remove</a>&nbsp;&nbsp;
+                        <a [routerLink]="['/admin/editmovie/',movie.movieId]">Edit</a>&nbsp;&nbsp;
+                        <a [routerLink]="['/admin/removemovie/',movie.movieId]">Remove</a>&nbsp;&nbsp;
                     </td>
                 </tr> 
             </tbody>
