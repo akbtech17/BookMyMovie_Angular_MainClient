@@ -1,4 +1,4 @@
-.md-containerr{
+.amd-containerr{
     font-size: 2.5rem;
     height: auto;
     width: auto;
@@ -10,41 +10,41 @@
     color: #e72929;
 }
 
-.md-image{
+.amd-image{
     height:27.5rem;
     border-radius: 1rem;
 }
 
-.md-content{
+.amd-content{
     padding-left: 6rem;
     position: relative;
     display: flex;
     flex-direction: column;
 }
 
-.md-title{
+.amd-title{
     display: flex;
 }
 
-.md-movie-name{
+.amd-movie-name{
     flex: 0.75;
     font-weight: bold;
 }
 
-.md-favorite{
+.amd-favorite{
     position: absolute;
     top: .5rem;
     right: 1rem;
     font-size: 2rem;
 }
 
-.md-product-item-footer{
+.amd-product-item-footer{
   display: flex;
   justify-content: space-between;
   align-items: center;  
 }
 
-.md-genres{
+.amd-genres{
     border-radius: 0 2rem;
     background-color: whitesmoke;
     color: grey;
@@ -55,17 +55,17 @@
     padding-left: 1rem;
 }
 
-.md-duration{
+.amd-duration{
     font-size: 1.5rem;
     text-align: center;
 }
 
-.md-show-time{
+.amd-show-time{
     color: whitesmoke;
     font-size: 1.5rem;
 }
 
-.md-movie-pricing-details{
+.amd-movie-pricing-details{
     font-size: 1.5rem;
     display: flex;
     justify-content: space-between;
@@ -75,14 +75,14 @@
     margin-top: 2rem;
 }
 
-.md-movie-price-age {
+.amd-movie-price-age {
     display: flex;
 }
 
-.md-age-rating {
+.amd-age-rating {
     margin-left: 0.5rem;
 }
-.md-movie-type {
+.amd-movie-type {
     background-color: #e72929;
     border-radius: 1rem;
     color: white;
@@ -91,7 +91,7 @@
     text-align: center;
 }
 
-.md-btn {
+.amd-btn {
     margin-top: 4rem;
     height: 3rem;
     width: 20rem;
@@ -104,7 +104,7 @@
     font-size: 1.8rem;
 }
 
-.md-btn:hover {
+.amd-btn:hover {
     opacity: 0.9;
     transition: 0.3s;
     cursor: pointer;
