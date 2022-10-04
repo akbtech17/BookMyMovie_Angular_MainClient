@@ -5,13 +5,13 @@ import { Observable } from 'rxjs'; // to work or load single component not whole
 import { catchError, throwError } from 'rxjs';
 import { HttpErrorResponse } from '@angular/common/http';
 import { IMovie } from './movie';
-import { BaseUrl } from './BaseUrl';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MovieService {
-  url = BaseUrl.url + 'movies'
+  url = environment.baseUrl + 'movies'
   httpOptions = { headers: new HttpHeaders({'Content-type':'application/json'}) }
   
   constructor(private httpclient: HttpClient) { }

@@ -1,14 +1,14 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, throwError } from 'rxjs';
-import { BaseUrl } from '../BaseUrl';
+import { environment } from 'src/environments/environment';
 import { ICrendtials } from '../icrendtials';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AdminService {
-  url = BaseUrl.url+'customer'
+  url = environment.baseUrl+'customer'
   httpOptions = { headers: new HttpHeaders({'Content-type':'application/json'}) }
   
   constructor(private httpclient: HttpClient) { }
