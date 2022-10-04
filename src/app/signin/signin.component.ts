@@ -21,21 +21,23 @@ export class SigninComponent implements OnInit {
   }
 
   onSubmit() {
-    this.customerService.validateCustomerSignIn(this.creds).subscribe(data => {
-      if(data!=null) {
-        CustomerStore.email = data.email;
-        CustomerStore.firstName = data.firstName;
-        this.toastr.success('Login Success!', 'Welcome '+CustomerStore.firstName, {
+    this.customerService.validateCustomerSignIn(this.creds).subscribe(
+      (data) => {
+        if(data!=null) {
+          CustomerStore.email = data.email;
+          CustomerStore.firstName = data.firstName;
+          this.toastr.success('Login Success!', 'Welcome '+CustomerStore.firstName, {
+            timeOut: 3000,
+          });
+          this.router.navigate(['/']);
+        }
+      },
+      (err) => {
+          this.toastr.error('Try with different credentials','Login Error' ,{
           timeOut: 3000,
         });
-        this.router.navigate(['/']);
       }
-      else {
-        this.toastr.error('Try with different credentials','Login Error' ,{
-          timeOut: 3000,
-        });
-      }
-    })
+    )
   }
 
 }
