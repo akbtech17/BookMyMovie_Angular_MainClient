@@ -9,7 +9,7 @@ import { ICrendtials } from '../icrendtials';
   providedIn: 'root'
 })
 export class AdminService {
-  url = environment.baseUrl+'customer'
+  url = environment.baseUrl+'admin'
   httpOptions = { headers: new HttpHeaders({'Content-type':'application/json'}) }
   
   constructor(private httpclient: HttpClient, private toastr: ToastrService) { }

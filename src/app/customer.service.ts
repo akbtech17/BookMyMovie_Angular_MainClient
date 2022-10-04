@@ -16,6 +16,7 @@ export class CustomerService {
   constructor(private httpclient: HttpClient, private toastr: ToastrService) { }
 
   validateCustomerSignIn(creds: ICrendtials): Observable<any> {
+    console.log(creds);
     return this.httpclient.post<any>(this.url+'/signin',creds,this.httpOptions).pipe(catchError(this.handleError))
   }
 
