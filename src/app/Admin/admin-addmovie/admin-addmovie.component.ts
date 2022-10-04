@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { IMovie } from 'src/app/movie';
 import { MovieService } from 'src/app/movie.service';
 
@@ -9,21 +10,35 @@ import { MovieService } from 'src/app/movie.service';
   styleUrls: ['./admin-addmovie.component.css']
 })
 export class AdminAddmovieComponent implements OnInit {
+  // movieData : IMovie = {
+  //   movieId: 9,
+  //   movieName: "Brahmastra",
+  //   releaseDate: "2022-09-03T12:45:56",
+  //   ratings: 78,
+  //   genres: "Action, Adventure, Fantasy",
+  //   imageUrl: "image2.jpg",
+  //   costPerSeat: 750,
+  //   showTime: "2022-09-03T12:45:56",
+  //   duration: "2h 47m",
+  //   ageRating: "UA",
+  //   language: "Hindi",
+  //   movieType: "IMAX 3D"
+  // }
   movieData : IMovie = {
-    movieId: 9,
-    movieName: "Brahmastra",
-    releaseDate: "2022-09-03T12:45:56",
-    ratings: 78,
-    genres: "Action, Adventure, Fantasy",
-    imageUrl: "image2.jpg",
-    costPerSeat: 750,
-    showTime: "2022-09-03T12:45:56",
-    duration: "2h 47m",
-    ageRating: "UA",
-    language: "Hindi",
-    movieType: "IMAX 3D"
+    movieId: 0,
+    movieName: "",
+    releaseDate: "",
+    ratings: 0,
+    genres: "",
+    imageUrl: "",
+    costPerSeat: 0,
+    showTime: "",
+    duration: "",
+    ageRating: "",
+    language: "",
+    movieType: ""
   }
-  constructor(private movieService: MovieService, private router: Router) { }
+  constructor(private movieService: MovieService, private router: Router, private toastr: ToastrService) { }
 
   ngOnInit(): void {
   }
@@ -32,11 +47,15 @@ export class AdminAddmovieComponent implements OnInit {
     // console.log(this.movieData);
     this.movieService.addMovie(this.movieData).subscribe(
       (resp) => {
-        alert("movie added successfully");
+        this.toastr.success('Movie added successfuly','Success!', {
+          timeOut: 3000,
+        });
         this.router.navigate(["admin/movielist"])
       },
       (err) => {
-        alert("failed");
+        this.toastr.error('Some internal error happened!','Error!', {
+          timeOut: 3000,
+        });
       }
     )
   }
