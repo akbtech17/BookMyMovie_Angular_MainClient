@@ -83,13 +83,13 @@
                 </div>
                 <div class="validations" style="margin-bottom: 0.8rem;">
                     <div class="form-text text-danger" *ngIf="genrestest.errors?.['required']&&(genrestest.dirty || genrestest.touched)">
-                      Movie name is required
+                      Genres is required
                     </div>
                     <div class="form-text text-danger" *ngIf="genrestest.errors?.['minlength']&&(genrestest.invalid || genrestest.dirty || genrestest.touched)">
                       Min Length should be 3
                     </div>
                     <div class="form-text text-danger" *ngIf="genrestest.errors?.['pattern']&&(genrestest.invalid || genrestest.dirty || genrestest.touched)">
-                      Movie name is invalid
+                      Genres is invalid
                     </div>
                 </div>
 
