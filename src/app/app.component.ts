@@ -11,10 +11,10 @@ export class AppComponent implements OnInit{
   constructor(private testService: TestService) {}
   
   ngOnInit() {
-    this.testService.setDatabase().subscribe(
-      (resp) => {},
-      (err) => {}
-    )
+    // this.testService.setDatabase().subscribe(
+    //   (resp) => {},
+    //   (err) => {}
+    // )
   }
 
 }
