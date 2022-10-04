@@ -1,4 +1,8 @@
 {
     "appService.defaultWebAppToDeploy": "/subscriptions/88658f32-7f4f-4be1-8a6a-c6e742dd9292/AppServices/subscriptions/88658f32-7f4f-4be1-8a6a-c6e742dd9292/resourceGroups/MSDNResGrpBA2_ForAnshulKumar/providers/Microsoft.Web/sites/AnshulKumarNG246",
-    "appService.deploySubpath": "."
+    "appService.deploySubpath": ".",
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ]
 }
