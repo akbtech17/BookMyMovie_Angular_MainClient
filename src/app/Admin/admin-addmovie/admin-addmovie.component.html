@@ -59,15 +59,13 @@
                     <div class="form-text am-form-row-label">Theatre Type</div>
                     <input type="text" name="movieType"  class="form-control am-form-row-input sty1" placeholder="Movie Type" required [(ngModel)]="movieData.movieType"> 
                 </div>
-        
-            
+                
                 <div class="row">  
-                    
                     <div class="col-6">  
                         <button type="submit" class="btn btn-success px-4">Add Movie</button>  
                     </div>  
                     <div class="col-6 text-right">  
-                        <button type="button" class="btn btn-link px-4 ">Cancel?</button>  
+                        <button type="button" class="btn btn-link px-4" routerLink="/admin/movielist">Cancel?</button>  
                     </div>  
               </div>   
             </form>  

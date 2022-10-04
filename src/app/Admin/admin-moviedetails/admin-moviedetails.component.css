@@ -90,22 +90,28 @@
     width: auto;
     text-align: center;
 }
-
+.amd-button-group {
+    display: flex;
+    justify-content: space-between;
+}
 .amd-btn {
     margin-top: 4rem;
     height: 3rem;
-    width: 20rem;
+    width: 6rem;
     font-size: 1rem;
     border-radius: 10rem;
     outline: none;
-    background-color: #e72929;
-    color: white;
+    background-color: whitesmoke;
+    color: black;
     border: none;
     font-size: 1.8rem;
 }
 
 .amd-btn:hover {
+    background-color: #e72929;
+    color: white;
     opacity: 0.9;
     transition: 0.3s;
     cursor: pointer;
+    transform: scale(1.01);
 }
