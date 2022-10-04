@@ -14,7 +14,7 @@ export class ValidateUserSignInGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       if(CustomerStore.email == '') {
         // alert("To access this section of app, user must be Signed In!")
-        this.toastr.error('Error Message', 'To access this section of app, user must be Signed In!', {
+        this.toastr.error('To access this section of app, user must be Signed In!','Error Message',  {
           timeOut: 3000,
         });
         this.router.navigate(['/signin']);

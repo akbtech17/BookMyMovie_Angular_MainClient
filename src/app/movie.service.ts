@@ -6,6 +6,7 @@ import { catchError, throwError } from 'rxjs';
 import { HttpErrorResponse } from '@angular/common/http';
 import { IMovie } from './movie';
 import { environment } from 'src/environments/environment';
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,7 @@ export class MovieService {
   url = environment.baseUrl + 'movies'
   httpOptions = { headers: new HttpHeaders({'Content-type':'application/json'}) }
   
-  constructor(private httpclient: HttpClient) { }
+  constructor(private httpclient: HttpClient, private toastr: ToastrService) { }
 
   // to get the movie list
   getMovieList():Observable<IMovie[]> {
@@ -33,7 +34,9 @@ export class MovieService {
   handleError(error: HttpErrorResponse) {
     let errormessage = ''
     errormessage = error.status+'\n'+error.statusText+'\n'+error.error
-    alert(errormessage)
+    this.toastr.error('Error!', errormessage, {
+      timeOut: 3000,
+    });
     return throwError(errormessage);
   }
 

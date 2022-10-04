@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Route, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { CustomerService } from '../customer.service';
 import { CustomerStore } from '../CustomerStore';
 import { ICrendtials } from '../icrendtials';
@@ -14,7 +15,7 @@ export class SigninComponent implements OnInit {
     email: '',
     password: ''
   }
-  constructor(private customerService: CustomerService, private router: Router) { }
+  constructor(private customerService: CustomerService, private router: Router, private toastr: ToastrService) { }
 
   ngOnInit(): void {
   }
@@ -25,9 +26,16 @@ export class SigninComponent implements OnInit {
         CustomerStore.email = data.email;
         CustomerStore.firstName = data.firstName;
         console.log(CustomerStore.email);
+        this.toastr.success('Login Success!', 'Welcome '+CustomerStore.firstName, {
+          timeOut: 3000,
+        });
         this.router.navigate(['/']);
       }
-      else console.log("login failed")
+      else {
+        this.toastr.error('Login Failed!', 'Try with different credentials', {
+          timeOut: 3000,
+        });
+      }
     })
   }
 
