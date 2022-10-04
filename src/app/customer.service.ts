@@ -22,7 +22,7 @@ export class CustomerService {
   // method to handle errors in client side
   handleError(error: HttpErrorResponse) {
     let errormessage = 'Invalid Credentials\nTry Again'
-    this.toastr.error('Error!', errormessage, {
+    this.toastr.error(errormessage,'Error!', {
       timeOut: 3000,
     });
     return throwError(errormessage);

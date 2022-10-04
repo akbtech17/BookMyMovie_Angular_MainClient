@@ -34,7 +34,7 @@ export class MovieService {
   handleError(error: HttpErrorResponse) {
     let errormessage = ''
     errormessage = error.status+'\n'+error.statusText+'\n'+error.error
-    this.toastr.error('Error!', errormessage, {
+    this.toastr.error(errormessage,'Error!', {
       timeOut: 3000,
     });
     return throwError(errormessage);

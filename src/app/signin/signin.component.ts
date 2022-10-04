@@ -25,14 +25,13 @@ export class SigninComponent implements OnInit {
       if(data!=null) {
         CustomerStore.email = data.email;
         CustomerStore.firstName = data.firstName;
-        console.log(CustomerStore.email);
         this.toastr.success('Login Success!', 'Welcome '+CustomerStore.firstName, {
           timeOut: 3000,
         });
         this.router.navigate(['/']);
       }
       else {
-        this.toastr.error('Login Failed!', 'Try with different credentials', {
+        this.toastr.error('Try with different credentials','Login Error' ,{
           timeOut: 3000,
         });
       }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { CustomerService } from '../customer.service';
 import { CustomerStore } from '../CustomerStore';
 
@@ -12,7 +13,7 @@ export class HeaderComponent implements OnInit {
   customerEmail = CustomerStore.email
   customerFirstName = CustomerStore.firstName
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private toastr: ToastrService) { }
 
   ngOnInit() {
   }
@@ -20,12 +21,12 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(["/"]);
   }
   OnLogout() {
-    if(confirm(`${CustomerStore.firstName}, do you really want to Logout?`)){
-      CustomerStore.email = '';
-      CustomerStore.firstName = '';
-      this.customerEmail='';
-      
-      this.router.navigate(["/"]);
-    }
+    this.toastr.success('You have been logged out!', 'Success', {
+      timeOut: 3000,
+    });
+    CustomerStore.email = '';
+    CustomerStore.firstName = '';
+    this.customerEmail='';
+    this.router.navigate(["/"]);
   }
 }
