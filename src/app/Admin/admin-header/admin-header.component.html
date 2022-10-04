@@ -3,11 +3,12 @@
         <a href="#" class="header-logo" routerLink="/">BMM 💃 Book My Movie</a>
         <nav>
             <ul class="header-links-list">
-                <li class="header-links">
-                    <a href="#" routerLink="signin">SignIn</a>
+                <li class="header-links" *ngIf="!adminEmail">
+                    <!-- <a href="#" routerLink="signin">SignIn</a> -->
+                </li>
+                <li class="header-links" *ngIf="adminEmail">
                     <a href="#" routerLink="addmovie">Add Movie</a>
                     <a href="#" routerLink="movielist">Movie List</a>
-                    <!-- <a href="#" routerLink="editmovie">Edit Movie</a> -->
                     <a (click)="OnLogout()">Logout</a>
                 </li>
             </ul>

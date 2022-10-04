@@ -31,7 +31,7 @@ export class AdminSigninComponent implements OnInit {
           this.toastr.success('Login Success!', 'Welcome '+AdminStore.firstName, {
             timeOut: 3000,
           });
-          this.router.navigate(['/']);
+          this.router.navigate(['/admin/movielist']);
         }
       },
       (err) => {
