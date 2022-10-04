@@ -20,6 +20,8 @@ import { AdminEditmovieComponent } from './Admin/admin-editmovie/admin-editmovie
 import { AdminHomeComponent } from './Admin/admin-home/admin-home.component';
 import { AdminRemovemovieComponent } from './Admin/admin-removemovie/admin-removemovie.component';
 import { AdminMoviedetailsComponent } from './Admin/admin-moviedetails/admin-moviedetails.component';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,9 @@ import { AdminMoviedetailsComponent } from './Admin/admin-moviedetails/admin-mov
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(), // ToastrModule added
   ],
   providers: [],
   bootstrap: [AppComponent]

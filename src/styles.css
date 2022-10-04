@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&disk=play=swap');
 @import url('https://fonts.googleapis.com/css?family=Quicksand');
+@import '~ngx-toastr/toastr';
 
 *{
     box-sizing: border-box;
