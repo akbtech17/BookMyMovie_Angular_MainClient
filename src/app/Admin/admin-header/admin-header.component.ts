@@ -26,6 +26,6 @@ export class AdminHeaderComponent implements OnInit {
     AdminStore.email = '';
     AdminStore.firstName = '';
     this.adminEmail='';
-    this.router.navigate(["/admin"]);
+    this.router.navigate(["/admin/signin"]);
   }
 }
