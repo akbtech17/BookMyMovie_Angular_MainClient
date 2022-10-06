@@ -30,6 +30,10 @@ export class MovieService {
     return this.httpclient.post<IMovie>(this.url, movieData,this.httpOptions).pipe(catchError(this.handleError))
   }
 
+  updateMovie(movieData: IMovie):Observable<IMovie> {
+    return this.httpclient.put<IMovie>(this.url, movieData,this.httpOptions).pipe(catchError(this.handleError))
+  }
+
   removeMovie(movieId: number) {
     return this.httpclient.delete(this.url+"/"+movieId,this.httpOptions).pipe(catchError(this.handleError))
   }

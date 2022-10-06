@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { IMovie } from 'src/app/movie';
+import { MovieService } from 'src/app/movie.service';
 
 @Component({
   selector: 'app-admin-editmovie',
@@ -6,10 +10,47 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin-editmovie.component.css']
 })
 export class AdminEditmovieComponent implements OnInit {
-
-  constructor() { }
+  movieData : IMovie = {
+    movieId: 0,
+    movieName: "",
+    releaseDate: "",
+    ratings: 0,
+    genres: "",
+    imageUrl: "",
+    costPerSeat: 0,
+    showTime: "",
+    duration: "",
+    ageRating: "",
+    language: "",
+    movieType: ""
+  }
+  movieId?: number;
+  constructor(private movieService: MovieService, private activatedRoute: ActivatedRoute, private toastr: ToastrService, private router: Router) { }
+  
 
   ngOnInit(): void {
+    const tid = this.activatedRoute.snapshot.paramMap.get("movieId");
+    this.movieId = Number(tid);
+
+    this.movieService.getMovie(this.movieId).subscribe(data => {
+      this.movieData = data;
+    })
+  }
+  onSubmit() {
+    // console.log(this.movieData);
+    this.movieService.updateMovie(this.movieData).subscribe(
+      (resp) => {
+        this.toastr.success('Movie added successfuly','Success!', {
+          timeOut: 3000,
+        });
+        this.router.navigate(["admin/movielist"])
+      },
+      (err) => {
+        this.toastr.error('Some internal error happened!','Error!', {
+          timeOut: 3000,
+        });
+      }
+    )
   }
 
 }

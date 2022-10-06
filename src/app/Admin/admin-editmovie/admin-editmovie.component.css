@@ -1,0 +1,10 @@
+.em-form-row{
+    display: flex;
+}
+.em-form-row-label {
+    flex: 0.3;
+}
+
+.em-form-row-input {
+    flex: 0.7;
+}
