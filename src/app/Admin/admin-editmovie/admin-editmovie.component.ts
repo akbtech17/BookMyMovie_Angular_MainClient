@@ -40,7 +40,7 @@ export class AdminEditmovieComponent implements OnInit {
     // console.log(this.movieData);
     this.movieService.updateMovie(this.movieData).subscribe(
       (resp) => {
-        this.toastr.success('Movie added successfuly','Success!', {
+        this.toastr.success('Movie edited successfuly','Success!', {
           timeOut: 3000,
         });
         this.router.navigate(["admin/movielist"])
