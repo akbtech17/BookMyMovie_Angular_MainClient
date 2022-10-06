@@ -17,7 +17,8 @@ export class ValidateUserSignInGuard implements CanActivate {
         this.toastr.error('To access this section of app, user must be Signed In!','Error Message',  {
           timeOut: 3000,
         });
-        this.router.navigate(['/signin']);
+        this.router.navigate(['/admin/signin']);
+        return false;
       }
     return true;
   }

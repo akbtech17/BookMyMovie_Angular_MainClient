@@ -27,11 +27,11 @@ const routes: Routes = [
     component: AdminHomeComponent,
     children: [
       {path:'signin', component:AdminSigninComponent},
-      {path:'addmovie', component:AdminAddmovieComponent, canActivate:[ValidateAdminSignInGuard]},
-      {path:'editmovie/:movieId', component:AdminEditmovieComponent, canActivate:[ValidateAdminSignInGuard]},
-      {path:'movielist', component:AdminMovielistComponent,canActivate:[ValidateAdminSignInGuard]},
-      {path:'removemovie/:movieId', component:AdminRemovemovieComponent,canActivate:[ValidateAdminSignInGuard]},
-      {path:'movie-details/:movieId', component:AdminMoviedetailsComponent, canActivate:[ValidateAdminSignInGuard]},
+      {path:'addmovie', component:AdminAddmovieComponent},
+      {path:'editmovie/:movieId', component:AdminEditmovieComponent},
+      {path:'movielist', component:AdminMovielistComponent},
+      {path:'removemovie/:movieId', component:AdminRemovemovieComponent},
+      {path:'movie-details/:movieId', component:AdminMoviedetailsComponent},
 
 
       {path: '', redirectTo: 'movielist', pathMatch: 'full' },
