@@ -12,25 +12,22 @@ export class SeatBookingComponent implements OnInit {
   // 1 - selected
   // 2 - booked
 
-  seatMap: any[] = [
-    {seatNo:"A1", status:0}, {seatNo:"B1", status:1}, {seatNo:"C1", status:2}, {seatNo:"D1", status:0},
-    {seatNo:"A2", status:0}, {seatNo:"B2", status:0}, {seatNo:"C2", status:0}, {seatNo:"D2", status:0},
-    {seatNo:"A3", status:0}, {seatNo:"B3", status:0}, {seatNo:"C3", status:0}, {seatNo:"D3", status:0},
-    {seatNo:"A4", status:0}, {seatNo:"B4", status:0}, {seatNo:"C4", status:0}, {seatNo:"D4", status:0}
-  ]
+  seatMap?: any[];
   constructor(private movieService: MovieService) { }
 
   onClick(seatNo: string) {
-    console.log(seatNo)
-    this.seatMap.forEach(seat => {
-      if(seat.status!=2 && seat.seatNo == seatNo) seat.status = seat.status == 0 ? 1 : 0
-    });
+    console.log(seatNo);
+    if(this.seatMap) {
+      this.seatMap.forEach(seat => {
+        if(seat.status!=2 && seat.seatNo == seatNo) seat.status = seat.status == 0 ? 1 : 0
+      });
+    }
   }
   
   ngOnInit(): void {
     this.movieService.GetSeatMap(1).subscribe(
       (resp) => {
-        console.log(resp)
+        this.seatMap = resp
       },
       (err) => {
         console.log(err)

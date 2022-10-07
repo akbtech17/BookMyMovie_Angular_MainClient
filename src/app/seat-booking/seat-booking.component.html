@@ -23,137 +23,100 @@
           <small>Sold</small>
         </li>
       </ul>
-      <div class="sb-containerr">
+      <div class="sb-containerr" *ngIf="seatMap">
         <div class="sb-screen"></div>
         <div class="sb-row">
           <div class="{{seatMap[0].status == 0 ? '' : seatMap[0].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[0].seatNo)"></div>
+          <div class="{{seatMap[5].status == 0 ? '' : seatMap[5].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[5].seatNo)"></div>
+          <div class="{{seatMap[10].status == 0 ? '' : seatMap[10].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[10].seatNo)"></div>
+          <div class="{{seatMap[15].status == 0 ? '' : seatMap[15].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[15].seatNo)"></div>
+          <div class="{{seatMap[20].status == 0 ? '' : seatMap[20].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[20].seatNo)"></div>
+          <div class="{{seatMap[25].status == 0 ? '' : seatMap[25].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[25].seatNo)"></div>
+          <div class="{{seatMap[30].status == 0 ? '' : seatMap[30].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[30].seatNo)"></div>
+          <div class="{{seatMap[35].status == 0 ? '' : seatMap[35].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[35].seatNo)"></div>
+          <div class="{{seatMap[40].status == 0 ? '' : seatMap[40].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[40].seatNo)"></div>
+          <div class="{{seatMap[45].status == 0 ? '' : seatMap[45].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[45].seatNo)"></div>
+          <div class="{{seatMap[50].status == 0 ? '' : seatMap[50].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[50].seatNo)"></div>
+          <div class="{{seatMap[55].status == 0 ? '' : seatMap[55].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[55].seatNo)"></div>
+          <div class="{{seatMap[60].status == 0 ? '' : seatMap[60].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[60].seatNo)"></div>
+          <div class="{{seatMap[65].status == 0 ? '' : seatMap[65].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[65].seatNo)"></div>
+          <div class="{{seatMap[70].status == 0 ? '' : seatMap[70].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[70].seatNo)"></div>
+          <div class="{{seatMap[75].status == 0 ? '' : seatMap[75].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[75].seatNo)"></div>
+        </div>
+
+        <div class="sb-row">
           <div class="{{seatMap[1].status == 0 ? '' : seatMap[1].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[1].seatNo)"></div>
-          <div class="{{seatMap[2].status == 0 ? '' : seatMap[2].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[2].seatNo)"></div>
-          <div class="{{seatMap[3].status == 0 ? '' : seatMap[3].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[3].seatNo)"></div>
-          <div class="{{seatMap[3].status == 0 ? '' : seatMap[3].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[3].seatNo)"></div>
-          <div class="{{seatMap[3].status == 0 ? '' : seatMap[3].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[3].seatNo)"></div>
-          <div class="{{seatMap[3].status == 0 ? '' : seatMap[3].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[3].seatNo)"></div>
-          <div class="{{seatMap[3].status == 0 ? '' : seatMap[3].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[3].seatNo)"></div>
-          <div class="{{seatMap[3].status == 0 ? '' : seatMap[3].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[3].seatNo)"></div>
-          <div class="{{seatMap[3].status == 0 ? '' : seatMap[3].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[3].seatNo)"></div>
-          <div class="{{seatMap[3].status == 0 ? '' : seatMap[3].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[3].seatNo)"></div>
-          <div class="{{seatMap[3].status == 0 ? '' : seatMap[3].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[3].seatNo)"></div>
-          <div class="{{seatMap[3].status == 0 ? '' : seatMap[3].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[3].seatNo)"></div>
-          <div class="{{seatMap[3].status == 0 ? '' : seatMap[3].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[3].seatNo)"></div>
-          <div class="{{seatMap[3].status == 0 ? '' : seatMap[3].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[3].seatNo)"></div>
-          <div class="{{seatMap[3].status == 0 ? '' : seatMap[3].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[3].seatNo)"></div>
+          <div class="{{seatMap[6].status == 0 ? '' : seatMap[6].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[6].seatNo)"></div>
+          <div class="{{seatMap[11].status == 0 ? '' : seatMap[11].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[11].seatNo)"></div>
+          <div class="{{seatMap[16].status == 0 ? '' : seatMap[16].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[16].seatNo)"></div>
+          <div class="{{seatMap[21].status == 0 ? '' : seatMap[21].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[21].seatNo)"></div>
+          <div class="{{seatMap[26].status == 0 ? '' : seatMap[26].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[26].seatNo)"></div>
+          <div class="{{seatMap[31].status == 0 ? '' : seatMap[31].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[31].seatNo)"></div>
+          <div class="{{seatMap[36].status == 0 ? '' : seatMap[36].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[36].seatNo)"></div>
+          <div class="{{seatMap[41].status == 0 ? '' : seatMap[41].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[41].seatNo)"></div>
+          <div class="{{seatMap[46].status == 0 ? '' : seatMap[46].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[46].seatNo)"></div>
+          <div class="{{seatMap[51].status == 0 ? '' : seatMap[51].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[51].seatNo)"></div>
+          <div class="{{seatMap[56].status == 0 ? '' : seatMap[56].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[56].seatNo)"></div>
+          <div class="{{seatMap[61].status == 0 ? '' : seatMap[61].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[61].seatNo)"></div>
+          <div class="{{seatMap[66].status == 0 ? '' : seatMap[66].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[66].seatNo)"></div>
+          <div class="{{seatMap[71].status == 0 ? '' : seatMap[71].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[71].seatNo)"></div>
+          <div class="{{seatMap[76].status == 0 ? '' : seatMap[76].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[76].seatNo)"></div>
         </div>
 
         <div class="sb-row">
-          <div class="{{seatMap[4].seatNo}} sb-seat"></div>
-          <div class="{{seatMap[5].seatNo}} sb-seat"></div>
-          <div class="{{seatMap[6].seatNo}} sb-seat"></div>
-          <div class="{{seatMap[7].seatNo}} sb-seat"></div>
+          <div class="{{seatMap[0].status == 0 ? '' : seatMap[0].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[0].seatNo)"></div>
+          <div class="{{seatMap[5].status == 0 ? '' : seatMap[5].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[5].seatNo)"></div>
+          <div class="{{seatMap[10].status == 0 ? '' : seatMap[10].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[10].seatNo)"></div>
+          <div class="{{seatMap[15].status == 0 ? '' : seatMap[15].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[15].seatNo)"></div>
+          <div class="{{seatMap[20].status == 0 ? '' : seatMap[20].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[20].seatNo)"></div>
+          <div class="{{seatMap[25].status == 0 ? '' : seatMap[25].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[25].seatNo)"></div>
+          <div class="{{seatMap[30].status == 0 ? '' : seatMap[30].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[30].seatNo)"></div>
+          <div class="{{seatMap[35].status == 0 ? '' : seatMap[35].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[35].seatNo)"></div>
+          <div class="{{seatMap[40].status == 0 ? '' : seatMap[40].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[40].seatNo)"></div>
+          <div class="{{seatMap[45].status == 0 ? '' : seatMap[45].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[45].seatNo)"></div>
+          <div class="{{seatMap[50].status == 0 ? '' : seatMap[50].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[50].seatNo)"></div>
+          <div class="{{seatMap[55].status == 0 ? '' : seatMap[55].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[55].seatNo)"></div>
+          <div class="{{seatMap[60].status == 0 ? '' : seatMap[60].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[60].seatNo)"></div>
+          <div class="{{seatMap[65].status == 0 ? '' : seatMap[65].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[65].seatNo)"></div>
+          <div class="{{seatMap[70].status == 0 ? '' : seatMap[70].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[70].seatNo)"></div>
+          <div class="{{seatMap[75].status == 0 ? '' : seatMap[75].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[75].seatNo)"></div>
         </div>
 
         <div class="sb-row">
-          <div class="{{seatMap[8].seatNo}} sb-seat"></div>
-          <div class="{{seatMap[9].seatNo}} sb-seat"></div>
-          <div class="{{seatMap[10].seatNo}} sb-seat"></div>
-          <div class="{{seatMap[11].seatNo}} sb-seat"></div>
-        </div>
-
-        <div class="sb-row">
-          <div class="{{seatMap[0].seatNo}} sb-seat"></div>
-          <div class="{{seatMap[0].seatNo}} sb-seat"></div>
-          <div class="{{seatMap[0].seatNo}} sb-seat"></div>
-          <div class="{{seatMap[0].seatNo}} sb-seat"></div>
-        </div>
-
-        <!-- <div class="sb-row">
-          <div class="sb-seat"></div>
-          <div class="sb-seat"></div>
-          <div class="sb-seat"></div>
-          <div class="sb-seat"></div>
-          <div class="sb-seat"></div>
-          <div class="sb-seat"></div>
-          <div class="sb-seat"></div>
-          <div class="sb-seat"></div>
-          <div class="sb-seat"></div>
-          <div class="sb-seat"></div>
-          <div class="sb-seat"></div>
-          <div class="sb-seat"></div>
-          <div class="sb-seat"></div>
-          <div class="sb-seat"></div>
-          <div class="sb-seat"></div>
-          <div class="sb-seat"></div>
-        </div> -->
-        <!-- <div class="sb-row">
-          <div class="sb-seat sold"></div>
-          <div class="sb-seat sold"></div>
-          <div class="sb-seat"></div>
-          <div class="sb-seat"></div>
-          <div class="sb-seat"></div>
-          <div class="sb-seat"></div>
-          <div class="sb-seat"></div>
-          <div class="sb-seat"></div>
-          <div class="sb-seat"></div>
-          <div class="sb-seat"></div>
-          <div class="sb-seat"></div>
-          <div class="sb-seat"></div>
-          <div class="sb-seat"></div>
-          <div class="sb-seat"></div>
-          <div class="sb-seat"></div>
-          <div class="sb-seat"></div>
+          <div class="{{seatMap[0].status == 0 ? '' : seatMap[0].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[0].seatNo)"></div>
+          <div class="{{seatMap[5].status == 0 ? '' : seatMap[5].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[5].seatNo)"></div>
+          <div class="{{seatMap[10].status == 0 ? '' : seatMap[10].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[10].seatNo)"></div>
+          <div class="{{seatMap[15].status == 0 ? '' : seatMap[15].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[15].seatNo)"></div>
+          <div class="{{seatMap[20].status == 0 ? '' : seatMap[20].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[20].seatNo)"></div>
+          <div class="{{seatMap[25].status == 0 ? '' : seatMap[25].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[25].seatNo)"></div>
+          <div class="{{seatMap[30].status == 0 ? '' : seatMap[30].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[30].seatNo)"></div>
+          <div class="{{seatMap[35].status == 0 ? '' : seatMap[35].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[35].seatNo)"></div>
+          <div class="{{seatMap[40].status == 0 ? '' : seatMap[40].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[40].seatNo)"></div>
+          <div class="{{seatMap[45].status == 0 ? '' : seatMap[45].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[45].seatNo)"></div>
+          <div class="{{seatMap[50].status == 0 ? '' : seatMap[50].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[50].seatNo)"></div>
+          <div class="{{seatMap[55].status == 0 ? '' : seatMap[55].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[55].seatNo)"></div>
+          <div class="{{seatMap[60].status == 0 ? '' : seatMap[60].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[60].seatNo)"></div>
+          <div class="{{seatMap[65].status == 0 ? '' : seatMap[65].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[65].seatNo)"></div>
+          <div class="{{seatMap[70].status == 0 ? '' : seatMap[70].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[70].seatNo)"></div>
+          <div class="{{seatMap[75].status == 0 ? '' : seatMap[75].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[75].seatNo)"></div>
         </div>
         <div class="sb-row">
-          <div class="sb-seat"></div>
-          <div class="sb-seat"></div>
-          <div class="sb-seat"></div>
-          <div class="sb-seat"></div>
-          <div class="sb-seat"></div>
-          <div class="sb-seat"></div>
-          <div class="sb-seat"></div>
-          <div class="sb-seat"></div>
-          <div class="sb-seat"></div>
-          <div class="sb-seat"></div>
-          <div class="sb-seat"></div>
-          <div class="sb-seat"></div>
-          <div class="sb-seat"></div>
-          <div class="sb-seat"></div>
-          <div class="sb-seat sold"></div>
-          <div class="sb-seat sold"></div>
+          <div class="{{seatMap[0].status == 0 ? '' : seatMap[0].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[0].seatNo)"></div>
+          <div class="{{seatMap[5].status == 0 ? '' : seatMap[5].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[5].seatNo)"></div>
+          <div class="{{seatMap[10].status == 0 ? '' : seatMap[10].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[10].seatNo)"></div>
+          <div class="{{seatMap[15].status == 0 ? '' : seatMap[15].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[15].seatNo)"></div>
+          <div class="{{seatMap[20].status == 0 ? '' : seatMap[20].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[20].seatNo)"></div>
+          <div class="{{seatMap[25].status == 0 ? '' : seatMap[25].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[25].seatNo)"></div>
+          <div class="{{seatMap[30].status == 0 ? '' : seatMap[30].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[30].seatNo)"></div>
+          <div class="{{seatMap[35].status == 0 ? '' : seatMap[35].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[35].seatNo)"></div>
+          <div class="{{seatMap[40].status == 0 ? '' : seatMap[40].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[40].seatNo)"></div>
+          <div class="{{seatMap[45].status == 0 ? '' : seatMap[45].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[45].seatNo)"></div>
+          <div class="{{seatMap[50].status == 0 ? '' : seatMap[50].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[50].seatNo)"></div>
+          <div class="{{seatMap[55].status == 0 ? '' : seatMap[55].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[55].seatNo)"></div>
+          <div class="{{seatMap[60].status == 0 ? '' : seatMap[60].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[60].seatNo)"></div>
+          <div class="{{seatMap[65].status == 0 ? '' : seatMap[65].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[65].seatNo)"></div>
+          <div class="{{seatMap[70].status == 0 ? '' : seatMap[70].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[70].seatNo)"></div>
+          <div class="{{seatMap[75].status == 0 ? '' : seatMap[75].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[75].seatNo)"></div>
         </div>
-        <div class="sb-row">
-          <div class="sb-seat"></div>
-          <div class="sb-seat sold"></div>
-          <div class="sb-seat"></div>
-          <div class="sb-seat"></div>
-          <div class="sb-seat sold"></div>
-          <div class="sb-seat"></div>
-          <div class="sb-seat"></div>
-          <div class="sb-seat"></div>
-          <div class="sb-seat sold"></div>
-          <div class="sb-seat"></div>
-          <div class="sb-seat"></div>
-          <div class="sb-seat sold"></div>
-          <div class="sb-seat"></div>
-          <div class="sb-seat"></div>
-          <div class="sb-seat"></div>
-          <div class="sb-seat"></div>
-        </div>
-        <div class="sb-row">
-          <div class="sb-seat"></div>
-          <div class="sb-seat"></div>
-          <div class="sb-seat sold"></div>
-          <div class="sb-seat"></div>
-          <div class="sb-seat"></div>
-          <div class="sb-seat"></div>
-          <div class="sb-seat"></div>
-          <div class="sb-seat sold"></div>
-          <div class="sb-seat"></div>
-          <div class="sb-seat"></div>
-          <div class="sb-seat"></div>
-          <div class="sb-seat"></div>
-          <div class="sb-seat sold"></div>
-          <div class="sb-seat sold"></div>
-          <div class="sb-seat sold"></div>
-          <div class="sb-seat sold"></div>
-        </div> -->
     </div>
 </div>
