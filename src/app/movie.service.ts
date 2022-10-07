@@ -38,6 +38,10 @@ export class MovieService {
     return this.httpclient.delete(this.url+"/"+movieId,this.httpOptions).pipe(catchError(this.handleError))
   }
 
+  GetSeatMap(movieId: number): Observable<any[]>{
+    return this.httpclient.get<any[]>(this.url+'/seatmap/'+movieId).pipe(catchError(this.handleError))
+  }
+
   // method to handle errors in client side
   handleError(error: HttpErrorResponse) {
     let errormessage = ''
