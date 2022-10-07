@@ -4,6 +4,7 @@ import { ToastrService } from 'ngx-toastr';
 import { catchError, Observable, throwError } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { ICrendtials } from './icrendtials';
+import { ICustomer } from './icustomer';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +19,11 @@ export class CustomerService {
   validateCustomerSignIn(creds: ICrendtials): Observable<any> {
     console.log(creds);
     return this.httpclient.post<any>(this.url+'/signin',creds,this.httpOptions).pipe(catchError(this.handleError))
+  }
+
+  registerCustomer(creds: ICustomer): Observable<any> {
+    console.log(creds);
+    return this.httpclient.post<any>(this.url+'/register',creds,this.httpOptions).pipe(catchError(this.handleError))
   }
 
   // method to handle errors in client side
