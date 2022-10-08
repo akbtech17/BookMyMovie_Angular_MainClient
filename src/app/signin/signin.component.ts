@@ -4,6 +4,7 @@ import { ToastrService } from 'ngx-toastr';
 import { CustomerService } from '../customer.service';
 import { CustomerStore } from '../CustomerStore';
 import { ICrendtials } from '../icrendtials';
+import { TransactionStore } from '../transaction-store';
 
 @Component({
   selector: 'app-signin',
@@ -26,6 +27,9 @@ export class SigninComponent implements OnInit {
         if(data!=null) {
           CustomerStore.email = data.email;
           CustomerStore.firstName = data.firstName;
+
+          TransactionStore.email = data.email;
+          TransactionStore.firstName = data.firstName;
           this.toastr.success('Login Success!', 'Welcome '+CustomerStore.firstName, {
             timeOut: 3000,
           });

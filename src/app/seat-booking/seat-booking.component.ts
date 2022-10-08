@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { MovieService } from '../movie.service';
+import { TransactionStore } from '../transaction-store';
 
 @Component({
   selector: 'app-seat-booking',
@@ -67,11 +68,22 @@ export class SeatBookingComponent implements OnInit {
         this.toastr.error(`Please select some seats to proceed`,`No seat is selected`, {
           timeOut: 3000,
         });
+        return;
       }
       else {
-        this.toastr.success(`Booking ${this.selectedSeats} ${this.selectedSeats.length == 1 ? 'seat' : 'seats'} for you`,`Processing your request`, {
-          timeOut: 3000,
+        this.toastr.success(`Booked ${this.selectedSeats} ${this.selectedSeats.length == 1 ? 'seat' : 'seats'} for you`,`Booking Confirmed`, {
+          timeOut: 8000,
         });
       }
+
+      TransactionStore.selectedSeats = this.selectedSeats;
+      TransactionStore.noOfSelectedSeats = this.selectedSeats.length;
+      TransactionStore.totalCost = TransactionStore.seatCost*TransactionStore.noOfSelectedSeats;
+
+      console.log(TransactionStore.firstName);
+      console.log(TransactionStore.movieName);
+      console.log(TransactionStore.noOfSelectedSeats);
+
+      this.router.navigate(["/movies-list"]);
   }
 }
