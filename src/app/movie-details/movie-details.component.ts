@@ -25,13 +25,13 @@ export class MovieDetailsComponent implements OnInit {
   }
 
   OnBookClick() {
-    TransactionStore.movieId = this.movieId;
-    if(this.movieDetails) {
-      TransactionStore.movieName = this.movieDetails.movieName;
-      TransactionStore.duration = this.movieDetails.duration;
-      TransactionStore.showTime = this.movieDetails.showTime;
-      TransactionStore.seatCost = this.movieDetails.costPerSeat;
-    }
+    // TransactionStore.movieId = this.movieId;
+    // if(this.movieDetails) {
+    //   TransactionStore.movieName = this.movieDetails.movieName;
+    //   TransactionStore.duration = this.movieDetails.duration;
+    //   TransactionStore.showTime = this.movieDetails.showTime;
+    //   TransactionStore.seatCost = this.movieDetails.costPerSeat;
+    // }
     this.router.navigate(["/sbook/"+this.movieId]);
   }
 }

@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { ITransaction } from '../itransaction';
 import { MovieService } from '../movie.service';
 import { TransactionStore } from '../transaction-store';
+import { TransactionService } from '../transaction.service';
 
 @Component({
   selector: 'app-seat-booking',
@@ -16,7 +18,14 @@ export class SeatBookingComponent implements OnInit {
   movieId: number = 0;
   seatMap?: any[];
   selectedSeats?: string[] = [];
-  constructor(private movieService: MovieService, private toastr: ToastrService, private activatedRoute: ActivatedRoute, private router: Router) { }
+
+  transactionDetails: ITransaction = {
+    firstName: '',
+    email: ''
+  }
+
+
+  constructor(private movieService: MovieService, private toastr: ToastrService, private activatedRoute: ActivatedRoute, private router: Router, private transactionService: TransactionService) { }
 
   onClick(seatNo: string) {
     if(this.seatMap) {
@@ -76,13 +85,30 @@ export class SeatBookingComponent implements OnInit {
         });
       }
 
-      TransactionStore.selectedSeats = this.selectedSeats;
-      TransactionStore.noOfSelectedSeats = this.selectedSeats.length;
-      TransactionStore.totalCost = TransactionStore.seatCost*TransactionStore.noOfSelectedSeats;
+      // TransactionStore.selectedSeats = this.selectedSeats;
+      // TransactionStore.noOfSelectedSeats = this.selectedSeats.length;
+      // TransactionStore.totalCost = TransactionStore.seatCost*TransactionStore.noOfSelectedSeats;
 
-      console.log(TransactionStore.firstName);
-      console.log(TransactionStore.movieName);
-      console.log(TransactionStore.noOfSelectedSeats);
+      // console.log(TransactionStore.firstName);
+      // console.log(TransactionStore.movieName);
+      // console.log(TransactionStore.noOfSelectedSeats);
+
+
+      this.transactionDetails.firstName = TransactionStore.firstName;
+      this.transactionDetails.email = TransactionStore.email;
+
+      this.transactionService.CreateTransaction(this.transactionDetails).subscribe(
+        (resp) => {
+          this.toastr.success('Booking Confirmed','Success', {
+            timeOut: 10000,
+          });
+        },
+        (err) => {
+          this.toastr.error('Something went wrong','Error', {
+            timeOut: 10000,
+          })
+        }
+      )
 
       this.router.navigate(["/movies-list"]);
   }
