@@ -12,6 +12,7 @@ export class SeatBookingComponent implements OnInit {
   // 0 - not selected
   // 1 - selected
   // 2 - booked
+  movieId: number = 0;
   seatMap?: any[];
   selectedSeats?: string[] = [];
   constructor(private movieService: MovieService, private toastr: ToastrService, private activatedRoute: ActivatedRoute, private router: Router) { }
@@ -39,12 +40,18 @@ export class SeatBookingComponent implements OnInit {
   }
   
   ngOnInit(): void {
-    this.movieService.GetSeatMap(1).subscribe(
+    const tid = this.activatedRoute.snapshot.paramMap.get("movieId");
+    this.movieId = Number(tid);
+
+
+    this.movieService.GetSeatMap(this.movieId).subscribe(
       (resp) => {
         this.seatMap = resp
       },
       (err) => {
-        console.log(err)
+        this.toastr.error(`Internal Error happened`,`Error`, {
+          timeOut: 3000,
+        });
       }
     )
   }

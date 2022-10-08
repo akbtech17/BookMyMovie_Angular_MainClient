@@ -21,7 +21,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'movies-list', component: MoviesListComponent },
   { path: 'movie-details/:movieId', component: MovieDetailsComponent, canActivate:[ValidateUserSignInGuard] },
-  { path: 'sbook', component: SeatBookingComponent },
+  { path: 'sbook/:movieId', component: SeatBookingComponent },
   { 
     path : 'admin', 
     component: AdminHomeComponent,

@@ -12,14 +12,14 @@ export class ValidateUserSignInGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      if(CustomerStore.email == '') {
-        // alert("To access this section of app, user must be Signed In!")
-        this.toastr.error('To access this section of app, user must be Signed In!','Error Message',  {
-          timeOut: 3000,
-        });
-        this.router.navigate(['/admin/signin']);
-        return false;
-      }
+      // if(CustomerStore.email == '') {
+      //   // alert("To access this section of app, user must be Signed In!")
+      //   this.toastr.error('To access this section of app, user must be Signed In!','Error Message',  {
+      //     timeOut: 3000,
+      //   });
+      //   this.router.navigate(['/admin/signin']);
+      //   return false;
+      // }
     return true;
   }
 }
