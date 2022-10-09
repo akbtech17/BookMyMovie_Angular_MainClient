@@ -1,18 +1,10 @@
 export interface ITransaction {
+    transactionId: number;
+    transactionTime: string;
     // customer details
-    firstName: string;
-    email: string;
-
+    customerId: number;
     // movie details
     movieId: number;
-    movieName: string;
-    duration: string;
-    showTime: string;
-    seatCost: number;
-
-
     // seat details
-    selectedSeats: string[];
-    noOfSelectedSeats: number;
-    totalCost: number;
+    seats: string[]
 }

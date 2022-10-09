@@ -16,6 +16,7 @@ export class SigninComponent implements OnInit {
     email: '',
     password: ''
   }
+  customerId?:number;
   constructor(private customerService: CustomerService, private router: Router, private toastr: ToastrService) { }
 
   ngOnInit(): void {
@@ -30,6 +31,7 @@ export class SigninComponent implements OnInit {
 
           TransactionStore.email = data.email;
           TransactionStore.firstName = data.firstName;
+          TransactionStore.customerId = data.customerId;
           this.toastr.success('Login Success!', 'Welcome '+CustomerStore.firstName, {
             timeOut: 3000,
           });

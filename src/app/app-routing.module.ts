@@ -15,6 +15,7 @@ import { SeatBookingComponent } from './seat-booking/seat-booking.component';
 import { SigninComponent } from './signin/signin.component';
 import { ValidateUserSignInGuard } from './validate-user-sign-in.guard';
 import { ValidateAdminSignInGuard } from './validate-admin-sign-in.guard';
+import { ConfirmationPageComponent } from './confirmation-page/confirmation-page.component';
 
 const routes: Routes = [
   { path: 'signin', component: SigninComponent },
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'movies-list', component: MoviesListComponent },
   { path: 'movie-details/:movieId', component: MovieDetailsComponent, canActivate:[ValidateUserSignInGuard] },
   { path: 'sbook/:movieId', component: SeatBookingComponent },
+  { path: 'confirm', component: ConfirmationPageComponent },
   { 
     path : 'admin', 
     component: AdminHomeComponent,

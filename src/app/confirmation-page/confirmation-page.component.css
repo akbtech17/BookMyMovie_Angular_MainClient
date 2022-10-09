@@ -190,7 +190,6 @@
 .cp-inner{
     display: flex;
     justify-content: space-between; 
-    
     font-size: 14px;
     color: black;
     padding: 0;
@@ -198,3 +197,16 @@
     font-weight: bolder;
 }
 
+.cp-back {
+    background-color:#e72929;
+    border-radius: 2rem;
+    padding: 0.5rem 1rem;
+    color: white;
+}
+
+.cp-back:hover{
+    transition: 0.8s;
+    transform: scale(1.1);
+    cursor: pointer;
+    opacity: 0.95;
+}

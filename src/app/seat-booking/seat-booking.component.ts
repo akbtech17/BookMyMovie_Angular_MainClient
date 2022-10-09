@@ -20,19 +20,11 @@ export class SeatBookingComponent implements OnInit {
   selectedSeats?: string[] = [];
 
   transactionDetails: ITransaction = {
-    // customer details
-    firstName: '',
-    email: '',
-    // movie details
+    customerId:0,
+    transactionId:0,
+    transactionTime:"",
     movieId: 0,
-    movieName: '',
-    duration: '',
-    showTime: '',
-    seatCost: 0,
-    // seat details
-    selectedSeats: [],
-    noOfSelectedSeats: 0,
-    totalCost: 0,
+    seats: []
   }
 
 
@@ -101,16 +93,11 @@ export class SeatBookingComponent implements OnInit {
       TransactionStore.totalCost = TransactionStore.seatCost*TransactionStore.noOfSelectedSeats;
 
       // update the transaction details from the store
-      this.transactionDetails.firstName = TransactionStore.firstName;
-      this.transactionDetails.email = TransactionStore.email;
+      this.transactionDetails.customerId = TransactionStore.customerId;
       this.transactionDetails.movieId = TransactionStore.movieId;
-      this.transactionDetails.movieName = TransactionStore.movieName;
-      this.transactionDetails.duration = TransactionStore.duration;
-      this.transactionDetails.showTime = TransactionStore.showTime;
-      this.transactionDetails.seatCost = TransactionStore.seatCost;
-      this.transactionDetails.selectedSeats = TransactionStore.selectedSeats;
-      this.transactionDetails.noOfSelectedSeats = TransactionStore.noOfSelectedSeats;
-      this.transactionDetails.totalCost = TransactionStore.totalCost;
+      this.transactionDetails.transactionTime = "2022-09-03T12:45:56";
+      this.transactionDetails.transactionId = 0;
+      this.transactionDetails.seats = TransactionStore.selectedSeats;
 
       this.transactionService.CreateTransaction(this.transactionDetails).subscribe(
         (resp) => {
@@ -125,6 +112,6 @@ export class SeatBookingComponent implements OnInit {
         }
       )
 
-      this.router.navigate(["/movies-list"]);
+      this.router.navigate(["/confirm"]);
   }
 }
