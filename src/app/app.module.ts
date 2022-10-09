@@ -22,6 +22,7 @@ import { AdminRemovemovieComponent } from './Admin/admin-removemovie/admin-remov
 import { AdminMoviedetailsComponent } from './Admin/admin-moviedetails/admin-moviedetails.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ConfirmationPageComponent } from './confirmation-page/confirmation-page.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AdminHomeComponent,
     AdminRemovemovieComponent,
     AdminMoviedetailsComponent,
+    ConfirmationPageComponent,
   ],
   imports: [
     BrowserModule,
