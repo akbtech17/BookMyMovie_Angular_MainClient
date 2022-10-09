@@ -28,6 +28,12 @@
     font-weight: bold;
 }
 
+.cp-waiting{
+    color: rgb(255, 166, 0);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
 .cp-bid {
     font-weight: bold;
 }
