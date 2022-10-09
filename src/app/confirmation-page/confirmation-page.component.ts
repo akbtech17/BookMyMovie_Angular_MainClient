@@ -18,6 +18,7 @@ export class ConfirmationPageComponent implements OnInit {
     movieId: 0,
     seats: []
   }
+  transactionResponse: any;
   transactionSuccess:boolean = false;
   constructor(private router: Router, private transactionService: TransactionService, private toastr: ToastrService) { }
 
@@ -30,6 +31,7 @@ export class ConfirmationPageComponent implements OnInit {
 
       this.transactionService.CreateTransaction(this.transactionDetails).subscribe(
         (resp) => {
+          this.transactionResponse = resp
           this.transactionSuccess = true;
           this.toastr.success('Booking Confirmed','Success', {
             timeOut: 10000,

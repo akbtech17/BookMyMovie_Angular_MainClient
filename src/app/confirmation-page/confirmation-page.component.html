@@ -11,20 +11,21 @@
     <div class="cp-ticket-container">
         <div class="cp-movie">
             <div class="cp-movie-image">
-                <img src="./assets/image6.jpg" alt="" class="cp-movie-image">
+                <img src="./assets/{{transactionResponse.imageUrl}}" alt="" class="cp-movie-image">
             </div>
             <div class="cp-movie-info">
-                <div class="cp-movie-title">Bhool Bhulaiaya 2 (U/A)</div>
+                <div class="cp-movie-title">{{transactionResponse.movieName}} ({{transactionResponse.ageRating}})</div>
                 <div class="cp-movie-venue">
-                    <div class="cp-time">11:30pm | Sun, 22 May, 2022</div>
+                    <!-- <div class="cp-time">11:30pm | Sun, 22 May, 2022</div> -->
+                    <div class="cp-time">{{transactionResponse.showTime}}</div>
                     <div class="cp-address">Cinepolis: WESTEND Mall Aundh, Pune(AUDI03) Pune, Pune</div>
                 </div>
-                <div class="cp-seat">EXECUTIVE - G11, G12, G13</div>
+                <div class="cp-seat">EXECUTIVE - {{transactionResponse.seats}}</div>
             </div>
         </div>
         <div class="cp-seat-details">
             <div class="cp-number-of-seats">
-                <div class="cp-nseat">3</div>
+                <div class="cp-nseat">{{transactionResponse.seats.length}}</div>
                 <div class="cp-ticket-label">Tickets</div>
             </div>
             <div class="cp-audi-details">AUDI03</div>
@@ -35,16 +36,16 @@
         <div class="cp-transaction-details">
             <div class="cp-amount-details">
                 <div class="cp-amount-label">TICKET AMOUNT</div>
-                <div class="cp-amount">Rs.840.00</div>
+                <div class="cp-amount">Rs.{{transactionResponse.totalCost}}</div>
             </div>
             <div class="cp-quantity-details">
                 <div class="cp-quantity-label">Quantity</div>
-                <div class="cp-quantity">3 tickets</div>
+                <div class="cp-quantity">{{transactionResponse.seats.length}} tickets</div>
             </div>
             <div class="cp-paid-details">
                 <div class="cp-inner">
                     <div class="cp-paid-label">AMOUNT PAID</div>
-                    <div class="cp-paid-money">Rs.840.00</div>
+                    <div class="cp-paid-money">Rs.{{transactionResponse.totalCost}}</div>
                 </div>
             </div>
         </div>

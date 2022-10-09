@@ -31,6 +31,7 @@ export class MovieDetailsComponent implements OnInit {
       TransactionStore.duration = this.movieDetails.duration;
       TransactionStore.showTime = this.movieDetails.showTime;
       TransactionStore.seatCost = this.movieDetails.costPerSeat;
+      TransactionStore.imageUrl = this.movieDetails.imageUrl;
     }
     this.router.navigate(["/sbook/"+this.movieId]);
   }

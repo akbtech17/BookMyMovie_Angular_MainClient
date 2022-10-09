@@ -13,6 +13,7 @@ export class TransactionStore {
     public static duration: string = '';
     public static showTime: string = '';
     public static seatCost: number = 0;
+    public static imageUrl: string = '';
 
 
     // seat details
