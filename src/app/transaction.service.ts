@@ -15,7 +15,7 @@ export class TransactionService {
   
   constructor(private httpClient: HttpClient, private toastr: ToastrService) { }
 
-  CreateTransaction(td :ITransaction): Observable<any> {
-    return this.httpClient.post<any>(this.url,td,this.httpOptions);
+  CreateTransaction(transationDetails :ITransaction): Observable<any> {
+    return this.httpClient.post<any>(this.url,transationDetails,this.httpOptions);
   }
 }

@@ -20,8 +20,19 @@ export class SeatBookingComponent implements OnInit {
   selectedSeats?: string[] = [];
 
   transactionDetails: ITransaction = {
+    // customer details
     firstName: '',
-    email: ''
+    email: '',
+    // movie details
+    movieId: 0,
+    movieName: '',
+    duration: '',
+    showTime: '',
+    seatCost: 0,
+    // seat details
+    selectedSeats: [],
+    noOfSelectedSeats: 0,
+    totalCost: 0,
   }
 
 
@@ -85,17 +96,21 @@ export class SeatBookingComponent implements OnInit {
         });
       }
 
-      // TransactionStore.selectedSeats = this.selectedSeats;
-      // TransactionStore.noOfSelectedSeats = this.selectedSeats.length;
-      // TransactionStore.totalCost = TransactionStore.seatCost*TransactionStore.noOfSelectedSeats;
+      TransactionStore.selectedSeats = this.selectedSeats;
+      TransactionStore.noOfSelectedSeats = this.selectedSeats.length;
+      TransactionStore.totalCost = TransactionStore.seatCost*TransactionStore.noOfSelectedSeats;
 
-      // console.log(TransactionStore.firstName);
-      // console.log(TransactionStore.movieName);
-      // console.log(TransactionStore.noOfSelectedSeats);
-
-
+      // update the transaction details from the store
       this.transactionDetails.firstName = TransactionStore.firstName;
       this.transactionDetails.email = TransactionStore.email;
+      this.transactionDetails.movieId = TransactionStore.movieId;
+      this.transactionDetails.movieName = TransactionStore.movieName;
+      this.transactionDetails.duration = TransactionStore.duration;
+      this.transactionDetails.showTime = TransactionStore.showTime;
+      this.transactionDetails.seatCost = TransactionStore.seatCost;
+      this.transactionDetails.selectedSeats = TransactionStore.selectedSeats;
+      this.transactionDetails.noOfSelectedSeats = TransactionStore.noOfSelectedSeats;
+      this.transactionDetails.totalCost = TransactionStore.totalCost;
 
       this.transactionService.CreateTransaction(this.transactionDetails).subscribe(
         (resp) => {
