@@ -1,7 +1,7 @@
 <app-header></app-header>
 <p>confirmation-page works!</p>
 
-<div class="cp-container container">
+<div class="cp-container container" *ngIf="transactionSuccess">
     <div class="cp-logo">book <span>my</span> movie</div>
     <div class="cp-confirm">Your booking is confirmed!</div>
     <div class="cp-bookingid">

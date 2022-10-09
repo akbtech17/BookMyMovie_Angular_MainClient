@@ -19,13 +19,7 @@ export class SeatBookingComponent implements OnInit {
   seatMap?: any[];
   selectedSeats?: string[] = [];
 
-  transactionDetails: ITransaction = {
-    customerId:0,
-    transactionId:0,
-    transactionTime:"",
-    movieId: 0,
-    seats: []
-  }
+  
 
 
   constructor(private movieService: MovieService, private toastr: ToastrService, private activatedRoute: ActivatedRoute, private router: Router, private transactionService: TransactionService) { }
@@ -82,35 +76,14 @@ export class SeatBookingComponent implements OnInit {
         });
         return;
       }
-      else {
-        this.toastr.success(`Booked ${this.selectedSeats} ${this.selectedSeats.length == 1 ? 'seat' : 'seats'} for you`,`Booking Confirmed`, {
-          timeOut: 8000,
-        });
-      }
+      
 
       TransactionStore.selectedSeats = this.selectedSeats;
       TransactionStore.noOfSelectedSeats = this.selectedSeats.length;
       TransactionStore.totalCost = TransactionStore.seatCost*TransactionStore.noOfSelectedSeats;
 
       // update the transaction details from the store
-      this.transactionDetails.customerId = TransactionStore.customerId;
-      this.transactionDetails.movieId = TransactionStore.movieId;
-      this.transactionDetails.transactionTime = "2022-09-03T12:45:56";
-      this.transactionDetails.transactionId = 0;
-      this.transactionDetails.seats = TransactionStore.selectedSeats;
-
-      this.transactionService.CreateTransaction(this.transactionDetails).subscribe(
-        (resp) => {
-          this.toastr.success('Booking Confirmed','Success', {
-            timeOut: 10000,
-          });
-        },
-        (err) => {
-          this.toastr.error('Something went wrong','Error', {
-            timeOut: 10000,
-          })
-        }
-      )
+      
 
       this.router.navigate(["/confirm"]);
   }
