@@ -10,6 +10,7 @@ import { MovieService } from 'src/app/movie.service';
   styleUrls: ['./admin-editmovie.component.css']
 })
 export class AdminEditmovieComponent implements OnInit {
+  theatreTypeList: string[] = ["2D", "3D", "4D MAX", "IMAX"]
   movieData : IMovie = {
     movieId: 0,
     movieName: "",

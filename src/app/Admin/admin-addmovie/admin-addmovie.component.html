@@ -211,9 +211,9 @@
                     </div>
                 </div>
 
-                <div class="input-group am-form-row mb-3">  
-                    <div class="form-text am-form-row-label">Theatre Type</div>
-                    <input 
+                <div class="input-group am-form-row-select mb-3">  
+                    <div class="form-text am-form-row-label-select">Theatre Type</div>
+                    <select 
                     type="text" 
                     name="movieType"  
                     class="form-control am-form-row-input sty1" 
@@ -224,8 +224,10 @@
                     maxlength="30"
                     #theatreTypeTest="ngModel" 
                     > 
+                    <option *ngFor="let theatreType of theatreTypeList" [value]="theatreType">{{theatreType}}</option>
+                    </select>
                 </div>
-                <div class="validations" style="margin-bottom: 0.8rem;">
+                <!-- <div class="validations" style="margin-bottom: 0.8rem;">
                     <div class="form-text text-danger" *ngIf="theatreTypeTest.errors?.['required']&&(theatreTypeTest.dirty || theatreTypeTest.touched)">
                       Theatre type is required
                     </div>
@@ -235,7 +237,7 @@
                     <div class="form-text text-danger" *ngIf="theatreTypeTest.errors?.['pattern']&&(theatreTypeTest.invalid || theatreTypeTest.dirty || theatreTypeTest.touched)">
                       Theatre type is invalid
                     </div>
-                </div>
+                </div> -->
 
                 <div class="row">  
                     <div class="col-6">  

@@ -10,20 +10,6 @@ import { MovieService } from 'src/app/movie.service';
   styleUrls: ['./admin-addmovie.component.css']
 })
 export class AdminAddmovieComponent implements OnInit {
-  // movieData : IMovie = {
-  //   movieId: 9,
-  //   movieName: "Brahmastra",
-  //   releaseDate: "",
-  //   ratings: 78,
-  //   genres: "Action, Adventure, Fantasy",
-  //   imageUrl: "image2.jpg",
-  //   costPerSeat: 750,
-  //   showTime: "",
-  //   duration: "2h 47m",
-  //   ageRating: "UA",
-  //   language: "",
-  //   movieType: ""
-  // }
   movieData : IMovie = {
     movieId: 0,
     movieName: "",
@@ -36,8 +22,9 @@ export class AdminAddmovieComponent implements OnInit {
     duration: "",
     ageRating: "",
     language: "",
-    movieType: ""
+    movieType: "2D"
   }
+  theatreTypeList: string[] = ["2D", "3D", "4D MAX", "IMAX"]
   constructor(private movieService: MovieService, private router: Router, private toastr: ToastrService) { }
 
   ngOnInit(): void {
@@ -50,7 +37,7 @@ export class AdminAddmovieComponent implements OnInit {
         this.toastr.success('Movie added successfuly','Success!', {
           timeOut: 3000,
         });
-        // this.router.navigate(["admin/movielist"])
+        this.router.navigate(["admin/movielist"])
       },
       (err) => {
         this.toastr.error('Some internal error happened!','Error!', {

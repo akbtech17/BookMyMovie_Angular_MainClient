@@ -8,3 +8,10 @@
 .em-form-row-input {
     flex: 0.7;
 }
+
+.em-form-row-select {
+    display: flex;
+}
+.em-form-row-label-select{
+    flex: 0.42;
+}
