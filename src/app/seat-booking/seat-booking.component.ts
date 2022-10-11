@@ -18,6 +18,9 @@ export class SeatBookingComponent implements OnInit {
   movieId: number = 0;
   seatMap?: any[];
   selectedSeats?: string[] = [];
+  col: number[] = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+  row: number[] = [0,16,32,48]
+  index: number = 0
 
   
 
