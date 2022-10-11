@@ -22,7 +22,7 @@ export class AdminAddmovieComponent implements OnInit {
     duration: "",
     ageRating: "",
     language: "",
-    movieType: "2D"
+    movieType: "Choose Theatre Type"
   }
   theatreTypeList: string[] = ["2D", "3D", "4D MAX", "IMAX"]
   constructor(private movieService: MovieService, private router: Router, private toastr: ToastrService) { }

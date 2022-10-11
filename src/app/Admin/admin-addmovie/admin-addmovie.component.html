@@ -224,6 +224,7 @@
                     maxlength="30"
                     #theatreTypeTest="ngModel" 
                     > 
+                    <option selected="true" disabled="true">Choose Theatre Type</option>
                     <option *ngFor="let theatreType of theatreTypeList" [value]="theatreType">{{theatreType}}</option>
                     </select>
                 </div>
