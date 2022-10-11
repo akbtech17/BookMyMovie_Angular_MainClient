@@ -11,4 +11,5 @@ export interface IMovie {
     ageRating: string;
     language: string;
     movieType: string;
+    isAdult: boolean;
 }

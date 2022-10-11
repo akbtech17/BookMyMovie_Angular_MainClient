@@ -15,3 +15,8 @@
 .em-form-row-label-select{
     flex: 0.42;
 }
+
+.em-checkbox{ 
+    height: 30px;
+    width: 30px;
+}

@@ -240,6 +240,15 @@
                     </div>
                 </div> -->
 
+                <div class="input-group am-form-row mb-4 mt-2"> 
+                  <div class="form-text am-form-row-label">Above 18</div> 
+                  <input class="am-checkbox"
+                  type="checkbox"
+                  [(ngModel)]="movieData.isAdult"
+                  [ngModelOptions]="{standalone: true}"/> 
+                </div>
+
+
                 <div class="row">  
                     <div class="col-6">  
                         <button type="submit" class="btn btn-success px-4">Add Movie</button>  

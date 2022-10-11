@@ -23,7 +23,8 @@ export class AdminEditmovieComponent implements OnInit {
     duration: "",
     ageRating: "",
     language: "",
-    movieType: ""
+    movieType: "",
+    isAdult: false
   }
   movieId?: number;
   constructor(private movieService: MovieService, private activatedRoute: ActivatedRoute, private toastr: ToastrService, private router: Router) { }

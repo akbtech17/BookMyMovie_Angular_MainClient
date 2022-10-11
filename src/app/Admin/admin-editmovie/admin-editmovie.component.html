@@ -237,6 +237,13 @@
                       Theatre type is invalid
                     </div>
                 </div> -->
+                <div class="input-group em-form-row mb-4 mt-2"> 
+                  <div class="form-text em-form-row-label">Above 18</div> 
+                  <input class="em-checkbox"
+                  type="checkbox"
+                  [(ngModel)]="movieData.isAdult"
+                  [ngModelOptions]="{standalone: true}"/> 
+                </div>
 
                 <div class="row">  
                     <div class="col-6">  
