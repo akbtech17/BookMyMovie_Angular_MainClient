@@ -8,3 +8,8 @@
     transition: 0.3s;
     transform: scale(1.01);
 }
+
+
+.center-align {
+    text-align: center;
+}

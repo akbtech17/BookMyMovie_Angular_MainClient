@@ -5,22 +5,23 @@
         <table class="table">
             <thead class="head">
                 <tr>
-                    <th>Sno</th>
-                    <th>Name</th>
-                    <th>Release Date</th>
-                    <th>Seat Cost</th>
-                    <th>Age Rating</th>
-                    <th>Likes</th>
+                    <th class="center-align">Sno</th>
+                    <th >Name</th>
+                    <th class="center-align">Release Date</th>
+                    <th class="center-align">Seat Cost</th>
+                    <th class="center-align">Age Rating</th>
+                    <th class="center-align">Likes</th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let movie of movies; index as indexOfelement;" class="amovielist-row" [routerLink]="['/admin/movie-details/',movie.movieId]">
-                    <td>{{indexOfelement+1}}</td>
+                    <td class="center-align">{{indexOfelement+1}}</td>
                     <td>{{movie.movieName}}</td>
-                    <td>{{movie.releaseDate| date: 'dd/MM/yyyy'}}</td>
-                    <td>{{movie.costPerSeat|currency:"INR":"symbol"}}</td>
-                    <td>{{movie.ageRating}}</td>
-                    <td>{{movie.ratings}}</td>
+                    <!-- <td class="center-align">{{movie.releaseDate| date: 'dd/MM/yyyy'}}</td> -->
+                    <td class="center-align">{{formatDate(movie.releaseDate)}}</td>
+                    <td class="center-align">{{movie.costPerSeat| currency:"INR":"symbol"}}</td>
+                    <td class="center-align">{{movie.ageRating}}</td>
+                    <td class="center-align">{{movie.ratings}}%</td>
                 </tr> 
             </tbody>
         </table>
