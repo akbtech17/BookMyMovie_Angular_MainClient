@@ -26,7 +26,7 @@
                 <div class="form-text text-danger" *ngIf="firstnametest.errors?.['required']&&(firstnametest.dirty || firstnametest.touched)">
                   Name is required
                 </div>
-                <div class="form-text text-danger" *ngIf="firstnametest.errors?.['minlength']&&(firstnametest.invalid || firstnametest.dirty || emailtest.touched)">
+                <div class="form-text text-danger" *ngIf="firstnametest.errors?.['minlength']&&(firstnametest.invalid || firstnametest.dirty || firstnametest.touched)">
                   Min Length should be 3
                 </div>
               </div>
