@@ -27,6 +27,7 @@ export class ConfirmationPageComponent implements OnInit {
       this.transactionDetails.movieId = TransactionStore.movieId;
       this.transactionDetails.transactionTime = "2022-09-03T12:45:56";
       this.transactionDetails.transactionId = 0;
+      console.log(TransactionStore.selectedSeats);
       this.transactionDetails.seats = TransactionStore.selectedSeats;
 
       this.transactionService.CreateTransaction(this.transactionDetails).subscribe(
