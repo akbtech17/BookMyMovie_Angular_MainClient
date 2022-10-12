@@ -22,18 +22,18 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'movies-list', component: MoviesListComponent },
   { path: 'movie-details/:movieId', component: MovieDetailsComponent, canActivate:[ValidateUserSignInGuard] },
-  { path: 'sbook/:movieId', component: SeatBookingComponent },
-  { path: 'confirm', component: ConfirmationPageComponent },
+  { path: 'sbook/:movieId', component: SeatBookingComponent, canActivate:[ValidateUserSignInGuard] },
+  { path: 'confirm', component: ConfirmationPageComponent,canActivate:[ValidateUserSignInGuard] },
   { 
     path : 'admin', 
     component: AdminHomeComponent,
     children: [
       {path:'signin', component:AdminSigninComponent},
-      {path:'addmovie', component:AdminAddmovieComponent},
-      {path:'editmovie/:movieId', component:AdminEditmovieComponent},
-      {path:'movielist', component:AdminMovielistComponent},
-      {path:'removemovie/:movieId', component:AdminRemovemovieComponent},
-      {path:'movie-details/:movieId', component:AdminMoviedetailsComponent},
+      {path:'addmovie', component:AdminAddmovieComponent,canActivate:[ValidateAdminSignInGuard]},
+      {path:'editmovie/:movieId', component:AdminEditmovieComponent, canActivate:[ValidateAdminSignInGuard]},
+      {path:'movielist', component:AdminMovielistComponent, canActivate:[ValidateAdminSignInGuard]},
+      {path:'removemovie/:movieId', component:AdminRemovemovieComponent, canActivate:[ValidateAdminSignInGuard]},
+      {path:'movie-details/:movieId', component:AdminMoviedetailsComponent, canActivate:[ValidateAdminSignInGuard]},
 
 
       {path: '', redirectTo: 'movielist', pathMatch: 'full' },
