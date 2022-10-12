@@ -32,6 +32,7 @@ export class AdminRemovemovieComponent implements OnInit {
         this.toastr.error('Internal Error','Error!', {
           timeOut: 3000,
         });
+        this.router.navigate(['/admin/movie-details/'+this.movieId]);
       }
     )
   }
