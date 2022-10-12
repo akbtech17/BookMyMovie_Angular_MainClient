@@ -7,7 +7,7 @@
         <div class="card p-4">  
           <div class="card-body">  
             <form name="form"  #f="ngForm" (submit)="onSubmit()" style="line-height: 0.8rem;">   
-              <h1 style="text-align:center; color:#e72929;">Sign In</h1>  
+              <h1 style="text-align:center; color:#e72929;">Register</h1>  
 
               <div class="input-group mb-3" style="margin-bottom: 0rem;">  
                 <input 
@@ -95,6 +95,35 @@
                 </div>
               </div>
 
+              <div class="input-group mb-4" style="margin-bottom: 0rem;" style="line-height: 0rem;">  
+                <input 
+                type="confirm password" 
+                name="Confirm Password"  
+                class="form-control" 
+                placeholder="Confirm Password" 
+                required 
+                [(ngModel)]="confirmPassword"
+                #confirmpasstest="ngModel"
+                minlength="8" 
+                maxlength="20"
+                pattern1="(?=.*[a-z])"   
+                pattern2="(?=.*[A-Z])"
+                pattern3="(?=.*\d)"
+                pattern4="(?=.*\W)"
+                >  
+              </div>  
+              <div class="validations" style="margin-bottom: 0.8rem;">
+                <div class="form-text text-danger" *ngIf="confirmpasstest.errors?.['required']&&(confirmpasstest.dirty || confirmpasstest.touched)">
+                  Password is required
+                </div>
+                <div class="form-text text-danger" *ngIf="confirmpasstest.errors?.['minlength']&&(confirmpasstest.invalid || confirmpasstest.dirty || confirmpasstest.touched)">
+                  Min Length should be 8
+                </div>
+                <div class="form-text text-danger" *ngIf="!arePasswordEqual()">
+                  Password must be same
+                </div>
+              </div>
+
               <div class="register-gender-div">
                 <div class="register-gender-label">
                   <h5>Gender</h5>
@@ -108,10 +137,10 @@
               
               <div class="row">  
                 <div class="col-6">  
-                  <button type="submit" class="btn btn-success px-4" [disabled]="emailtest.invalid || passtest.invalid">Login</button>  
+                  <button type="submit" class="btn btn-success px-4" [disabled]="emailtest.invalid || passtest.invalid || !arePasswordEqual()">Register me</button>  
                 </div>  
                 <div class="col-6 text-right">  
-                  <button type="button" class="btn btn-link px-4" routerLink="/register">Register?</button>  
+                  <button type="button" class="btn btn-link px-4" routerLink="/signin">Sign In?</button>  
                 </div>  
               </div>   
             </form>  

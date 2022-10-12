@@ -17,12 +17,18 @@ export class RegisterComponent implements OnInit {
     password: "",
     gender: ""
   };
+  confirmPassword: string = ""
   constructor(private router: Router, private customerService: CustomerService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
   }
 
   onSubmit() {
+    if(this.arePasswordEqual() == false) {
+      this.toastr.error('Password entered are not matching','Try again' ,{
+        timeOut: 3000,
+      });
+    } 
     this.customerService.registerCustomer(this.customerDetails).subscribe(
       (data) => {
           this.toastr.success('Registration is Successful!', 'Success', {
@@ -37,5 +43,9 @@ export class RegisterComponent implements OnInit {
         });
       }
     )
+    }
+
+    arePasswordEqual() :boolean {
+      return this.confirmPassword == this.customerDetails.password;
     }
 }
