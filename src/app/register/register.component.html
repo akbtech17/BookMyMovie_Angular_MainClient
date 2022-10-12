@@ -11,23 +11,22 @@
 
               <div class="input-group mb-3" style="margin-bottom: 0rem;">  
                 <input 
-                type="email" 
-                name="Email" 
+                type="firstName" 
+                name="FirstName" 
                 class="form-control sty1" 
                 placeholder="First Name" 
                 required 
                 [(ngModel)]="customerDetails.firstName" 
-                pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
                 minlength="3" 
                 maxlength="30"
-                #emailtest="ngModel"
+                #firstnametest="ngModel"
                 > 
               </div>
               <div class="validations" style="margin-bottom: 0.8rem;">
-                <div class="form-text text-danger" *ngIf="emailtest.errors?.['required']&&(emailtest.dirty || emailtest.touched)">
+                <div class="form-text text-danger" *ngIf="firstnametest.errors?.['required']&&(firstnametest.dirty || firstnametest.touched)">
                   Name is required
                 </div>
-                <div class="form-text text-danger" *ngIf="emailtest.errors?.['minlength']&&(emailtest.invalid || emailtest.dirty || emailtest.touched)">
+                <div class="form-text text-danger" *ngIf="firstnametest.errors?.['minlength']&&(firstnametest.invalid || firstnametest.dirty || emailtest.touched)">
                   Min Length should be 3
                 </div>
               </div>
