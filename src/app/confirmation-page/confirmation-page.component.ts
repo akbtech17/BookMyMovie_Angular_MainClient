@@ -43,6 +43,7 @@ export class ConfirmationPageComponent implements OnInit {
           this.toastr.error('Something went wrong','Error', {
             timeOut: 10000,
           })
+          this.router.navigate(["/movies-list"]);
         }
       )
   }
