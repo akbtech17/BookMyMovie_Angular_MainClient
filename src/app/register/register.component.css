@@ -1,0 +1,19 @@
+.register-gender-div{
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 1.5rem;
+}
+
+.register-gender-label{
+    margin-right: 2rem;
+}
+
+.register-gender-options > input{
+    margin: 6px;
+}
+
+.register-gender-options > input:hover{
+    cursor: pointer;
+}
+
+
