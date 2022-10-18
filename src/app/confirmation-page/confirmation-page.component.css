@@ -217,3 +217,22 @@
     cursor: pointer;
     opacity: 0.95;
 }
+
+.cp-print {
+    background-color:#e72929;
+    border-radius: 1rem;
+    outline: none;
+    border: none;
+    padding: 0.5rem 1rem;
+    color: white;
+    margin: 1rem;
+}
+
+.cp-print:hover{
+    outline: none;
+    border: none;
+    transition: 0.8s;
+    transform: scale(1.1);
+    cursor: pointer;
+    opacity: 0.95;
+}

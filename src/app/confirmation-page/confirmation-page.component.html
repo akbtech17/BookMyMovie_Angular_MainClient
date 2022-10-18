@@ -1,6 +1,6 @@
 <app-header></app-header>
 
-<div class="cp-container container" *ngIf="transactionSuccess">
+<div id="print-section" class="cp-container container" *ngIf="transactionSuccess">
     <div class="cp-logo">book <span>my</span> movie</div>
     <div class="cp-confirm">Your booking is confirmed!</div>
     <div class="cp-bookingid">
@@ -51,6 +51,7 @@
     </div>
 
     <div class="cp-back" (click)="OnClick()">Back to Dashboard</div>
+    <button printSectionId="print-section" ngxPrint class="cp-print">Print</button>
 </div>
 
 <div class="container" style="margin: 2rem auto;" *ngIf="!transactionSuccess">

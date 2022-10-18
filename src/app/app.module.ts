@@ -23,6 +23,7 @@ import { AdminMoviedetailsComponent } from './Admin/admin-moviedetails/admin-mov
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ConfirmationPageComponent } from './confirmation-page/confirmation-page.component';
+import { NgxPrintModule } from 'ngx-print';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { ConfirmationPageComponent } from './confirmation-page/confirmation-page
     FormsModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(), // ToastrModule added
+    NgxPrintModule
   ],
   providers: [],
   bootstrap: [AppComponent]
