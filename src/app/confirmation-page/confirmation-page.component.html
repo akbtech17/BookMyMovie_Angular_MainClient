@@ -16,7 +16,7 @@
                 <div class="cp-movie-title">{{transactionResponse.movieName}} ({{transactionResponse.ageRating}})</div>
                 <div class="cp-movie-venue">
                     <!-- <div class="cp-time">11:30pm | Sun, 22 May, 2022</div> -->
-                    <div class="cp-time">{{transactionResponse.showTime}}</div>
+                    <div class="cp-time">{{transactionResponse.showTime | mydatepipe}} {{transactionResponse.showTime | date: 'shortTime'}}</div>
                     <div class="cp-address">Cinepolis: WESTEND Mall Aundh, Pune(AUDI 03) Pune, Pune</div>
                 </div>
                 <div class="cp-seat">EXECUTIVE - {{transactionResponse.seats}}</div>

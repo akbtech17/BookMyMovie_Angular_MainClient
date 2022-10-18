@@ -16,7 +16,7 @@
         <div class="amd-movie-pricing-details">
             <div class="amd-showtime-language">
                 <div class="amd-show-time">
-                    {{movieDetails.showTime | date: 'short'}}
+                  {{movieDetails.showTime | mydatepipe}} {{movieDetails.showTime | date: 'shortTime'}}
                 </div>
                 <!-- {{movieDetails.costPerSeat | currency:'INR'}} -->
                 <div class="amd-movie-price-age">

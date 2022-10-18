@@ -23,8 +23,12 @@
                     </div>
                 </div>
                 <div class="ml-show-time">
-                    {{movie.showTime | date: 'short'}}
+                    {{movie.showTime | mydatepipe}}
                 </div>
+                <div class="ml-show-time">
+                    {{movie.showTime | date: 'shortTime'}}
+                </div>
+                
                 <div class="ml-movie-pricing-details">
                     <!-- {{movie.costPerSeat | currency:'INR'}} -->
                     <div class="ml-movie-price-age">
