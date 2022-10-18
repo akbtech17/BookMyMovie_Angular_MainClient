@@ -24,6 +24,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ConfirmationPageComponent } from './confirmation-page/confirmation-page.component';
 import { NgxPrintModule } from 'ngx-print';
+import { MydatepipePipe } from './mydatepipe.pipe';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { NgxPrintModule } from 'ngx-print';
     AdminRemovemovieComponent,
     AdminMoviedetailsComponent,
     ConfirmationPageComponent,
+    MydatepipePipe,
   ],
   imports: [
     BrowserModule,
