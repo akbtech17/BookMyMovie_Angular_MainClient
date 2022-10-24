@@ -8,7 +8,7 @@
           <div class="card-body">  
             <form name="form"  #f="ngForm" (submit)="onSubmit()" style="line-height: 0.8rem;">   
               <h1 style="text-align:center; color:#e72929;">Admin Sign In</h1>  
-              <div class="input-group mb-3" style="margin-bottom: 0rem;">  
+              <div class="input-group mb-3 acs-flex" style="margin-bottom: 0rem;">  
                 <input 
                 type="email" 
                 name="Email" 
@@ -18,23 +18,22 @@
                 [(ngModel)]="creds.email" 
                 pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
                 minlength="5" 
-                maxlength="30"
+                maxlength="100"
                 #emailtest="ngModel"
                 > 
-              </div>
-              <div class="validations" style="margin-bottom: 0.8rem;">
                 <div class="form-text text-danger" *ngIf="emailtest.errors?.['required']&&(emailtest.dirty || emailtest.touched)">
-                  Email is required
+                  * Email is required
                 </div>
                 <div class="form-text text-danger" *ngIf="emailtest.errors?.['minlength']&&(emailtest.invalid || emailtest.dirty || emailtest.touched)">
-                  Min Length should be 3
+                  * Min Length must be 3
                 </div>
                 <div class="form-text text-danger" *ngIf="emailtest.errors?.['pattern']&&(emailtest.invalid || emailtest.dirty || emailtest.touched)">
-                  Email is invalid
+                  * Email is invalid
                 </div>
               </div>
+      
 
-              <div class="input-group mb-4" style="margin-bottom: 0rem;" style="line-height: 0rem;">  
+              <div class="input-group mb-3 acs-flex" style="margin-bottom: 0rem">  
                 <input 
                 type="password" 
                 name="Password"  
@@ -50,13 +49,11 @@
                 pattern3="(?=.*\d)"
                 pattern4="(?=.*\W)"
                 >  
-              </div>  
-              <div class="validations" style="margin-bottom: 0.8rem;">
                 <div class="form-text text-danger" *ngIf="passtest.errors?.['required']&&(passtest.dirty || passtest.touched)">
-                  Password is required
+                  * Password is required
                 </div>
                 <div class="form-text text-danger" *ngIf="passtest.errors?.['minlength']&&(passtest.invalid || passtest.dirty || passtest.touched)">
-                  Min Length should be 8
+                  * Min Length must be 8
                 </div>
                 <div class="form-text text-danger" *ngIf="passtest.errors?.['pattern1']&&(passtest.invalid || passtest.dirty || passtest.touched)">
                   Password must include atleast one lowercase character
@@ -70,12 +67,12 @@
                 <div class="form-text text-danger" *ngIf="passtest.errors?.['pattern4']&&(passtest.invalid || passtest.dirty || passtest.touched)">
                   Password must include atleast one special character
                 </div>
-              </div>
+              </div>  
 
               <div class="row">  
                 <div class="col-6">  
                   <button type="submit" class="btn btn-success px-4" [disabled]="emailtest.invalid || passtest.invalid">Login</button>  
-                </div>  
+                </div>   
               </div>   
             </form>  
           </div>  
