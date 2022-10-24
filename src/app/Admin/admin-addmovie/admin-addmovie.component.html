@@ -37,7 +37,7 @@
                   <div class="form-text am-form-row-label">Release Date</div> 
                   <div class="am-flex">
                     <input  type="datetime-local" name="releaseDate" #selectedRDate="ngModel" class="form-control am-form-row-input"  placeholder="" required [(ngModel)]="movieData.releaseDate">
-                    <div class="form-text text-danger" *ngIf="selectedRDate.errors?.['required']">
+                    <div class="form-text text-danger" *ngIf="selectedRDate.errors?.['required']&&(selectedRDate.dirty || selectedRDate.touched)">
                       * Release Date is required
                     </div>
                   </div>
@@ -58,7 +58,7 @@
                       #ratingstest="ngModel" 
                     >
                     <div class="form-text text-danger" *ngIf="ratingstest.errors?.['required']&&(ratingstest.dirty || ratingstest.touched)">
-                      Ratings are required
+                      * Ratings are required
                     </div>
                     <div class="form-text text-danger" *ngIf="ratingstest.errors?.['min']&&(ratingstest.invalid || ratingstest.dirty || ratingstest.touched)">
                       * Min value cannot be less than 0
@@ -85,27 +85,38 @@
                     #genrestest="ngModel" 
                     > 
                     <div class="form-text text-danger" *ngIf="genrestest.errors?.['required']&&(genrestest.dirty || genrestest.touched)">
-                      Genre is required
+                      * Genre is required
                     </div>
                     <div class="form-text text-danger" *ngIf="genrestest.errors?.['minlength']&&(genrestest.invalid || genrestest.dirty || genrestest.touched)">
-                      Min length must be 3
+                      * Min length must be 3
                     </div>
                   </div>
                 </div>  
 
-                <div class="input-group am-form-row mb-4 mt-2"> 
-                    
-                </div>
-                <div class="validations" style="margin-bottom: 0.8rem;">
-                    
+                <div class="input-group mb-3 am-form-row">  
+                  <div class="form-text am-form-row-label">Image Url</div>
+                  <div class="am-flex">
+                    <input 
+                    type="text" 
+                    name="imageUrl"  
+                    class="form-control am-form-row-input sty1" 
+                    placeholder="eg, image1.jpg" 
+                    required
+                    minlength="5" 
+                    [(ngModel)]="movieData.imageUrl"
+                    #imageurlTest="ngModel"> 
+                    <div class="form-text text-danger" *ngIf="imageurlTest.errors?.['required']&&(imageurlTest.dirty || imageurlTest.touched)">
+                      * Image URL is required
+                    </div>
+                    <div class="form-text text-danger" *ngIf="imageurlTest.errors?.['minlength']&&(imageurlTest.invalid || imageurlTest.dirty || genrestest.touched)">
+                      * Min length must be 5
+                    </div>
+                  </div>
                 </div>
 
-                <div class="input-group am-form-row mb-3">  
-                    <div class="form-text am-form-row-label">Image Url</div>
-                    <input type="text" name="imageUrl"  class="form-control am-form-row-input sty1" placeholder="Image Url" required [(ngModel)]="movieData.imageUrl"> 
-                </div>
-                <div class="input-group am-form-row mb-4 mt-2"> 
-                    <div class="form-text am-form-row-label">Cost Per Seat (₹)</div> 
+                <div class="input-group mb-3 am-form-row">  
+                  <div class="form-text am-form-row-label">Ticket Cost</div>
+                  <div class="am-flex">
                     <input 
                     type="number" 
                     name="costPerSeat"  
@@ -113,35 +124,38 @@
                     placeholder="eg, ₹230" 
                     required 
                     [(ngModel)]="movieData.costPerSeat"
-                    minlength="2" 
-                    maxlength="30"
+                    min="0" 
+                    max="2000"
                     #costTest="ngModel" 
                     > 
-                </div>
-                <div class="validations" style="margin-bottom: 0.8rem;">
                     <div class="form-text text-danger" *ngIf="costTest.errors?.['required']&&(costTest.dirty || costTest.touched)">
-                      Cost is required
+                      * Cost is required
                     </div>
-                    <div class="form-text text-danger" *ngIf="costTest.errors?.['minlength']&&(costTest.invalid || costTest.dirty || costTest.touched)">
-                      Min Length should be 2
+                    <div class="form-text text-danger" *ngIf="costTest.errors?.['min']&&(costTest.invalid || costTest.dirty || costTest.touched)">
+                      * Min value cannot be less than 0
                     </div>
-                    <div class="form-text text-danger" *ngIf="costTest.errors?.['pattern']&&(costTest.invalid || costTest.dirty || costTest.touched)">
-                      Cost is invalid
+                    <div class="form-text text-danger" *ngIf="costTest.errors?.['max']&&(costTest.invalid || costTest.dirty || costTest.touched)">
+                      * Max value cannot be more than 2000
                     </div>
-                </div> 
+                  </div>
+                </div>
 
-                <div class="input-group am-form-row mb-3">  
-                    <div class="form-text am-form-row-label">Show Time</div>
+                <div class="input-group mb-3 am-form-row">  
+                  <div class="form-text am-form-row-label">Show Time</div>
+                  <div class="am-flex">
                     <input 
                     type="datetime-local" 
                     name="showTime"  
                     class="form-control am-form-row-input sty1" 
                     required 
                     [(ngModel)]="movieData.showTime"> 
+                    
+                  </div>
                 </div>
 
-                <div class="input-group am-form-row mb-4 mt-2">  
-                    <div class="form-text am-form-row-label">Duration</div>
+                <div class="input-group mb-3 am-form-row">  
+                  <div class="form-text am-form-row-label">Duration</div>
+                  <div class="am-flex">
                     <input 
                     type="text" 
                     name="duration"  
@@ -153,8 +167,6 @@
                     maxlength="30"
                     #durationTest="ngModel" 
                     > 
-                </div>
-                <div class="validations" style="margin-bottom: 0.8rem;">
                     <div class="form-text text-danger" *ngIf="durationTest.errors?.['required']&&(durationTest.dirty || durationTest.touched)">
                       Duration is required
                     </div>
@@ -163,11 +175,13 @@
                     </div>
                     <div class="form-text text-danger" *ngIf="durationTest.errors?.['pattern']&&(durationTest.invalid || durationTest.dirty || durationTest.touched)">
                       Duration is invalid
-                    </div>
-                </div> 
+                    </div> 
+                  </div>
+                </div>
 
-                <div class="input-group am-form-row mb-3">  
-                    <div class="form-text am-form-row-label">Age Rating</div>
+                <div class="input-group mb-3 am-form-row">  
+                  <div class="form-text am-form-row-label">Age Rating</div>
+                  <div class="am-flex">
                     <input 
                     type="text" 
                     name="ageRating"  
@@ -179,8 +193,6 @@
                     maxlength="30"
                     #ageRatingTest="ngModel" 
                     > 
-                </div>
-                <div class="validations" style="margin-bottom: 0.8rem;">
                     <div class="form-text text-danger" *ngIf="ageRatingTest.errors?.['required']&&(ageRatingTest.dirty || ageRatingTest.touched)">
                       Age Rating is required
                     </div>
@@ -190,10 +202,12 @@
                     <div class="form-text text-danger" *ngIf="ageRatingTest.errors?.['pattern']&&(ageRatingTest.invalid || ageRatingTest.dirty || ageRatingTest.touched)">
                       Age Rating is invalid
                     </div>
+                  </div>
                 </div>
 
-                <div class="input-group am-form-row mb-4 mt-2"> 
-                    <div class="form-text am-form-row-label">Language</div> 
+                <div class="input-group mb-3 am-form-row">  
+                  <div class="form-text am-form-row-label">Language</div>
+                  <div class="am-flex">
                     <input  
                     type="text" 
                     name="language"  
@@ -205,8 +219,6 @@
                     maxlength="30"
                     #LanguageTest="ngModel" 
                     > 
-                </div>
-                <div class="validations" style="margin-bottom: 0.8rem;">
                     <div class="form-text text-danger" *ngIf="LanguageTest.errors?.['required']&&(LanguageTest.dirty || LanguageTest.touched)">
                       Language is required
                     </div>
@@ -216,10 +228,12 @@
                     <div class="form-text text-danger" *ngIf="LanguageTest.errors?.['pattern']&&(LanguageTest.invalid || LanguageTest.dirty || LanguageTest.touched)">
                       Language is invalid
                     </div>
+                  </div>
                 </div>
 
-                <div class="input-group am-form-row-select mb-3">  
-                    <div class="form-text am-form-row-label-select">Theatre Type</div>
+                <div class="input-group mb-3 am-form-row">  
+                  <div class="form-text am-form-row-label">Language</div>
+                  <div class="am-flex">
                     <select 
                     type="text" 
                     name="movieType"  
@@ -234,26 +248,20 @@
                     <option selected="true" disabled="true">Choose Theatre Type</option>
                     <option *ngFor="let theatreType of theatreTypeList" [value]="theatreType">{{theatreType}}</option>
                     </select>
+                    
+                  </div>
                 </div>
-                <!-- <div class="validations" style="margin-bottom: 0.8rem;">
-                    <div class="form-text text-danger" *ngIf="theatreTypeTest.errors?.['required']&&(theatreTypeTest.dirty || theatreTypeTest.touched)">
-                      Theatre type is required
-                    </div>
-                    <div class="form-text text-danger" *ngIf="theatreTypeTest.errors?.['minlength']&&(theatreTypeTest.invalid || theatreTypeTest.dirty || theatreTypeTest.touched)">
-                      Min Length should be 2
-                    </div>
-                    <div class="form-text text-danger" *ngIf="theatreTypeTest.errors?.['pattern']&&(theatreTypeTest.invalid || theatreTypeTest.dirty || theatreTypeTest.touched)">
-                      Theatre type is invalid
-                    </div>
-                </div> -->
 
-                <div class="input-group am-form-row mb-4 mt-2"> 
-                  <div class="form-text am-form-row-label">Above 18</div> 
-                  <input class="am-checkbox"
-                  type="checkbox"
-                  [(ngModel)]="movieData.isAdult"
-                  [ngModelOptions]="{standalone: true}"/> 
+                <div class="input-group mb-3 am-form-row">  
+                  <div class="form-text am-form-row-label">Above 18</div>
+                  <div class="am-flex">
+                    <input class="am-checkbox"
+                    type="checkbox"
+                    [(ngModel)]="movieData.isAdult"
+                    [ngModelOptions]="{standalone: true}"/> 
+                  </div>
                 </div>
+
 
 
                 <div class="row">  
@@ -261,7 +269,7 @@
                         <button type="submit" class="btn btn-success px-4">Add Movie</button>  
                     </div>  
                     <div class="col-6 text-right">  
-                        <button type="button" class="btn btn-link px-4" routerLink="/admin/movielist">Cancel?</button>  
+                        <button type="button" class="btn btn-danger px-4" routerLink="/admin/movielist">Cancel?</button>  
                     </div>  
               </div>   
             </form>  
