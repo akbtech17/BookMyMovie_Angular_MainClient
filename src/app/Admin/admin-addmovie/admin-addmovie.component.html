@@ -11,64 +11,68 @@
                
                 <div class="input-group mb-3 am-form-row">  
                     <div class="form-text am-form-row-label">Movie Name</div>
-                    <input 
-                    type="text" 
-                    name="movieName"  
-                    class="form-control sty1 am-form-row-input" 
-                    placeholder="eg, Brahmastra" 
-                    required 
-                    [(ngModel)]="movieData.movieName"
-                    pattern=""
-                    minlength="5" 
-                    maxlength="30"
-                    #movienametest="ngModel" 
-                    > 
-                </div>
-                <div class="validations" style="margin-bottom: 0.8rem;">
-                    <div class="form-text text-danger" *ngIf="movienametest.errors?.['required']&&(movienametest.dirty || movienametest.touched)">
-                      Movie name is required
-                    </div>
-                    <div class="form-text text-danger" *ngIf="movienametest.errors?.['minlength']&&(movienametest.invalid || movienametest.dirty || movienametest.touched)">
-                      Min Length should be 3
-                    </div>
-                    <div class="form-text text-danger" *ngIf="movienametest.errors?.['pattern']&&(movienametest.invalid || movienametest.dirty || movienametest.touched)">
-                      Movie name is invalid
+                    <div class="am-flex">
+                      <input 
+                      type="text" 
+                      name="movieName"  
+                      class="form-control sty1 am-form-row-input" 
+                      placeholder="eg, Brahmastra" 
+                      required 
+                      [(ngModel)]="movieData.movieName"
+                      pattern=""
+                      minlength="5" 
+                      maxlength="30"
+                      #movienametest="ngModel" 
+                      > 
+                      <div class="form-text text-danger" *ngIf="movienametest.errors?.['required']&&(movienametest.dirty || movienametest.touched)">
+                        * Movie name is required
+                      </div>
+                      <div class="form-text text-danger" *ngIf="movienametest.errors?.['minlength']&&(movienametest.invalid || movienametest.dirty || movienametest.touched)">
+                        * Min length must be 3
+                      </div>
                     </div>
                 </div>
 
-                <div class="input-group mb-4 mt-2 am-form-row"> 
-                    <div class="form-text am-form-row-label">Release Date</div> 
-                    <input  type="datetime-local" name="releaseDate"  class="form-control am-form-row-input"  placeholder="" required [(ngModel)]="movieData.releaseDate">
+                <div class="input-group mb-3 am-form-row">  
+                  <div class="form-text am-form-row-label">Release Date</div> 
+                  <div class="am-flex">
+                    <input  type="datetime-local" name="releaseDate" #selectedRDate="ngModel" class="form-control am-form-row-input"  placeholder="" required [(ngModel)]="movieData.releaseDate">
+                    <div class="form-text text-danger" *ngIf="selectedRDate.errors?.['required']">
+                      * Release Date is required
+                    </div>
+                  </div>
                 </div>  
 
                 <div class="input-group mb-3 am-form-row">  
-                    <div class="form-text am-form-row-label">Ratings (%)</div>
+                  <div class="form-text am-form-row-label">Ratings (%)</div>
+                  <div class="am-flex">
                     <input 
-                    type="number" 
-                    name="ratings"  
-                    class="form-control am-form-row-input sty1" 
-                    placeholder="" 
-                    required 
-                    [(ngModel)]="movieData.ratings"
-                    minlength="1" 
-                    maxlength="3"
-                    #ratingstest="ngModel" 
-                    > 
-                </div>
-                <div class="validations" style="margin-bottom: 0.8rem;">
+                      type="number" 
+                      name="ratings"  
+                      class="form-control am-form-row-input sty1" 
+                      placeholder="" 
+                      required 
+                      [(ngModel)]="movieData.ratings"
+                      min="0" 
+                      max="100"
+                      #ratingstest="ngModel" 
+                    >
                     <div class="form-text text-danger" *ngIf="ratingstest.errors?.['required']&&(ratingstest.dirty || ratingstest.touched)">
                       Ratings are required
                     </div>
-                    <div class="form-text text-danger" *ngIf="ratingstest.errors?.['minlength']&&(ratingstest.invalid || ratingstest.dirty || ratingstest.touched)">
-                      Min Length should be 1
+                    <div class="form-text text-danger" *ngIf="ratingstest.errors?.['min']&&(ratingstest.invalid || ratingstest.dirty || ratingstest.touched)">
+                      * Min value cannot be less than 0
                     </div>
-                    <div class="form-text text-danger" *ngIf="ratingstest.errors?.['pattern']&&(ratingstest.invalid || ratingstest.dirty || ratingstest.touched)">
-                      Ratings are invalid
+                    <div class="form-text text-danger" *ngIf="ratingstest.errors?.['max']&&(ratingstest.invalid || ratingstest.dirty || ratingstest.touched)">
+                      * Max value cannot be more than 100
                     </div>
-                </div>
+                  </div>
+                </div>  
 
-                <div class="input-group am-form-row mb-4 mt-2"> 
-                    <div class="form-text am-form-row-label">Genres</div> 
+
+                <div class="input-group mb-3 am-form-row">  
+                  <div class="form-text am-form-row-label">Genres</div> 
+                  <div class="am-flex">
                     <input  
                     type="text" 
                     name="genres"  
@@ -80,17 +84,20 @@
                     maxlength="30"
                     #genrestest="ngModel" 
                     > 
-                </div>
-                <div class="validations" style="margin-bottom: 0.8rem;">
                     <div class="form-text text-danger" *ngIf="genrestest.errors?.['required']&&(genrestest.dirty || genrestest.touched)">
-                      Genres is required
+                      Genre is required
                     </div>
                     <div class="form-text text-danger" *ngIf="genrestest.errors?.['minlength']&&(genrestest.invalid || genrestest.dirty || genrestest.touched)">
-                      Min Length should be 3
+                      Min length must be 3
                     </div>
-                    <div class="form-text text-danger" *ngIf="genrestest.errors?.['pattern']&&(genrestest.invalid || genrestest.dirty || genrestest.touched)">
-                      Genres is invalid
-                    </div>
+                  </div>
+                </div>  
+
+                <div class="input-group am-form-row mb-4 mt-2"> 
+                    
+                </div>
+                <div class="validations" style="margin-bottom: 0.8rem;">
+                    
                 </div>
 
                 <div class="input-group am-form-row mb-3">  

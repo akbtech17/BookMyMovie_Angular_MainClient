@@ -5,9 +5,9 @@
     flex: 0.3;
 }
 
-.am-form-row-input {
-    flex: 0.7;
-}
+
+    
+
 
 .am-form-row-select {
     display: flex;
@@ -20,3 +20,23 @@
     height: 30px;
     width: 30px;
 }
+
+input.ng-invalid.ng-touched {
+    border: 1.5px solid #e72929;
+  }
+  
+  input:focus {
+    outline: none !important;
+    box-shadow: none;
+  }
+
+  .am-flex {
+    display: flex;
+    flex: 0.7;
+    flex-direction: column;
+  }
+  
+  .am-flex > div {
+    font-size: 0.95rem;
+    font-weight: bolder;
+  }
