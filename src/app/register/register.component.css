@@ -32,3 +32,12 @@
     font-weight: bolder;
     color:#e72929;
 }
+
+input.ng-invalid.ng-touched {
+    border: 1.5px solid #e72929;
+}
+
+input:focus {
+    outline: none !important;
+    box-shadow: none;
+}
