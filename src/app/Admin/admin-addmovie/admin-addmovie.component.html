@@ -115,7 +115,7 @@
                 </div>
 
                 <div class="input-group mb-3 am-form-row">  
-                  <div class="form-text am-form-row-label">Ticket Cost</div>
+                  <div class="form-text am-form-row-label">Ticket Cost (₹)</div>
                   <div class="am-flex">
                     <input 
                     type="number" 
@@ -141,15 +141,18 @@
                 </div>
 
                 <div class="input-group mb-3 am-form-row">  
-                  <div class="form-text am-form-row-label">Show Time</div>
+                  <div class="form-text am-form-row-label">Show Date & Time</div>
                   <div class="am-flex">
                     <input 
                     type="datetime-local" 
                     name="showTime"  
                     class="form-control am-form-row-input sty1" 
                     required 
-                    [(ngModel)]="movieData.showTime"> 
-                    
+                    [(ngModel)]="movieData.showTime"
+                    #showTimeTest="ngModel"> 
+                    <div class="form-text text-danger" *ngIf="showTimeTest.errors?.['required']&&(showTimeTest.dirty || showTimeTest.touched)">
+                      * Show Date & Time are required
+                    </div>
                   </div>
                 </div>
 
@@ -168,13 +171,13 @@
                     #durationTest="ngModel" 
                     > 
                     <div class="form-text text-danger" *ngIf="durationTest.errors?.['required']&&(durationTest.dirty || durationTest.touched)">
-                      Duration is required
+                      * Duration is required
                     </div>
                     <div class="form-text text-danger" *ngIf="durationTest.errors?.['minlength']&&(durationTest.invalid || durationTest.dirty || durationTest.touched)">
-                      Min Length should be 2
+                      * Min length must be 2
                     </div>
                     <div class="form-text text-danger" *ngIf="durationTest.errors?.['pattern']&&(durationTest.invalid || durationTest.dirty || durationTest.touched)">
-                      Duration is invalid
+                      * Duration is invalid
                     </div> 
                   </div>
                 </div>
@@ -194,13 +197,10 @@
                     #ageRatingTest="ngModel" 
                     > 
                     <div class="form-text text-danger" *ngIf="ageRatingTest.errors?.['required']&&(ageRatingTest.dirty || ageRatingTest.touched)">
-                      Age Rating is required
+                      * Age Rating is required
                     </div>
                     <div class="form-text text-danger" *ngIf="ageRatingTest.errors?.['minlength']&&(ageRatingTest.invalid || ageRatingTest.dirty || ageRatingTest.touched)">
-                      Min Length should be 2
-                    </div>
-                    <div class="form-text text-danger" *ngIf="ageRatingTest.errors?.['pattern']&&(ageRatingTest.invalid || ageRatingTest.dirty || ageRatingTest.touched)">
-                      Age Rating is invalid
+                      * Min length must be 2
                     </div>
                   </div>
                 </div>
@@ -220,35 +220,31 @@
                     #LanguageTest="ngModel" 
                     > 
                     <div class="form-text text-danger" *ngIf="LanguageTest.errors?.['required']&&(LanguageTest.dirty || LanguageTest.touched)">
-                      Language is required
+                      * Language is required
                     </div>
                     <div class="form-text text-danger" *ngIf="LanguageTest.errors?.['minlength']&&(LanguageTest.invalid || LanguageTest.dirty || LanguageTest.touched)">
-                      Min Length should be 5
-                    </div>
-                    <div class="form-text text-danger" *ngIf="LanguageTest.errors?.['pattern']&&(LanguageTest.invalid || LanguageTest.dirty || LanguageTest.touched)">
-                      Language is invalid
+                      * Min length must be 5
                     </div>
                   </div>
                 </div>
 
                 <div class="input-group mb-3 am-form-row">  
-                  <div class="form-text am-form-row-label">Language</div>
+                  <div class="form-text am-form-row-label">Theatre Type</div>
                   <div class="am-flex">
                     <select 
                     type="text" 
                     name="movieType"  
                     class="form-control am-form-row-input sty1" 
-                    placeholder="eg, 4D MAX" 
                     required 
                     [(ngModel)]="movieData.movieType"
-                    minlength="2" 
-                    maxlength="30"
                     #theatreTypeTest="ngModel" 
                     > 
-                    <option selected="true" disabled="true">Choose Theatre Type</option>
-                    <option *ngFor="let theatreType of theatreTypeList" [value]="theatreType">{{theatreType}}</option>
+                      <option selected="true" disabled="true">Choose Theatre Type</option>
+                      <option *ngFor="let theatreType of theatreTypeList" [value]="theatreType">{{theatreType}}</option>
                     </select>
-                    
+                    <!-- <div class="form-text text-danger" *ngIf="theatreTypeTest.dirty || theatreTypeTest.touched">
+                      * Theatre Type is required
+                    </div> -->
                   </div>
                 </div>
 
