@@ -16,4 +16,19 @@
     cursor: pointer;
 }
 
+.cr-flex {
+    display: flex;
+    flex-direction: column;
+}
 
+.cr-flex > div {
+    font-size: 0.95rem;
+    font-weight: bolder;
+    color:#e72929;
+}
+
+.validations {
+    font-size: 0.95rem;
+    font-weight: bolder;
+    color:#e72929;
+}

@@ -9,7 +9,7 @@
             <form name="form"  #f="ngForm" (submit)="onSubmit()" style="line-height: 0.8rem;">   
               <h1 style="text-align:center; color:#e72929;">Register</h1>  
 
-              <div class="input-group mb-3" style="margin-bottom: 0rem;">  
+              <div class="input-group mb-3 cr-flex" >  
                 <input 
                 type="firstName" 
                 name="FirstName" 
@@ -21,17 +21,14 @@
                 maxlength="30"
                 #firstnametest="ngModel"
                 > 
-              </div>
-              <div class="validations" style="margin-bottom: 0.8rem;">
                 <div class="form-text text-danger" *ngIf="firstnametest.errors?.['required']&&(firstnametest.dirty || firstnametest.touched)">
-                  Name is required
+                  * Name is required
                 </div>
                 <div class="form-text text-danger" *ngIf="firstnametest.errors?.['minlength']&&(firstnametest.invalid || firstnametest.dirty || firstnametest.touched)">
-                  Min Length should be 3
+                  * Min length must be 3
                 </div>
               </div>
-
-              <div class="input-group mb-3" style="margin-bottom: 0rem;">  
+              <div class="input-group mb-3 cr-flex" >  
                 <input 
                 type="email" 
                 name="Email" 
@@ -44,20 +41,17 @@
                 maxlength="100"
                 #emailtest="ngModel"
                 > 
-              </div>
-              <div class="validations" style="margin-bottom: 0.8rem;">
                 <div class="form-text text-danger" *ngIf="emailtest.errors?.['required']&&(emailtest.dirty || emailtest.touched)">
-                  Email is required
+                  * Email is required
                 </div>
                 <div class="form-text text-danger" *ngIf="emailtest.errors?.['minlength']&&(emailtest.invalid || emailtest.dirty || emailtest.touched)">
-                  Min Length should be 5
+                  * Min length should be 5
                 </div>
                 <div class="form-text text-danger" *ngIf="emailtest.errors?.['pattern']&&(emailtest.invalid || emailtest.dirty || emailtest.touched)">
-                  Email is invalid
+                  * Email is invalid
                 </div>
               </div>
-
-              <div class="input-group mb-4" style="margin-bottom: 0rem;" style="line-height: 0rem;">  
+              <div class="input-group mb-3 cr-flex" >  
                 <input 
                 type="password" 
                 name="Password"  
@@ -73,29 +67,14 @@
                 pattern3="(?=.*\d)"
                 pattern4="(?=.*\W)"
                 >  
-              </div>  
-              <div class="validations" style="margin-bottom: 0.8rem;">
                 <div class="form-text text-danger" *ngIf="passtest.errors?.['required']&&(passtest.dirty || passtest.touched)">
-                  Password is required
+                  * Password is required
                 </div>
                 <div class="form-text text-danger" *ngIf="passtest.errors?.['minlength']&&(passtest.invalid || passtest.dirty || passtest.touched)">
-                  Min Length should be 8
+                  * Min length must be 8
                 </div>
-                <div class="form-text text-danger" *ngIf="passtest.errors?.['pattern1']&&(passtest.invalid || passtest.dirty || passtest.touched)">
-                  Password must include atleast one lowercase character
-                </div>
-                <div class="form-text text-danger" *ngIf="passtest.errors?.['pattern2']&&(passtest.invalid || passtest.dirty || passtest.touched)">
-                  Password must include atleast one uppercase character
-                </div>
-                <div class="form-text text-danger" *ngIf="passtest.errors?.['pattern3']&&(passtest.invalid || passtest.dirty || passtest.touched)">
-                  Password must include atleast one digit
-                </div>
-                <div class="form-text text-danger" *ngIf="passtest.errors?.['pattern4']&&(passtest.invalid || passtest.dirty || passtest.touched)">
-                  Password must include atleast one special character
-                </div>
-              </div>
-
-              <div class="input-group mb-4" style="margin-bottom: 0rem;" style="line-height: 0rem;">  
+              </div>  
+              <div class="input-group mb-3 cr-flex" >
                 <input 
                 type="password" 
                 name="Confirm Password"  
@@ -111,33 +90,30 @@
                 pattern3="(?=.*\d)"
                 pattern4="(?=.*\W)"
                 >  
-              </div>  
-              <div class="validations" style="margin-bottom: 0.8rem;">
                 <div class="form-text text-danger" *ngIf="confirmpasstest.errors?.['required']&&(confirmpasstest.dirty || confirmpasstest.touched)">
-                  Password is required
+                  * Password is required
                 </div>
                 <div class="form-text text-danger" *ngIf="confirmpasstest.errors?.['minlength']&&(confirmpasstest.invalid || confirmpasstest.dirty || confirmpasstest.touched)">
-                  Min Length should be 8
+                  * Min length must be 8
                 </div>
                 <div class="form-text text-danger" *ngIf="!arePasswordEqual()">
-                  Password must be same
+                  * Password must be same
                 </div>
-              </div>
-
+              </div>  
               <div class="register-gender-div">
                 <div class="register-gender-label">
                   <h5>Gender</h5>
                 </div>
                 <div class="register-gender-options">
-                  <input name="gender" ng-control="options" type="radio" value="Male" [(ngModel)]="customerDetails.gender">Male<br/>
-                  <input name="gender" ng-control="options" type="radio" value="Female" [(ngModel)]="customerDetails.gender">Female<br/>
-                  <input name="gender" ng-control="options" type="radio" value="Other" [(ngModel)]="customerDetails.gender">Other<br/>
-                </div> 
+                  <input name="gender" ng-control="options" type="radio" value="Male" [(ngModel)]="customerDetails.gender" #selectedGender="ngModel">Male<br/>
+                  <input name="gender" ng-control="options" type="radio" value="Female" [(ngModel)]="customerDetails.gender" required >Female<br/>
+                  <input name="gender" ng-control="options" type="radio" value="Other" [(ngModel)]="customerDetails.gender" required >Other<br/>
+                  <div *ngIf="selectedGender.errors?.['required']" class="validations">* Gender is required</div>
+                </div>   
               </div>
-              
               <div class="row">  
                 <div class="col-6">  
-                  <button type="submit" class="btn btn-success px-4" [disabled]="emailtest.invalid || passtest.invalid || !arePasswordEqual()">Register me</button>  
+                  <button type="submit" class="btn btn-success px-4" [disabled]="firstnametest.invalid || emailtest.invalid || passtest.invalid || !arePasswordEqual() || selectedGender.invalid">Register me</button>  
                 </div>  
                 <div class="col-6 text-right">  
                   <button type="button" class="btn btn-link px-4" routerLink="/signin">Sign In?</button>  
