@@ -36,6 +36,7 @@ export class AdminEditmovieComponent implements OnInit {
 
     this.movieService.getMovie(this.movieId).subscribe(data => {
       this.movieData = data;
+      this.movieData.releaseDate = this.movieData.releaseDate.substring(0,10);
     })
   }
   onSubmit() {

@@ -43,7 +43,7 @@
                 <div class="input-group mb-3 em-form-row">  
                   <div class="form-text em-form-row-label">Release Date</div> 
                   <div class="em-flex">
-                    <input  type="datetime-local" name="releaseDate" #selectedRDate="ngModel" class="form-control em-form-row-input"  placeholder="" required [(ngModel)]="movieData.releaseDate">
+                    <input  type="date" name="releaseDate" #selectedRDate="ngModel" class="form-control em-form-row-input"  placeholder="" required [(ngModel)]="movieData.releaseDate">
                     <div class="form-text text-danger" *ngIf="selectedRDate.errors?.['required']&&(selectedRDate.dirty || selectedRDate.touched)">
                       * Release Date is required
                     </div>
