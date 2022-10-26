@@ -26,6 +26,15 @@
     /* overflow-y: hidden; */
     /* overflow-y: auto; */
 }
+
+.content::-webkit-scrollbar {
+    display: none;
+}
+
+.content {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
 .amovielist-row:hover {
     cursor: pointer;
     background-color: #e72929;

@@ -1,53 +1,67 @@
-<app-admin-header></app-admin-header>
-<div *ngIf="movieDetails" class="amd-containerr">
-    <img class="amd-image" src="./assets/{{movieDetails.imageUrl}}" alt="foods-image">
-    <div class="amd-content">
-        <div class="amd-title">
-            <div class="amd-movie-name">{{movieDetails.movieName}}</div>
-            <span class="amd-favorite">❤{{movieDetails.ratings}}%</span>
-        </div>
-        <div class="amd-product-item-footer">
-            <div class="amd-genres">
-                {{movieDetails.genres}}
-            </div>
-            
-        </div>
-        
-        <div class="amd-movie-pricing-details">
-            <div class="amd-showtime-language">
-                <div class="amd-show-time">
-                  {{movieDetails.showTime | mydatepipe}} {{movieDetails.showTime | date: 'shortTime'}}
-                </div>
-                <!-- {{movieDetails.costPerSeat | currency:'INR'}} -->
-                <div class="amd-movie-price-age">
-                    <div class="language">
-                        {{movieDetails.language}}
-                    </div>
-                    <div class="amd-age-rating">
-                        ({{movieDetails.ageRating}})
-                    </div>
-                </div>
-            </div>
-            <div class="amd-duration-movie-type">
-                <div class="amd-duration">
-                    <span>🕘</span>
-                    {{movieDetails.duration}}
-                </div>
-                <div class="amd-movie-type">
-                    {{movieDetails.movieType}}
-                </div>
-            </div> 
-        </div>
-        <div class="amd-button-group">
-            <button class="amd-btn" [routerLink]="['/admin/editmovie/',movieDetails.movieId]">Edit</button>
-            <!-- <button class="amd-btn" [routerLink]="['/admin/removemovie/',movieDetails.movieId]">Delete</button> -->
-            <button class="amd-btn" data-toggle="modal" data-target="#confirmDeletion">Delete</button>
-        </div>
-
-        <button class="amd-btn-back" [routerLink]="['/admin/movielist']">Back to the Movie List</button>
-
-    </div>
+<div class="application-div">
+  <app-admin-header></app-admin-header>
+  
+  <div class="application-content">
+      <div class="sidebar">
+          <app-admin-sidebar></app-admin-sidebar>
+      </div>
+      <div class="content">
+        <div *ngIf="movieDetails" class="amd-containerr">
+          <img class="amd-image" src="./assets/{{movieDetails.imageUrl}}" alt="foods-image">
+          <div class="amd-content">
+              <div class="amd-title">
+                  <div class="amd-movie-name">{{movieDetails.movieName}}</div>
+                  <span class="amd-favorite">❤{{movieDetails.ratings}}%</span>
+              </div>
+              <div class="amd-product-item-footer">
+                  <div class="amd-genres">
+                      {{movieDetails.genres}}
+                  </div>
+                  
+              </div>
+              
+              <div class="amd-movie-pricing-details">
+                  <div class="amd-showtime-language">
+                      <div class="amd-show-time">
+                        {{movieDetails.showTime | mydatepipe}} {{movieDetails.showTime | date: 'shortTime'}}
+                      </div>
+                      <!-- {{movieDetails.costPerSeat | currency:'INR'}} -->
+                      <div class="amd-movie-price-age">
+                          <div class="language">
+                              {{movieDetails.language}}
+                          </div>
+                          <div class="amd-age-rating">
+                              ({{movieDetails.ageRating}})
+                          </div>
+                      </div>
+                  </div>
+                  <div class="amd-duration-movie-type">
+                      <div class="amd-duration">
+                          <span>🕘</span>
+                          {{movieDetails.duration}}
+                      </div>
+                      <div class="amd-movie-type">
+                          {{movieDetails.movieType}}
+                      </div>
+                  </div> 
+              </div>
+              <div class="amd-button-group">
+                  <button class="amd-btn" [routerLink]="['/admin/editmovie/',movieDetails.movieId]">Edit</button>
+                  <!-- <button class="amd-btn" [routerLink]="['/admin/removemovie/',movieDetails.movieId]">Delete</button> -->
+                  <button class="amd-btn" data-toggle="modal" data-target="#confirmDeletion">Delete</button>
+              </div>
+      
+              <button class="amd-btn-back" [routerLink]="['/admin/movielist']">Back to the Movie List</button>
+      
+          </div>
+      </div>
+      </div>
+      
+  </div>
 </div>
+
+
+
 
 
   <div *ngIf="movieDetails" class="modal fade" id="confirmDeletion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
