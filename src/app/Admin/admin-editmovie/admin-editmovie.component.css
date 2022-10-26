@@ -1,40 +1,42 @@
 .application-div{
-    display: flex;
-    flex-direction: column;
-    overflow: auto;
-    height: 100vh;
-  }
-  
-  .application-content{
-    display: flex;
-    height: 88.5vh;
-  }
-  
-  .sidebar {
-    flex: 0.163;
-    background-color: #00171F;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .content{
-    flex: 0.9;
-    overflow-x: hidden;
-    /* overflow-y: hidden; */
-    /* overflow-y: auto; */
-  }
-  
-  .content::-webkit-scrollbar {
-    display: none;
-  }
-  
-  .content {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
-  }
-  .em-form{
-    width: 300rem;
-  }
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  height: 100vh;
+}
+
+.application-content{
+  display: flex;
+  height: 88.5vh;
+}
+
+.sidebar {
+  flex: 0.163;
+  background-color: #00171F;
+  display: flex;
+  flex-direction: column;
+}
+
+.content{
+  flex: 0.9;
+  overflow-x: hidden;
+  /* overflow-y: hidden; */
+  /* overflow-y: auto; */
+}
+
+.content::-webkit-scrollbar {
+  display: none;
+}
+
+.content {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.em-form{
+  width: 300rem;
+}
+
 .em-form-row{
     display: flex;
 }
@@ -42,18 +44,38 @@
     flex: 0.3;
 }
 
-.em-form-row-input {
-    flex: 0.7;
-}
+
+    
+
 
 .em-form-row-select {
     display: flex;
 }
 .em-form-row-label-select{
-    flex: 0.42;
+    flex: 0.3;
 }
 
 .em-checkbox{ 
     height: 30px;
     width: 30px;
 }
+
+input.ng-invalid.ng-touched {
+    border: 1.5px solid #e72929;
+  }
+  
+  input:focus {
+    outline: none !important;
+    box-shadow: none;
+  }
+
+  .em-flex {
+    display: flex;
+    flex: 0.7;
+    flex-direction: column;
+  }
+  
+  .em-flex > div {
+    font-size: 0.95rem;
+    font-weight: bolder;
+  }

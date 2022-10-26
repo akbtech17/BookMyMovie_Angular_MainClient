@@ -27,7 +27,7 @@
                       required 
                       [(ngModel)]="movieData.movieName"
                       pattern=""
-                      minlength="5" 
+                      minlength="3" 
                       maxlength="30"
                       #movienametest="ngModel" 
                       > 
@@ -199,7 +199,7 @@
                     placeholder="eg, UA" 
                     required 
                     [(ngModel)]="movieData.ageRating"
-                    minlength="2" 
+                    minlength="1" 
                     maxlength="30"
                     #ageRatingTest="ngModel" 
                     > 
@@ -207,7 +207,7 @@
                       * Age Rating is required
                     </div>
                     <div class="form-text text-danger" *ngIf="ageRatingTest.errors?.['minlength']&&(ageRatingTest.invalid || ageRatingTest.dirty || ageRatingTest.touched)">
-                      * Min length must be 2
+                      * Min length must be 1
                     </div>
                   </div>
                 </div>
