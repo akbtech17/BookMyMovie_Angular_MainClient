@@ -25,6 +25,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ConfirmationPageComponent } from './confirmation-page/confirmation-page.component';
 import { NgxPrintModule } from 'ngx-print';
 import { MydatepipePipe } from './mydatepipe.pipe';
+import { AdminSidebarComponent } from './admin/admin-sidebar/admin-sidebar.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { MydatepipePipe } from './mydatepipe.pipe';
     AdminMoviedetailsComponent,
     ConfirmationPageComponent,
     MydatepipePipe,
+    AdminSidebarComponent,
   ],
   imports: [
     BrowserModule,

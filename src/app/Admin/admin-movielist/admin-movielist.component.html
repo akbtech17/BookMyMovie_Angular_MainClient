@@ -1,29 +1,43 @@
-<app-admin-header></app-admin-header>
-<div class="container" style="margin-top: 2rem;">
-    <div  class="jumbotron" style="padding: 1.5rem 2rem">
-        <h1 style="text-align:center; color:#e72929;">Movies</h1>
-        <table class="table">
-            <thead class="head">
-                <tr>
-                    <th class="center-align">Sno</th>
-                    <th >Name</th>
-                    <th class="center-align">Release Date</th>
-                    <th class="center-align">Seat Cost</th>
-                    <th class="center-align">Age Rating</th>
-                    <th class="center-align">Likes</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let movie of movies; index as indexOfelement;" class="amovielist-row" [routerLink]="['/admin/movie-details/',movie.movieId]">
-                    <td class="center-align">{{indexOfelement+1}}</td>
-                    <td>{{movie.movieName}}</td>
-                    <!-- <td class="center-align">{{movie.releaseDate| date: 'dd/MM/yyyy'}}</td> -->
-                    <td class="center-align">{{formatDate(movie.releaseDate)}}</td>
-                    <td class="center-align">{{movie.costPerSeat| currency:"INR":"symbol"}}</td>
-                    <td class="center-align">{{movie.ageRating}}</td>
-                    <td class="center-align">{{movie.ratings}}%</td>
-                </tr> 
-            </tbody>
-        </table>
+<div class="application-div">
+    <app-admin-header></app-admin-header>
+    
+    <div class="application-content">
+        <div class="sidenav">
+            <a href="#" routerLink="">Movie List</a>
+            <a href="#" routerLink="">Add Movie</a>
+            <a href="#" routerLink="">Customer List</a>
+            <a href="#" routerLink="">Change Password</a>
+        </div>
+        <div class="content">
+            <div class="container" style="margin-top: 2rem;">
+                <div  class="jumbotron" style="padding: 1.5rem 2rem">
+                    <h1 style="text-align:center; color:#e72929;">Movies</h1>
+                    <table class="table">
+                        <thead class="head">
+                            <tr>
+                                <th class="center-align">Sno</th>
+                                <th >Name</th>
+                                <th class="center-align">Release Date</th>
+                                <th class="center-align">Seat Cost</th>
+                                <th class="center-align">Age Rating</th>
+                                <th class="center-align">Likes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let movie of movies; index as indexOfelement;" class="amovielist-row" [routerLink]="['/admin/movie-details/',movie.movieId]">
+                                <td class="center-align">{{indexOfelement+1}}</td>
+                                <td>{{movie.movieName}}</td>
+                                <!-- <td class="center-align">{{movie.releaseDate| date: 'dd/MM/yyyy'}}</td> -->
+                                <td class="center-align">{{formatDate(movie.releaseDate)}}</td>
+                                <td class="center-align">{{movie.costPerSeat| currency:"INR":"symbol"}}</td>
+                                <td class="center-align">{{movie.ageRating}}</td>
+                                <td class="center-align">{{movie.ratings}}%</td>
+                            </tr> 
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
     </div>
 </div>
