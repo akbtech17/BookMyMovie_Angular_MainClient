@@ -1,12 +1,19 @@
-<app-admin-header></app-admin-header>
-<br/>
-<div class="container" style="padding-top:20px;">  
+<div class="application-div">
+  <app-admin-header></app-admin-header>
+  
+  <div class="application-content">
+      <div class="sidebar">
+          <app-admin-sidebar></app-admin-sidebar>
+      </div>
+      <div class="content">
+        
+<div class="container am-form" style="padding-top:20px;">  
   <div class="row">  
     <div class="col-md-7 mx-auto">  
       <div class="card-group">  
         <div class="card p-4">  
           <div class="card-body">  
-            <form name="form" class="am-form" #f="ngForm" (submit)="onSubmit()">   
+            <form name="form"  #f="ngForm" (submit)="onSubmit()">   
                 <h1 style="text-align:center; color:#e72929;">Add Movie</h1>  
                
                 <div class="input-group mb-3 am-form-row">  
@@ -275,3 +282,7 @@
     </div>  
   </div>  
 </div>     
+      </div>
+      
+  </div>
+</div>
