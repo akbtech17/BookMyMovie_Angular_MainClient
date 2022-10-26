@@ -27,6 +27,7 @@ import { NgxPrintModule } from 'ngx-print';
 import { MydatepipePipe } from './mydatepipe.pipe';
 import { AdminSidebarComponent } from './admin/admin-sidebar/admin-sidebar.component';
 import { CustomerSidebarComponent } from './customer-sidebar/customer-sidebar.component';
+import { TempComponent } from './temp/temp.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { CustomerSidebarComponent } from './customer-sidebar/customer-sidebar.co
     MydatepipePipe,
     AdminSidebarComponent,
     CustomerSidebarComponent,
+    TempComponent,
   ],
   imports: [
     BrowserModule,

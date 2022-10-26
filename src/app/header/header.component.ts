@@ -27,6 +27,6 @@ export class HeaderComponent implements OnInit {
     CustomerStore.email = '';
     CustomerStore.firstName = '';
     this.customerEmail='';
-    this.router.navigate(["/"]);
+    this.router.navigate(["/temp"]);
   }
 }
