@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { CustomerStore } from '../CustomerStore';
 import { IMovie } from '../movie';
 import { MovieService } from '../movie.service';
 
@@ -12,6 +13,7 @@ export class MoviesListComponent implements OnInit {
   movies: IMovie[] = [];
   private _listFilter: string = '';
   filteredMovies: IMovie[] = [];
+  isCustomerLoggedIn = false;
 
   get listFilter(): string {
     return this._listFilter;
@@ -29,6 +31,7 @@ export class MoviesListComponent implements OnInit {
       this.movies = data
       this.filteredMovies = data
     })
+    this.isCustomerLoggedIn = CustomerStore.email != "";
   }
 
   performFilter(): void {

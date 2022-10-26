@@ -10,36 +10,23 @@
     height: 88.5vh;
 }
 
-.sidenav {
-    /* flex: 0.163; */
+.sidebar {
+    flex: 0.163;
     background-color: #00171F;
     display: flex;
     flex-direction: column;
-}
+  }
 
-.sidenav a{
-    color: white;
-    padding: 1em;
-    display: inline-block;
-    list-style-type: none;
-    text-align: center;
-}
 
-.sidenav a:hover{
-    transition: 2sec;
-    background-color: white;
-    color:#00171F;
-    text-decoration: none;
-    opacity: 0.9;
-    transition: 0.3s;
-    cursor: pointer;
-    transform: scale(1.01);
-    font-weight: bolder;
-    
-}
 
 .ml-list{
-    /* flex: 0.9; */
+    overflow-x: hidden;
+    /* overflow-y: hidden; */
+    /* overflow-y: auto; */
+}
+
+.ml-list-with-sidebar{
+    flex: 0.9;
     overflow-x: hidden;
     /* overflow-y: hidden; */
     /* overflow-y: auto; */
@@ -50,6 +37,15 @@
   }
 
   .ml-list {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+  .ml-list-with-sidebar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .ml-list-with-sidebar {
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
   }

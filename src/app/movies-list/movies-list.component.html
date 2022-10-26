@@ -1,14 +1,69 @@
-<div class="application-div">
+<div class="application-div" *ngIf="isCustomerLoggedIn">
     <app-header></app-header>
     
     <div class="application-content">
-        <!-- <div class="sidenav">
-            <a href="#" routerLink="">Movie List</a>
-            <a href="#" routerLink="">Previous Bookings</a>
-            <a href="#" routerLink="">Wallet</a>
-            <a href="#" routerLink="">Saved Cards</a>
-            <a href="#" routerLink="">Change Password</a>
-        </div> -->
+        <div class="sidebar">
+            <app-customer-sidebar></app-customer-sidebar>
+        </div>
+        <div class="ml-list-with-sidebar">
+            <div class="ml-filter-comp">
+                <input type="text" [(ngModel)]='listFilter' placeholder="Search Movie from BMM">
+                <button type="button" (click)="performFilter()">Search</button>
+            </div>
+            <ul class="ml-ul">
+                <li *ngFor="let movie of filteredMovies">
+                    <a href="#" [routerLink]="['/movie-details', movie.movieId]">
+                        <img class="ml-image" src="./assets/{{movie.imageUrl}}" alt="foods-image">
+                        <div class="ml-content">
+                            <div class="ml-title">
+                                <div class="ml-movie-name" *ngIf="movie.movieName.length>22">{{movie.movieName | slice:0:22}}...</div>
+                                <div class="ml-movie-name" *ngIf="movie.movieName.length<=22">{{movie.movieName}}</div>
+                                <span class="ml-favorite">❤{{movie.ratings}}%</span>
+                            </div>
+                            <div class="ml-product-item-footer">
+                                <div class="ml-genres">
+                                    {{movie.genres}}
+                                </div>
+                                <div class="ml-duration">
+                                    <span>🕘</span>
+                                    {{movie.duration}}
+                                </div>
+                            </div>
+                            <div class="ml-show-time">
+                                {{movie.showTime | mydatepipe}}
+                            </div>
+                            <div class="ml-show-time">
+                                {{movie.showTime | date: 'shortTime'}}
+                            </div>
+                            
+                            <div class="ml-movie-pricing-details">
+                                <!-- {{movie.costPerSeat | currency:'INR'}} -->
+                                <div class="ml-movie-price-age">
+                                    <div class="language">
+                                        {{movie.language}}
+                                    </div>
+                                    <div class="ml-age-rating">
+                                        ({{movie.ageRating}})
+                                    </div>
+                                </div>
+                                <div class="ml-movie-type">
+                                    {{movie.movieType}}
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<div class="application-div" *ngIf="!isCustomerLoggedIn">
+    <app-header></app-header>
+    
+    <div class="application-content">
+       
         <div class="ml-list">
             <div class="ml-filter-comp">
                 <input type="text" [(ngModel)]='listFilter' placeholder="Search Movie from BMM">
