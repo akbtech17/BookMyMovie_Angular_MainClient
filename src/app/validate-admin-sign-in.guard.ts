@@ -12,13 +12,13 @@ export class ValidateAdminSignInGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      // if(AdminStore.email == '') {
-      //   // alert("To access this section of app, user must be Signed In!")
-      //   this.toastr.error('Only accessible by Admin!','Error Message',  {
-      //     timeOut: 3000,
-      //   });
-      //   this.router.navigate(['/admin/signin']);
-      // }
+      if(AdminStore.email == '') {
+        // alert("To access this section of app, user must be Signed In!")
+        this.toastr.error('Only accessible by Admin!','Error Message',  {
+          timeOut: 3000,
+        });
+        this.router.navigate(['/admin/signin']);
+      }
     return true;
   }
   
