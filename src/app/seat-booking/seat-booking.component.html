@@ -1,30 +1,40 @@
-<app-header></app-header>
-<div class="seat-book">
-    <div class="sb-movie-container">
+<div class="application-div">
+  <app-header></app-header>
+  
+  <div class="application-content">
+      <div class="sidebar">
+          <app-customer-sidebar></app-customer-sidebar>
       </div>
-      <ul class="sb-showcase">
-        <li>
-          <div class="sb-seat"></div>
-          <small>Available</small>
-        </li>
-        <li>
-          <div class="sb-seat selected"></div>
-          <small>Selected</small>
-        </li>
-        <li>
-          <div class="sb-seat sold"></div>
-          <small>Sold</small>
-        </li>
-      </ul>
-      <div class="sb-containerr" *ngIf="seatMap">
-        <div class="sb-screen"></div>
-        <div class="" *ngFor="let j of row">
-          <div class="sb-row">
-            <div class="" *ngFor="let i of col">
-              <div class="{{seatMap[i+j].status == 0 ? '' : seatMap[i+j].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[i+j].seatNo)"></div>
+      <div class="content">
+        <div class="seat-book">
+          <div class="sb-movie-container">
             </div>
+            <ul class="sb-showcase">
+              <li>
+                <div class="sb-seat"></div>
+                <small>Available</small>
+              </li>
+              <li>
+                <div class="sb-seat selected"></div>
+                <small>Selected</small>
+              </li>
+              <li>
+                <div class="sb-seat sold"></div>
+                <small>Sold</small>
+              </li>
+            </ul>
+            <div class="sb-containerr" *ngIf="seatMap">
+              <div class="sb-screen"></div>
+              <div class="" *ngFor="let j of row">
+                <div class="sb-row">
+                  <div class="" *ngFor="let i of col">
+                    <div class="{{seatMap[i+j].status == 0 ? '' : seatMap[i+j].status == 1 ? 'selected': 'sold'}} sb-seat" (click)="onClick(seatMap[i+j].seatNo)"></div>
+                  </div>
+                </div>
+              </div>
+              <button (click)="OnSubmit()" class="btn btn-success" style="margin-top: 2rem;">Book Now</button>
           </div>
-        </div>
-        <button (click)="OnSubmit()" class="btn btn-success" style="margin-top: 2rem;">Book Now</button>
-    </div>
+      </div>
+      </div>
+  </div>
 </div>

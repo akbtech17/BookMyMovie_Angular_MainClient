@@ -1,60 +1,71 @@
-<app-header></app-header>
-
-<div id="print-section" class="cp-container container" *ngIf="transactionSuccess">
-    <div class="cp-logo">book <span>my</span> movie</div>
-    <div class="cp-confirm">Your booking is confirmed!</div>
-    <div class="cp-bookingid">
-        <span>Booking ID </span>
-        <span class="cp-bid">#{{transactionResponse.transactionId}}</span>
-    </div>
-    <div class="cp-ticket-container">
-        <div class="cp-movie">
-            <div class="cp-movie-image">
-                <img src="./assets/{{transactionResponse.imageUrl}}" alt="" class="cp-movie-image">
-            </div>
-            <div class="cp-movie-info">
-                <div class="cp-movie-title">{{transactionResponse.movieName}} ({{transactionResponse.ageRating}})</div>
-                <div class="cp-movie-venue">
-                    <!-- <div class="cp-time">11:30pm | Sun, 22 May, 2022</div> -->
-                    <div class="cp-time">{{transactionResponse.showTime | mydatepipe}} {{transactionResponse.showTime | date: 'shortTime'}}</div>
-                    <div class="cp-address">Cinepolis: WESTEND Mall Aundh, Pune(AUDI 03) Pune, Pune</div>
+<div class="application-div">
+    <app-header></app-header>
+    
+    <div class="application-content">
+        <div class="sidebar">
+            <app-customer-sidebar></app-customer-sidebar>
+        </div>
+        <div class="content">
+            <div id="print-section" class="cp-container container" *ngIf="transactionSuccess">
+                <div class="cp-logo">book <span>my</span> movie</div>
+                <div class="cp-confirm">Your booking is confirmed!</div>
+                <div class="cp-bookingid">
+                    <span>Booking ID </span>
+                    <span class="cp-bid">#{{transactionResponse.transactionId}}</span>
                 </div>
-                <div class="cp-seat">EXECUTIVE - {{transactionResponse.seats}}</div>
-            </div>
-        </div>
-        <div class="cp-seat-details">
-            <div class="cp-number-of-seats">
-                <div class="cp-nseat">{{transactionResponse.seats.length}}</div>
-                <div class="cp-ticket-label">Tickets</div>
-            </div>
-            <div class="cp-audi-details">AUDI 03</div>
-        </div>
-    </div>
-    <div class="cp-transaction-container">
-        <div class="cpt-heading">ORDER SUMMARY</div>
-        <div class="cp-transaction-details">
-            <div class="cp-amount-details">
-                <div class="cp-amount-label">TICKET AMOUNT</div>
-                <div class="cp-amount">Rs.{{transactionResponse.totalCost}}</div>
-            </div>
-            <div class="cp-quantity-details">
-                <div class="cp-quantity-label">Quantity</div>
-                <div class="cp-quantity">{{transactionResponse.seats.length}} tickets</div>
-            </div>
-            <div class="cp-paid-details">
-                <div class="cp-inner">
-                    <div class="cp-paid-label">AMOUNT PAID</div>
-                    <div class="cp-paid-money">Rs.{{transactionResponse.totalCost}}</div>
+                <div class="cp-ticket-container">
+                    <div class="cp-movie">
+                        <div class="cp-movie-image">
+                            <img src="./assets/{{transactionResponse.imageUrl}}" alt="" class="cp-movie-image">
+                        </div>
+                        <div class="cp-movie-info">
+                            <div class="cp-movie-title">{{transactionResponse.movieName}} ({{transactionResponse.ageRating}})</div>
+                            <div class="cp-movie-venue">
+                                <!-- <div class="cp-time">11:30pm | Sun, 22 May, 2022</div> -->
+                                <div class="cp-time">{{transactionResponse.showTime | mydatepipe}} {{transactionResponse.showTime | date: 'shortTime'}}</div>
+                                <div class="cp-address">Cinepolis: WESTEND Mall Aundh, Pune(AUDI 03) Pune, Pune</div>
+                            </div>
+                            <div class="cp-seat">EXECUTIVE - {{transactionResponse.seats}}</div>
+                        </div>
+                    </div>
+                    <div class="cp-seat-details">
+                        <div class="cp-number-of-seats">
+                            <div class="cp-nseat">{{transactionResponse.seats.length}}</div>
+                            <div class="cp-ticket-label">Tickets</div>
+                        </div>
+                        <div class="cp-audi-details">AUDI 03</div>
+                    </div>
                 </div>
+                <div class="cp-transaction-container">
+                    <div class="cpt-heading">ORDER SUMMARY</div>
+                    <div class="cp-transaction-details">
+                        <div class="cp-amount-details">
+                            <div class="cp-amount-label">TICKET AMOUNT</div>
+                            <div class="cp-amount">Rs.{{transactionResponse.totalCost}}</div>
+                        </div>
+                        <div class="cp-quantity-details">
+                            <div class="cp-quantity-label">Quantity</div>
+                            <div class="cp-quantity">{{transactionResponse.seats.length}} tickets</div>
+                        </div>
+                        <div class="cp-paid-details">
+                            <div class="cp-inner">
+                                <div class="cp-paid-label">AMOUNT PAID</div>
+                                <div class="cp-paid-money">Rs.{{transactionResponse.totalCost}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="cp-back" (click)="OnClick()">Back to Dashboard</div>
+                <button printSectionId="print-section" ngxPrint class="cp-print">Print</button>
+            </div>
+            
+            <div class="container" style="margin: 2rem auto;" *ngIf="!transactionSuccess">
+                <div class="cp-logo">book <span>my</span> movie</div>
+                <div class="cp-waiting">Your order is under processing!</div>
             </div>
         </div>
     </div>
+  </div>
+  
 
-    <div class="cp-back" (click)="OnClick()">Back to Dashboard</div>
-    <button printSectionId="print-section" ngxPrint class="cp-print">Print</button>
-</div>
-
-<div class="container" style="margin: 2rem auto;" *ngIf="!transactionSuccess">
-    <div class="cp-logo">book <span>my</span> movie</div>
-    <div class="cp-waiting">Your order is under processing!</div>
-</div>
