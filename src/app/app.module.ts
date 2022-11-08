@@ -28,6 +28,7 @@ import { MydatepipePipe } from './mydatepipe.pipe';
 import { AdminSidebarComponent } from './admin/admin-sidebar/admin-sidebar.component';
 import { CustomerSidebarComponent } from './customer-sidebar/customer-sidebar.component';
 import { TempComponent } from './temp/temp.component';
+import { TransactionListComponent } from './transaction-list/transaction-list.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { TempComponent } from './temp/temp.component';
     AdminSidebarComponent,
     CustomerSidebarComponent,
     TempComponent,
+    TransactionListComponent,
   ],
   imports: [
     BrowserModule,

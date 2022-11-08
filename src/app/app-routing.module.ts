@@ -17,6 +17,7 @@ import { ValidateUserSignInGuard } from './validate-user-sign-in.guard';
 import { ValidateAdminSignInGuard } from './validate-admin-sign-in.guard';
 import { ConfirmationPageComponent } from './confirmation-page/confirmation-page.component';
 import { TempComponent } from './temp/temp.component';
+import { TransactionListComponent } from './transaction-list/transaction-list.component';
 
 const routes: Routes = [
   { path: 'signin', component: SigninComponent },
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'sbook/:movieId', component: SeatBookingComponent, canActivate:[ValidateUserSignInGuard] },
   { path: 'confirm', component: ConfirmationPageComponent,canActivate:[ValidateUserSignInGuard] },
   { path: 'temp', component: TempComponent},
+  { path: 'transaction-list/:customerId', component: TransactionListComponent },
   { 
     path : 'admin', 
     component: AdminHomeComponent,
