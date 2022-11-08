@@ -32,3 +32,11 @@
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+
+.transaction-div {
+  background-color: whitesmoke;
+  padding: 1rem;
+  margin: 1rem;
+  color: black;
+  border-radius: 1rem;
+}

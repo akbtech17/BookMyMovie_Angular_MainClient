@@ -18,4 +18,8 @@ export class TransactionService {
   CreateTransaction(transationDetails :ITransaction): Observable<any> {
     return this.httpClient.post<any>(this.url,transationDetails,this.httpOptions);
   }
+
+  GetTransactionsByCustomerId(customerId: number): Observable<any> {
+    return this.httpClient.get<any>(this.url + "/cid/" + customerId);
+  }
 }

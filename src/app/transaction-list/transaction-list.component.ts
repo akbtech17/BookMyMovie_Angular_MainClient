@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TransactionStore } from '../transaction-store';
+import { TransactionService } from '../transaction.service';
 
 @Component({
   selector: 'app-transaction-list',
@@ -8,10 +9,17 @@ import { TransactionStore } from '../transaction-store';
 })
 export class TransactionListComponent implements OnInit {
   customerId: number = 0;
-  constructor() { }
+  transactions: any;
+  constructor(private transactionService: TransactionService) { }
 
   ngOnInit(): void {
     this.customerId =  TransactionStore.customerId;
+    this.transactionService.GetTransactionsByCustomerId(this.customerId).subscribe(
+      data => {
+        this.transactions = data;
+        console.log(this.transactions);
+      }
+    )
   }
 
 }

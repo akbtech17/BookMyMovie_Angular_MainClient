@@ -3,7 +3,7 @@ export class TransactionStore {
     public static transactionTime: string = '';
 
     // customer details
-    public static customerId: number = 0;
+    public static customerId: number = 1;
     public static firstName: string = '';
     public static email: string = '';
 
