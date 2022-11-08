@@ -8,7 +8,43 @@
       <div class="content">
           <div *ngFor="let transaction of transactions" style="color: white;">
             <div class="transaction-div">
-              {{transaction.movieName}}
+              <div class="transaction-header">
+                <div class="transaction-id">
+                  {{transaction.transactionId}}
+                </div>
+                <div class="transaction-time">
+                  {{transaction.transactionTime}}
+                </div>
+              </div>
+              <div class="t-content">
+                <div class="t-left">
+                  {{transaction.imageUrl}}
+                </div>
+                <div class="t-middle">
+                  <h5>{{transaction.movieType}}</h5>
+                  <h5>{{transaction.duration}}</h5>
+                  <h5>{{transaction.showTime}}</h5>
+                  <h5>{{transaction.ageRating}}</h5>
+                  <h5>{{transaction.movieName}}</h5>
+                  {{transaction.seats}}
+                  
+                  
+                </div>
+                <div class="t-right">
+                  {{transaction.totalCost}}
+                  <button class="btn btn-success">Review</button>
+                  <button class="btn btn-danger">Cancel</button>
+                </div>
+              </div>
+              
+              
+
+            
+              
+              
+
+             
+              
             </div>
           </div>
       </div>

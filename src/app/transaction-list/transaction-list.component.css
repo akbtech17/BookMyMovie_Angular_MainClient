@@ -40,3 +40,23 @@
   color: black;
   border-radius: 1rem;
 }
+
+.transaction-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.t-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.t-middle {
+  display: flex;
+  flex-direction: column;
+}
+
+.t-right {
+  display: flex;
+  flex-direction: column;
+}
