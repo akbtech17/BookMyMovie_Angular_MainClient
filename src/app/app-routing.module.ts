@@ -27,7 +27,7 @@ const routes: Routes = [
   { path: 'sbook/:movieId', component: SeatBookingComponent, canActivate:[ValidateUserSignInGuard] },
   { path: 'confirm', component: ConfirmationPageComponent,canActivate:[ValidateUserSignInGuard] },
   { path: 'temp', component: TempComponent},
-  { path: 'transaction-list/:customerId', component: TransactionListComponent },
+  { path: 'transaction-list', component: TransactionListComponent },
   { 
     path : 'admin', 
     component: AdminHomeComponent,
