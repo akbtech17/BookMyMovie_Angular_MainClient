@@ -1,0 +1,103 @@
+.application-div{
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  height: 100vh;
+}
+
+.application-content{
+  display: flex;
+  height: 88.5vh;
+}
+
+.sidebar {
+  flex: 0.163;
+  background-color: #00171F;
+  display: flex;
+  flex-direction: column;
+}
+
+.content{
+  flex: 0.9;
+  overflow-x: hidden;
+  /* overflow-y: hidden; */
+  /* overflow-y: auto; */
+}
+
+.content::-webkit-scrollbar {
+  display: none;
+}
+
+.content {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.cp-logo {
+  color: #8d8d8f;
+  font-size: 2rem;
+  font-weight: bolder;
+}
+
+.cp-logo > span {
+  background-color: #e72929;
+  color: white;
+}
+
+.cp-waiting{
+  color: rgb(255, 166, 0);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.transaction-div {
+  background-color: whitesmoke;
+  padding: 1rem;
+  margin: 1rem;
+  color: black;
+  border-radius: 1rem;
+}
+
+.transaction-div:hover{
+  transition: 0.8s;
+  cursor: pointer;
+  transform: scale(1.02);
+}
+
+.transaction-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.t-content {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.t-middle {
+  display: flex;
+  flex-direction: column;
+}
+
+.t-right {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+}
+
+.bid {
+  font-weight: bold;
+}
+
+.transaction-time{
+  font-size: 16px;
+  font-family: Arial,sans-serif;
+  color: #3c3c3c;
+}
+
+.t-left > img {
+  height: 120px;
+  border-radius: 0.8rem;
+}

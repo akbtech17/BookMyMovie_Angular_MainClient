@@ -48,6 +48,11 @@
   font-size: 1.5rem;
   font-weight: bold;
 }
+.cp-confirm {
+  color: #4caf50;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
 
 .transaction-div {
   background-color: whitesmoke;

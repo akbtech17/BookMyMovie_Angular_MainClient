@@ -12,7 +12,13 @@
               <div class="cp-waiting">Wait! Previous Booking details are loading...</div>
             </div>
           </div>
-          <div *ngIf="transactions">
+          <div *ngIf="transactions.length == 0">
+            <div class="container" style="margin: 2rem auto;">
+              <div class="cp-logo">book <span>my</span> movie</div>
+              <div class="cp-confirm">Sorry, you don't have any past bookings.</div>
+            </div>
+          </div>
+          <div *ngIf="transactions.length !=0">
             <div *ngFor="let transaction of transactions" style="color: white;">
               <div class="transaction-div">
                 <div class="transaction-header">
