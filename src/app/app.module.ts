@@ -29,6 +29,7 @@ import { AdminSidebarComponent } from './admin/admin-sidebar/admin-sidebar.compo
 import { CustomerSidebarComponent } from './customer-sidebar/customer-sidebar.component';
 import { TempComponent } from './temp/temp.component';
 import { TransactionListComponent } from './transaction-list/transaction-list.component';
+import { DeleteTransactionComponent } from './delete-transaction/delete-transaction.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { TransactionListComponent } from './transaction-list/transaction-list.co
     CustomerSidebarComponent,
     TempComponent,
     TransactionListComponent,
+    DeleteTransactionComponent,
   ],
   imports: [
     BrowserModule,

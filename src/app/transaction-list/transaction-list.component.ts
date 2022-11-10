@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { TransactionStore } from '../transaction-store';
 import { TransactionService } from '../transaction.service';
 
@@ -10,7 +11,7 @@ import { TransactionService } from '../transaction.service';
 export class TransactionListComponent implements OnInit {
   customerId: number = 0;
   transactions: any;
-  constructor(private transactionService: TransactionService) { }
+  constructor(private transactionService: TransactionService, private router: Router) { }
 
   ngOnInit(): void {
     this.customerId =  TransactionStore.customerId;
@@ -21,5 +22,14 @@ export class TransactionListComponent implements OnInit {
       }
     )
   }
+
+  // cancelTransaction(transactionId: number) {
+  //   this.transactionService.CancelTransaction(transactionId).subscribe(
+  //     data => {
+  //       console.log(data);
+  //     }
+  //   )
+  //   this.router.navigate(["./delete"])
+  // }
 
 }

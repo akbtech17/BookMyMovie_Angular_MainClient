@@ -22,4 +22,8 @@ export class TransactionService {
   GetTransactionsByCustomerId(customerId: number): Observable<any> {
     return this.httpClient.get<any>(this.url + "/cid/" + customerId);
   }
+
+  CancelTransaction(transactionId: number): Observable<any> {
+    return this.httpClient.delete<any>(this.url+"/"+transactionId, this.httpOptions);
+  }
 }

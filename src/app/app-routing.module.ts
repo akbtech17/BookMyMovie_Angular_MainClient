@@ -18,6 +18,7 @@ import { ValidateAdminSignInGuard } from './validate-admin-sign-in.guard';
 import { ConfirmationPageComponent } from './confirmation-page/confirmation-page.component';
 import { TempComponent } from './temp/temp.component';
 import { TransactionListComponent } from './transaction-list/transaction-list.component';
+import { DeleteTransactionComponent } from './delete-transaction/delete-transaction.component';
 
 const routes: Routes = [
   { path: 'signin', component: SigninComponent },
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'confirm', component: ConfirmationPageComponent,canActivate:[ValidateUserSignInGuard] },
   { path: 'temp', component: TempComponent},
   { path: 'transaction-list', component: TransactionListComponent },
+  { path: 'delete-transaction/:transactionId', component: DeleteTransactionComponent },
   { 
     path : 'admin', 
     component: AdminHomeComponent,
