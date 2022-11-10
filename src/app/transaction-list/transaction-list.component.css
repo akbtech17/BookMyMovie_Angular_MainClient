@@ -32,6 +32,22 @@
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+.cp-logo {
+  color: #8d8d8f;
+  font-size: 2rem;
+  font-weight: bolder;
+}
+
+.cp-logo > span {
+  background-color: #e72929;
+  color: white;
+}
+
+.cp-waiting{
+  color: rgb(255, 166, 0);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
 
 .transaction-div {
   background-color: whitesmoke;
