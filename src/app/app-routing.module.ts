@@ -28,8 +28,8 @@ const routes: Routes = [
   { path: 'sbook/:movieId', component: SeatBookingComponent, canActivate:[ValidateUserSignInGuard] },
   { path: 'confirm', component: ConfirmationPageComponent,canActivate:[ValidateUserSignInGuard] },
   { path: 'temp', component: TempComponent},
-  { path: 'transaction-list', component: TransactionListComponent },
-  { path: 'delete-transaction/:transactionId', component: DeleteTransactionComponent },
+  { path: 'transaction-list', component: TransactionListComponent, canActivate:[ValidateUserSignInGuard] },
+  { path: 'delete-transaction/:transactionId', component: DeleteTransactionComponent, canActivate:[ValidateUserSignInGuard] },
   { 
     path : 'admin', 
     component: AdminHomeComponent,
