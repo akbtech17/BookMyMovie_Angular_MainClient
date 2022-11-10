@@ -10,29 +10,29 @@
             <div class="transaction-div">
               <div class="transaction-header">
                 <div class="transaction-id">
-                  {{transaction.transactionId}}
+                  Booking ID <span class="bid">#{{transaction.transactionId}}</span> 
                 </div>
                 <div class="transaction-time">
-                  {{transaction.transactionTime}}
+                  {{transaction.transactionTime | mydatepipe}}
                 </div>
               </div>
               <div class="t-content">
                 <div class="t-left">
-                  {{transaction.imageUrl}}
+                  <img src="./assets/{{transaction.imageUrl}}" alt="" class="cp-movie-image">
                 </div>
                 <div class="t-middle">
-                  <h5>{{transaction.movieType}}</h5>
-                  <h5>{{transaction.duration}}</h5>
-                  <h5>{{transaction.showTime}}</h5>
-                  <h5>{{transaction.ageRating}}</h5>
                   <h5>{{transaction.movieName}}</h5>
+                  <h5>{{transaction.showTime | mydatepipe}}</h5>
+                  <h5>{{transaction.duration}}</h5>
+                </div>
+                <div class="t-middle2">
+                  <h5>{{transaction.ageRating}}</h5>
+                  <h5>{{transaction.movieType}}</h5>
                   {{transaction.seats}}
-                  
-                  
                 </div>
                 <div class="t-right">
-                  {{transaction.totalCost}}
-                  <button class="btn btn-success">Review</button>
+                  <h5>{{transaction.totalCost}}</h5>
+                  <!-- <button class="btn btn-success">Review</button> -->
                   <button class="btn btn-danger">Cancel</button>
                 </div>
               </div>
